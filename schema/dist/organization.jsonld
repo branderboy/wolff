@@ -1,0 +1,90 @@
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "GeneralContractor",
+    "LocalBusiness"
+  ],
+  "@id": "https://www.wolffconstruction.com/#organization",
+  "name": "Wolff Construction",
+  "legalName": "Wolff Construction LLC",
+  "url": "https://www.wolffconstruction.com",
+  "foundingDate": "2018",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "CSLB License",
+    "value": "1056036",
+    "url": "https://www.cslb.ca.gov/onlineservices/checklicenseII/LicenseDetail.aspx?LicNum=1056036"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5828 Lonetree Blvd",
+    "addressLocality": "Rocklin",
+    "addressRegion": "CA",
+    "postalCode": "95765",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Rocklin, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Granite Bay, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Roseville, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Loomis, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Folsom, CA"
+    },
+    {
+      "@type": "City",
+      "name": "El Dorado Hills, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Auburn, CA"
+    }
+  ],
+  "founder": {
+    "@id": "https://www.wolffconstruction.com/#don-erik-wolff"
+  },
+  "employee": [
+    {
+      "@id": "https://www.wolffconstruction.com/#don-erik-wolff"
+    },
+    {
+      "@id": "https://www.wolffconstruction.com/#jocelyn-wolff"
+    },
+    {
+      "@id": "https://www.wolffconstruction.com/#jared-schneider"
+    },
+    {
+      "@id": "https://www.wolffconstruction.com/#salina-godinez"
+    }
+  ],
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "NARI"
+    },
+    {
+      "@type": "Organization",
+      "name": "NKBA"
+    }
+  ],
+  "sameAs": [],
+  "knowsAbout": [
+    "Luxury Kitchen Remodeling",
+    "Full Home Renovation",
+    "Custom Homes, Additions & ADUs",
+    "Luxury Bathroom Remodeling"
+  ]
+}

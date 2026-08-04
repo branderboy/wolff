@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.wolffconstruction.com/#salina-godinez",
+  "name": "Salina Godinez",
+  "jobTitle": "Team Member",
+  "url": "https://www.wolffconstruction.com/salina-godinez",
+  "worksFor": {
+    "@id": "https://www.wolffconstruction.com/#organization"
+  }
+}

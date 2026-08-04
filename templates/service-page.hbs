@@ -1,0 +1,46 @@
+<!--
+  Service page template. Rendered from data/services.json + data/company.json
+  + data/reviews.json. Agents edit DATA, not prose in the Duda editor.
+  Extraction rules: question-shaped H2s, direct answer in the first 40-60
+  words of each block, numbers in tables, named attribution on every answer.
+-->
+<article>
+  <h1>{{service.name}} in {{city.name}}, {{city.region}}</h1>
+
+  <p><!-- Direct answer block: what this service is, who it's for, where Wolff does it.
+       40-60 words. Must contain the geo token and one verifiable specific
+       (CSLB {{company.license.number}}, named PM, or permit record). --></p>
+
+  <section>
+    <h2>What does a {{service.shortName}} cost in {{city.name}}?</h2>
+    <p><!-- Real investment band with real scope attached. The firm that publishes
+         a number with context is the firm the answer engine cites. --></p>
+    <table><!-- ranges by scope tier, from data/ --></table>
+  </section>
+
+  <section>
+    <h2>Recent {{service.shortName}} projects in {{city.name}}</h2>
+    <!-- proofAssets from services.json: project cards with re-slugged URLs -->
+  </section>
+
+  <section>
+    <h2>What clients say</h2>
+    <!-- Reviews from data/reviews.json tagged service={{service.id}}, city={{city.id}}.
+         Rendered with Review schema. seo:validate fails any Review markup
+         without a matching data row. -->
+  </section>
+
+  <section>
+    <h2>Who manages the project?</h2>
+    <p><!-- Named PM, process summary, link to /our-process. Attribution:
+         "{{pm.name}}, {{pm.role}}, says..." --></p>
+  </section>
+
+  <section>
+    <h2>Is your project a fit?</h2>
+    <p><!-- The qualification filter: minimum budget, what Wolff does not take.
+         The filter is the differentiator that shows up in AI answers. --></p>
+  </section>
+
+  <!-- CTA: preconstruction consultation, NOT free estimate -->
+</article>

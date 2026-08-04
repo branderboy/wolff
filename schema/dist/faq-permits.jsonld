@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.wolffconstruction.com/our-process#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What permits do I need for a remodel in Placer County?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does Granite Bay plan check take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who manages permits for a remodel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    }
+  ]
+}

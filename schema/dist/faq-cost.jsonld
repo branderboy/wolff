@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.wolffconstruction.com/kitchen-remodeling#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a luxury kitchen remodel cost in Granite Bay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the minimum budget for a whole home renovation in Placer County?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does an ADU cost per square foot in Rocklin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the ROI of a luxury kitchen remodel in Granite Bay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "legalName": "Wolff Construction LLC",
+  "displayName": "Wolff Construction",
+  "disambiguator": "Rocklin, CA luxury residential remodeler (NOT the San Francisco firm founded by Max Wolff)",
+  "url": "https://www.wolffconstruction.com",
+  "license": {
+    "type": "CSLB",
+    "number": "1056036",
+    "verifyUrl": "https://www.cslb.ca.gov/onlineservices/checklicenseII/LicenseDetail.aspx?LicNum=1056036",
+    "activeSince": "2018"
+  },
+  "address": {
+    "street": "5828 Lonetree Blvd",
+    "city": "Rocklin",
+    "region": "CA",
+    "postalCode": "95765",
+    "country": "US",
+    "source": "BuildZoom public listing — VERIFY with client before publishing",
+    "verified": false
+  },
+  "geo": {
+    "latitude": null,
+    "longitude": null,
+    "note": "Fill after NAP is confirmed with client"
+  },
+  "phone": null,
+  "email": null,
+  "foundingDate": "2018",
+  "people": [
+    {
+      "name": "Don Erik Wolff",
+      "role": "Founder",
+      "slug": "don-erik-wolff",
+      "url": "https://www.wolffconstruction.com/don-erik-wolff"
+    },
+    {
+      "name": "Jocelyn Wolff",
+      "role": "Co-Owner",
+      "slug": "jocelyn-wolff",
+      "url": "https://www.wolffconstruction.com/jocelyn-wolff"
+    },
+    {
+      "name": "Jared Schneider",
+      "role": "Lead Project Manager",
+      "slug": "jared-schneider",
+      "url": "https://www.wolffconstruction.com/jared-schneider"
+    },
+    {
+      "name": "Salina Godinez",
+      "role": "Team Member — VERIFY role with client",
+      "slug": "salina-godinez",
+      "url": "https://www.wolffconstruction.com/salina-godinez"
+    }
+  ],
+  "evidence": {
+    "permitRecord": "19 permitted projects in three years, top 1% of 336,931 California licensed contractors per BuildZoom — VERIFY current numbers before publishing",
+    "memberships": ["NARI", "NKBA"]
+  },
+  "sameAs": [
+    "https://www.houzz.com/professionals/PLACEHOLDER-claim-rocklin-profile",
+    "https://www.buildzoom.com/contractor/wolff-construction-llc-PLACEHOLDER",
+    "https://www.yelp.com/biz/PLACEHOLDER",
+    "https://www.facebook.com/PLACEHOLDER",
+    "https://www.instagram.com/PLACEHOLDER",
+    "https://www.alignable.com/PLACEHOLDER",
+    "https://nextdoor.com/pages/PLACEHOLDER"
+  ],
+  "sameAsNote": "Replace PLACEHOLDER URLs with verified profile URLs before deploying schema. Every profile must state the Rocklin address to disambiguate from the SF Wolff Construction.",
+  "positioning": {
+    "model": "Low volume, high trust. Limited number of projects per year by design.",
+    "minimumBudget": null,
+    "minimumBudgetNote": "Confirm with client, then publish it — the filter is the differentiator",
+    "notAccepted": [
+      "small repairs",
+      "cosmetic-only work",
+      "investor flips",
+      "projects without design involvement"
+    ],
+    "primaryCta": "preconstruction consultation"
+  }
+}

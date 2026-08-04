@@ -1,0 +1,67 @@
+{
+  "core": [
+    {
+      "id": "kitchen-remodeling",
+      "name": "Luxury Kitchen Remodeling",
+      "plannedUrl": "/kitchen-remodeling",
+      "status": "MISSING — homepage tile currently links to /contact",
+      "schemaType": "Service",
+      "priority": 1,
+      "intent": ["luxury kitchen remodel", "kitchen remodeling contractor", "high end kitchen renovation"],
+      "proofAssets": ["silk-and-sage", "cream-and-cashmere", "sculpted-slate"],
+      "blogSupport": [
+        "/what-does-a-luxury-kitchen-remodel-look-like-in-granite-bay",
+        "/what-is-the-cost-and-roi-of-luxury-kitchens-in-granite-bay",
+        "/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay"
+      ]
+    },
+    {
+      "id": "full-home-renovation",
+      "name": "Full Home Renovation",
+      "plannedUrl": "/full-home-renovation",
+      "status": "MISSING — homepage tile currently links to /contact",
+      "schemaType": "Service",
+      "priority": 2,
+      "intent": ["whole home renovation", "full home remodel", "luxury home remodel"],
+      "proofAssets": [],
+      "blogSupport": [
+        "/what-does-a-luxury-home-remodel-actually-include-in-granite-bay-ca",
+        "/a-luxury-home-remodel-built-for-the-next-20-years-in-granite-bay-ca",
+        "/luxury-home-remodel-in-granite-bay-ca-turning-vision-into-timeless-design"
+      ]
+    },
+    {
+      "id": "additions-adu",
+      "name": "Custom Homes, Additions & ADUs",
+      "plannedUrl": "/home-additions-adu",
+      "status": "MISSING — homepage tile currently links to /contact",
+      "schemaType": "Service",
+      "priority": 3,
+      "intent": ["home addition contractor", "ADU builder", "custom home builder"],
+      "proofAssets": [],
+      "blogSupport": []
+    },
+    {
+      "id": "bathroom-remodeling",
+      "name": "Luxury Bathroom Remodeling",
+      "plannedUrl": "/bathroom-remodeling",
+      "status": "MISSING — blog posts carry this intent with no service page",
+      "schemaType": "Service",
+      "priority": 4,
+      "intent": ["luxury bathroom remodel", "bathroom contractor", "primary bath renovation"],
+      "proofAssets": [],
+      "blogSupport": [
+        "/what-should-i-look-for-in-a-luxury-bathroom-contractor-in-granite-bay-ca",
+        "/luxury-bathroom-remodel-granite-bay-ca"
+      ]
+    }
+  ],
+  "supporting": [
+    "Structural modifications",
+    "Permit management",
+    "Preconstruction planning",
+    "Design coordination",
+    "Project management",
+    "Interior reconfiguration"
+  ]
+}
