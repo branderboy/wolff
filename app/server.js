@@ -52,7 +52,13 @@ const routes = {
     const opportunities = readJson('data/opportunities.json', { opportunities: [] });
     const structure = readJson('data/site-structure.json', { tree: [], linkingRules: [] });
     const dudaReady = Boolean(process.env.DUDA_API_USER && process.env.DUDA_API_PASS && process.env.DUDA_SITE_NAME);
-    send(res, 200, { pages, updates, plan, validation, dudaReady, competitors, opportunities, structure, company: { displayName: company.displayName, license: company.license } });
+    const workers = readJson('data/workers.json', { workers: [] });
+    for (const w of workers.workers) {
+      try {
+        w.lastOrder = fs.statSync(path.join(ROOT, 'reports', 'workers', w.id, 'workorder.md')).mtime.toISOString().slice(0, 10);
+      } catch { w.lastOrder = null; }
+    }
+    send(res, 200, { pages, updates, plan, validation, dudaReady, competitors, opportunities, structure, workers, company: { displayName: company.displayName, license: company.license } });
   },
 
   'POST /api/run/validate': (req, res) => {
@@ -91,6 +97,18 @@ const routes = {
         if (b.schema) args.push('--schema');
         if (b.publish) args.push('--publish');
         runScript(args, (r) => send(res, 200, r));
+      });
+    });
+  },
+
+  'POST /api/worker/run': (req, res) => {
+    body(req, (b) => {
+      const roster = readJson('data/workers.json', { workers: [] }).workers;
+      if (!roster.some((w) => w.id === b.id)) return send(res, 404, { ok: false, error: 'unknown worker' });
+      runScript(['scripts/run-worker.js', b.id], (r) => {
+        let order = '';
+        try { order = fs.readFileSync(path.join(ROOT, 'reports', 'workers', b.id, 'workorder.md'), 'utf8'); } catch {}
+        send(res, 200, { ...r, order });
       });
     });
   },

@@ -23,6 +23,7 @@ async function load() {
   renderCompetitors();
   renderOpportunities();
   renderStructure();
+  renderWorkers();
   renderPages();
   renderFindings(STATE.validation);
   renderPlan();
@@ -141,6 +142,33 @@ function renderOverview() {
     const top = Object.entries(perUrl).sort((a, b) => b[1] - a[1]).slice(0, 6);
     $('#offenders').innerHTML = top.map(([u, n]) => `<li><span class="n">${n}</span>${esc(u)}</li>`).join('');
   }
+}
+
+// ------------------------------------------------------------------ workers
+function renderWorkers() {
+  const ws = STATE.workers?.workers || [];
+  $('#workers-table tbody').innerHTML = ws.map((w) => `<tr>
+    <td><b>${esc(w.name)}</b>${w.lastOrder ? `<div class="muted">order ${esc(w.lastOrder)}</div>` : ''}</td>
+    <td class="muted">${esc(w.audits)}</td>
+    <td class="muted">${(w.writes || []).map(esc).join('<br>')}</td>
+    <td><span class="badge">${esc(w.cadence)}</span></td>
+    <td><span class="badge ${w.mode === 'auto' ? 'ok' : 'staged'}">${esc(w.mode)}</span></td>
+    <td><button class="btn ghost" data-worker="${esc(w.id)}">Work order</button></td>
+  </tr>`).join('');
+  document.querySelectorAll('[data-worker]').forEach((b) => {
+    b.addEventListener('click', async () => {
+      b.disabled = true;
+      $('#worker-out').textContent = 'Generating work order for ' + b.dataset.worker + '...';
+      const r = await (await fetch('/api/worker/run', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: b.dataset.worker }),
+      })).json();
+      $('#worker-out').textContent = (r.stdout || '') + '\n' + '='.repeat(60) + '\n\n' + (r.order || r.error || '');
+      b.disabled = false;
+      STATE = await (await fetch('/api/state')).json();
+      renderWorkers();
+    });
+  });
 }
 
 // ------------------------------------------------------------------ pages

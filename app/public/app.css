@@ -2,8 +2,6 @@
    serif numerals, letterspaced caps: the specification sheet a luxury
    builder would print. */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap');
-
 :root {
   --ground: #fdfcf9;
   --panel: #ffffff;
@@ -15,8 +13,8 @@
   --critical: #9c3b22;
   --good: #66794b;
   --caution: #a8842c;
-  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --sans: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --sans: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+  --display: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -32,8 +30,8 @@ button { font: inherit; cursor: pointer; }
 /* ---------- masthead ---------- */
 header { text-align: center; padding: 34px 28px 0; }
 header h1 {
-  font-family: var(--serif); font-weight: 500; font-size: 30px;
-  letter-spacing: .22em; text-transform: uppercase;
+  font-family: var(--display); font-weight: 300; font-size: 27px;
+  letter-spacing: .38em; text-transform: uppercase; text-indent: .38em;
 }
 .masthead-sub { color: var(--stone); margin-top: 6px; }
 .masthead-sub b { color: var(--brass); font-weight: 600; }
@@ -59,7 +57,7 @@ main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
 
 /* ---------- section furniture ---------- */
 .card { background: var(--panel); border: 1px solid var(--hair); padding: 26px 30px; margin-bottom: 22px; }
-.card h2 { font-family: var(--serif); font-weight: 600; font-size: 21px; letter-spacing: .01em; margin-bottom: 6px; }
+.card h2 { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 10px; }
 .card h2 .muted { font-family: var(--sans); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
 .muted { color: var(--stone); font-weight: 400; }
 .center { text-align: center; }
@@ -72,8 +70,8 @@ main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
 .stat-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; margin-bottom: 26px; }
 .stat { border-top: 2px solid var(--ink); padding-top: 12px; }
 .stat b {
-  display: block; font-family: var(--serif); font-weight: 500; font-size: 46px;
-  line-height: 1; font-variant-numeric: tabular-nums;
+  display: block; font-family: var(--display); font-weight: 200; font-size: 46px;
+  line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: .02em;
 }
 .stat b.bad { color: var(--critical); }
 .stat span { color: var(--stone); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; display: block; margin-top: 8px; }
@@ -91,7 +89,7 @@ main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
 .offenders li { padding: 9px 0; border-bottom: 1px solid var(--hair); display: flex; gap: 12px; align-items: baseline; }
 .offenders li:last-child { border-bottom: none; }
 .offenders .n {
-  font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--critical);
+  font-family: var(--display); font-size: 17px; font-weight: 300; color: var(--critical);
   min-width: 26px; text-align: right; font-variant-numeric: tabular-nums;
 }
 
@@ -108,7 +106,7 @@ tr:last-child td { border-bottom: none; }
 td.path { color: var(--brass); white-space: nowrap; max-width: 260px; overflow: hidden; text-overflow: ellipsis; font-family: ui-monospace, 'Courier New', monospace; font-size: 12px; }
 td .old { color: var(--stone); text-decoration: line-through; text-decoration-color: rgba(156, 59, 34, .5); }
 td .new { color: var(--ink); }
-.score { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+.score { font-family: var(--display); font-size: 22px; font-weight: 300; color: var(--ink); font-variant-numeric: tabular-nums; }
 #opps-table td:nth-child(3) { min-width: 180px; }
 #opps-table td:nth-child(4), #opps-table td:nth-child(5) { min-width: 170px; }
 #opps-table td:nth-child(6) { min-width: 300px; }
@@ -133,7 +131,7 @@ input:focus { outline: none; border-color: var(--brass); }
 
 /* ---------- findings ---------- */
 #findings .group { margin-top: 22px; }
-#findings .group h3 { font-family: var(--serif); font-size: 17px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+#findings .group h3 { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
 #findings .group h3 .muted { font-family: var(--sans); font-size: 11px; }
 #findings .item { border-left: 2px solid var(--hair); padding: 8px 0 8px 16px; margin-top: 10px; font-size: 13px; }
 #findings .item .url { color: var(--brass); font-size: 12px; word-break: break-all; font-family: ui-monospace, 'Courier New', monospace; }
@@ -141,7 +139,7 @@ input:focus { outline: none; border-color: var(--brass); }
 /* ---------- plan ---------- */
 .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 18px; }
 .phase { background: var(--panel); border: 1px solid var(--hair); padding: 22px 24px; }
-.phase h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; margin-top: 4px; }
+.phase h3 { font-family: var(--display); font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-top: 6px; }
 .phase .days { color: var(--brass); }
 .progress { height: 2px; background: var(--hair); margin: 14px 0 10px; }
 .progress i { display: block; height: 100%; background: var(--brass); }

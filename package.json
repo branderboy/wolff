@@ -12,7 +12,11 @@
     "schema:build": "node scripts/build-schema.js",
     "duda:diff": "node scripts/push-duda.js",
     "duda:push": "node scripts/push-duda.js --apply",
-    "duda:push:all": "node scripts/push-duda.js --apply --schema --publish"
+    "duda:push:all": "node scripts/push-duda.js --apply --schema --publish",
+    "worker": "node scripts/run-worker.js",
+    "brand:sync": "node scripts/brand-sync.js"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
