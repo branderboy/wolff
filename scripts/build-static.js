@@ -55,5 +55,11 @@ for (const f of fs.readdirSync(PUB)) fs.copyFileSync(path.join(PUB, f), path.joi
 fs.copyFileSync(path.join(ROOT, 'docs', 'search-flow.svg'), path.join(OUT, 'search-flow.svg'));
 fs.copyFileSync(path.join(ROOT, 'docs', 'tech-flow.svg'), path.join(OUT, 'tech-flow.svg'));
 fs.writeFileSync(path.join(OUT, '.nojekyll'), '');
-console.log(`Pages snapshot built into docs/: ${fs.readdirSync(OUT).length} files.`);
-console.log('Enable once: repo Settings > Pages > Deploy from a branch > main, folder /docs.');
+
+// Mirror the app to the repo root so Pages serves the dashboard at
+// branderboy.github.io/wolff/ even when the Pages folder is set to / (root).
+const ROOT_FILES = ['index.html', 'app.css', 'app.js', 'brand.css', 'tailwind.css', 'lucide.js', 'static-state.json', 'search-flow.svg', 'tech-flow.svg'];
+for (const f of ROOT_FILES) fs.copyFileSync(path.join(OUT, f), path.join(ROOT, f));
+fs.writeFileSync(path.join(ROOT, '.nojekyll'), '');
+
+console.log(`Pages snapshot built into docs/: ${fs.readdirSync(OUT).length} files, mirrored to the repo root.`);
