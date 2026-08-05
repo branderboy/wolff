@@ -1,0 +1,72 @@
+{
+  "note": "The AEO question set. Every answer page must lead with a direct 40-60 word answer, carry FAQPage schema, and attribute answers to a named team member. Cost cluster is highest volume, highest intent, least served — competitors publish ranges, Wolff currently publishes nothing.",
+  "clusters": [
+    {
+      "id": "cost",
+      "priority": 1,
+      "questions": [
+        "What does a luxury kitchen remodel cost in Granite Bay?",
+        "What is the minimum budget for a whole home renovation in Placer County?",
+        "What does an ADU cost per square foot in Rocklin?",
+        "What is the ROI of a luxury kitchen remodel in Granite Bay?"
+      ],
+      "targetUrls": ["/kitchen-remodeling", "/what-is-the-cost-and-roi-of-luxury-kitchens-in-granite-bay"],
+      "gap": "Publish real investment bands with real scope attached. GVD currently owns this answer at $35k-$150k+."
+    },
+    {
+      "id": "timeline",
+      "priority": 2,
+      "questions": [
+        "How long does a full home remodel take?",
+        "Do I have to move out during a whole home renovation?",
+        "How long does a kitchen remodel take in Granite Bay?"
+      ],
+      "targetUrls": ["/our-process", "/full-home-renovation"],
+      "gap": "No timeline content exists anywhere on the site."
+    },
+    {
+      "id": "permits",
+      "priority": 3,
+      "questions": [
+        "What permits do I need for a remodel in Placer County?",
+        "How long does Granite Bay plan check take?",
+        "Who manages permits for a remodel?"
+      ],
+      "targetUrls": ["/our-process"],
+      "gap": "Permit management is a stated capability with zero supporting content."
+    },
+    {
+      "id": "adu",
+      "priority": 4,
+      "questions": [
+        "Can I build an ADU in Rocklin?",
+        "What are ADU setback rules in Placer County?",
+        "What does an ADU cost per square foot in Rocklin?"
+      ],
+      "targetUrls": ["/home-additions-adu"],
+      "gap": "ADU is in the homepage service tile with no page behind it."
+    },
+    {
+      "id": "roles",
+      "priority": 5,
+      "questions": [
+        "Do I need an architect and a general contractor?",
+        "What does a designer do that a GC does not?",
+        "Do I need an architect for a home addition?"
+      ],
+      "targetUrls": ["/our-process"],
+      "gap": "Design coordination is the pitch; no page explains it."
+    },
+    {
+      "id": "selection",
+      "priority": 6,
+      "questions": [
+        "How do I vet a luxury contractor?",
+        "What questions should I ask before signing with a remodeling contractor?",
+        "How do I choose between remodeling contractors in Granite Bay?"
+      ],
+      "targetUrls": ["/how-to-find-the-top-luxury-home-contractors-in-granite-bay"],
+      "gap": "One blog post exists; upgrade with extraction formatting and FAQPage schema."
+    }
+  ]
+}

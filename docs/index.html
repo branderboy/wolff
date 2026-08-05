@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wolff Search Ops</title>
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="brand.css">
+</head>
+<body>
+<header>
+  <h1>Wolff Construction</h1>
+  <p class="masthead-sub">Search Operations · Rocklin, California · <b>CSLB 1056036</b></p>
+  <div class="statusline"><span class="dot" id="health-dot"></span><span id="health-text">loading</span></div>
+</header>
+
+<nav id="tabs">
+  <button data-tab="overview" class="active">Where You Stand</button>
+  <button data-tab="opportunities">What To Win</button>
+  <button data-tab="structure">Site Plan</button>
+  <button data-tab="workers">AI Team</button>
+  <button data-tab="pages">Your Pages</button>
+  <button data-tab="validator">Site Check</button>
+  <button data-tab="plan">The 90 Days</button>
+  <button data-tab="deploy">Publish</button>
+</nav>
+
+<main>
+  <section id="tab-overview" class="tab active">
+    <div class="stat-row" id="stats"></div>
+    <div class="card">
+      <h2>How the system works</h2>
+      <img src="search-flow.svg" alt="The search operating system: eight data feeds flow into one source of truth, decisions and the AI team stage fixes, the site check and your approval gate publishing, both announcement doors reach the engines, and results flow back as new data" style="width:100%;height:auto;display:block;margin-top:8px">
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h2>What the scan of your site found</h2>
+        <div id="history"></div>
+      </div>
+      <div class="card">
+        <h2>Pages with the most problems</h2>
+        <ul class="offenders" id="offenders"><li class="muted">Run the site check to fill this in.</li></ul>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Who you are up against</h2>
+      <p class="muted" id="competitor-finding"></p>
+      <div class="table-wrap"><table id="competitors-table">
+        <thead><tr><th>Competitor</th><th>Danger</th><th>Their game</th><th>What they rank for</th><th>How you beat them</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="tab-opportunities" class="tab">
+    <div class="card">
+      <h2>The searches worth winning</h2>
+      <p class="muted">Ranked by win score: how many people search it, how well it fits your business, and how beatable the current winner is. Higher score means we go after it sooner.</p>
+      <div class="table-wrap"><table id="opps-table">
+        <thead><tr><th>Win score</th><th>Why they search</th><th>What they type into Google</th><th>Who wins it today</th><th>What you have now</th><th>What we do about it</th><th>The page that wins it</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="tab-structure" class="tab">
+    <div class="two-col">
+      <div class="card">
+        <h2>The pages your website needs</h2>
+        <p class="muted">Every kind of customer search gets its own page. Blog posts feed the service pages. Project photos prove the work. Everything reachable in two clicks.</p>
+        <div id="tree"></div>
+      </div>
+      <div class="card">
+        <h2>How the pages connect</h2>
+        <ul id="linking-rules" class="rules"></ul>
+        <div class="legend">
+          <span><i class="lg ok"></i> already good</span>
+          <span><i class="lg weak"></i> live but weak</span>
+          <span><i class="lg staged"></i> fix written, ready</span>
+          <span><i class="lg missing"></i> does not exist yet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-workers" class="tab">
+    <div class="card">
+      <h2>Data connections <span class="muted">· what fuels the system</span></h2>
+      <p class="muted">Each connection replaces judgment with measurement. Green means flowing; the setup line says exactly how to turn the rest on.</p>
+      <div class="table-wrap"><table id="connections-table">
+        <thead><tr><th>Source</th><th>What it feeds</th><th>Status</th><th>Latest data</th><th>How to connect</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <h2>Your AI team</h2>
+      <p class="muted">Eight AI assistants, each with one job: check your Google Business Profile, watch your competitors, listen to the market, dig up your permit history from government records, pull your Google performance data, plan the next moves, double check every change, and publish. Click a button to create that assistant's assignment for the month.</p>
+      <div class="table-wrap"><table id="workers-table">
+        <thead><tr><th>Assistant</th><th>What it checks</th><th>What it updates</th><th>How often</th><th>Runs</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <h2>The technology flow</h2>
+      <img src="tech-flow.svg" alt="The technology flow: AI agents and API connectors feed the GitHub repository, the CI gate checks every change, the console and the Duda API operate and deploy, the live site announces itself, and the connectors re capture results back into git" style="width:100%;height:auto;display:block;margin-top:8px">
+    </div>
+    <div class="card">
+      <h2>The assignment</h2>
+      <pre id="worker-out">Pick an assistant above and press Create Assignment. What appears here is the complete brief that AI assistant follows.</pre>
+    </div>
+  </section>
+
+  <section id="tab-pages" class="tab">
+    <div class="card">
+      <h2>Every page on your site <span class="muted" id="pages-count"></span></h2>
+      <p class="muted">What Google sees on each page today, next to the rewritten version that is ready to publish.</p>
+      <div class="table-wrap"><table id="pages-table">
+        <thead><tr><th>Page</th><th>Title Google sees now</th><th>New title, ready to go</th><th>Words</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="tab-validator" class="tab">
+    <div class="card">
+      <div class="row-between">
+        <h2>Automatic site check</h2>
+        <button class="btn" id="run-validate">Check the site</button>
+      </div>
+      <p class="muted" id="validate-meta">Scans every page for the mistakes that cost rankings. The same check runs before anything publishes, so a mistake that gets fixed can never sneak back.</p>
+      <div id="findings"></div>
+    </div>
+  </section>
+
+  <section id="tab-plan" class="tab">
+    <div id="phases" class="phases"></div>
+    <p class="muted center">Click any task to move it along: to do, then in progress, then done. Green means finished, amber means underway, red means waiting on someone.</p>
+  </section>
+
+  <section id="tab-deploy" class="tab">
+    <div class="two-col">
+      <div class="card">
+        <h2>Preview</h2>
+        <p class="muted">See exactly what would change on your website, before and after, without touching anything.</p>
+        <div class="btn-row">
+          <button class="btn" id="run-diff">Preview the changes</button>
+          <button class="btn ghost" id="run-schema">Rebuild Google business info</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Publish <span class="badge" id="duda-badge">checking</span></h2>
+        <p class="muted">Sends the approved fixes to your website builder as a <b>draft</b>, never straight to live. The site check must pass first. Type <code>PUSH TO WOLFF</code> to unlock the button.</p>
+        <div class="btn-row">
+          <input id="confirm-input" placeholder="type PUSH TO WOLFF to unlock" autocomplete="off">
+          <button class="btn danger" id="run-apply" disabled>Publish</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Details</h2>
+      <pre id="console-out">Ready when you are.</pre>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "note": "Every Review/AggregateRating schema block deployed to the site MUST have a matching row here. seo:validate enforces this. Tag every review with service, city, scope, and reviewer role so one review can surface on three pages. Populate from the live testimonials page and Google reviews with client approval — do NOT invent or paraphrase review text.",
+  "aggregateRating": {
+    "ratingValue": null,
+    "reviewCount": null,
+    "source": "Compute from verified reviews only. The site claims '5-star rated' in meta descriptions with zero structured data behind it — this file is what makes that claim citable."
+  },
+  "reviews": [
+    {
+      "id": "realtor-kitchen-sold-over-asking",
+      "status": "UNVERIFIED — pull exact text from live testimonials page",
+      "reviewerRole": "realtor",
+      "service": "kitchen-remodeling",
+      "city": "granite-bay",
+      "scope": "kitchen remodel before listing; house sold over asking",
+      "body": null,
+      "placements": ["/kitchen-remodeling", "/testimonials", "/granite-bay"]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "note": "The AI worker fleet. Each worker is a scoped agent job: a mission, the sources it audits, the files it writes, and a cadence. scripts/run-worker.js generates the work order (mission + guardrails + current data + output contract) that a Claude or Codex agent executes. Workers write to data/ and reports/ only; nothing ships without the validator and human approval. Mode: auto = runs locally with no agent, agent = needs an AI worker, hybrid = agent plus local scripts.",
+  "workers": [
+    {
+      "id": "gbp-auditor",
+      "name": "GBP Auditor",
+      "audits": "Google Business Profile: categories, services, hours, photos and geotags, Q&A, review velocity and owner responses, NAP match against data/company.json",
+      "sources": [
+        "Google Business Profile listing",
+        "Google Maps local pack for target queries",
+        "data/company.json",
+        "data/questions.json"
+      ],
+      "writes": [
+        "reports/workers/gbp-audit.md",
+        "data/plan.json tasks under phase-1"
+      ],
+      "cadence": "monthly",
+      "mode": "agent",
+      "brief": "Audit the Wolff Construction GBP as a customer and as an engine. Score: correct categories for luxury remodeling; services list matching data/services.json; photos of real projects with geotags; Q&A seeded with the cost and timeline questions from data/questions.json; every review answered in the owner voice; exact NAP match with the site and every citation. Flag anything that conflicts with the Rocklin entity or leaks toward the San Francisco Wolff. Output: findings ranked by impact, each with the exact fix."
+    },
+    {
+      "id": "competitor-monitor",
+      "name": "Competitor Monitor",
+      "audits": "The live SERP set for every opportunity query: who ranks, what pages they launched, review counts, new entrants",
+      "sources": [
+        "Google SERPs for data/opportunities.json queries",
+        "competitor sites in data/competitors.json",
+        "Houzz category pages"
+      ],
+      "writes": [
+        "data/competitors.json",
+        "reports/workers/competitor-delta.md"
+      ],
+      "cadence": "monthly",
+      "mode": "agent",
+      "brief": "Re-run every target query in data/opportunities.json. For each: record who appears, which URL, and what proof they show. Diff against data/competitors.json: new entrants, new pages, review count changes, cost content changes. Update the file and write the delta report. Flag any query where Wolff now appears, with position."
+    },
+    {
+      "id": "market-insights",
+      "name": "Market Insight Worker",
+      "audits": "Demand and conversation: what Placer County homeowners ask and where, seasonality, price expectations",
+      "sources": [
+        "Google Trends for service terms",
+        "Reddit r/Sacramento and home subs",
+        "Nextdoor Rocklin and Granite Bay",
+        "local press",
+        "GSC query data once connected"
+      ],
+      "writes": [
+        "data/questions.json new clusters",
+        "data/opportunities.json demand scores",
+        "reports/workers/market-insights.md"
+      ],
+      "cadence": "monthly",
+      "mode": "agent",
+      "brief": "Find the questions real homeowners in the service area are asking that data/questions.json does not cover. Evidence per question: where it was asked, how often the theme recurs, what answer exists today. Propose demand score adjustments to data/opportunities.json with the evidence attached. Never invent volume numbers; cite the thread or the trend line."
+    },
+    {
+      "id": "project-history",
+      "name": "Project and Permit Historian",
+      "audits": "Government and public records: CSLB license standing, Rocklin and Placer County permit records, BuildZoom history. Old projects become the proof layer.",
+      "sources": [
+        "CSLB license lookup for 1056036",
+        "City of Rocklin and Placer County permit portals",
+        "BuildZoom permit feed",
+        "client project records once provided"
+      ],
+      "writes": [
+        "data/projects.json",
+        "data/company.json evidence block",
+        "reports/workers/project-history.md"
+      ],
+      "cadence": "quarterly",
+      "mode": "agent",
+      "brief": "Build the verifiable project record. Confirm CSLB 1056036 standing and bond status. Pull every permit attributable to Wolff: date, jurisdiction, scope class, valuation band where public. Cross reference BuildZoom. Produce data/projects.json rows: city, year, scope, permit reference. Street addresses NEVER ship; neighborhood and city only. This file feeds case study pages, the top 1 percent claim, and every stat the site publishes."
+    },
+    {
+      "id": "seo-data-connector",
+      "name": "SEO Data Connector",
+      "audits": "Connected performance data: Search Console queries and pages, GA4 conversions, rank positions for the opportunity set",
+      "sources": [
+        "Google Search Console API or export",
+        "GA4 export",
+        "manual rank checks until API access lands"
+      ],
+      "writes": [
+        "data/performance/gsc-queries.json",
+        "data/performance/positions.json",
+        "data/opportunities.json demand rescore"
+      ],
+      "cadence": "weekly",
+      "mode": "hybrid",
+      "brief": "Ingest the latest GSC and GA4 exports into data/performance/. Recompute: which opportunity queries have impressions, which pages earn clicks, which consultations trace to which page. Replace judgment demand scores in data/opportunities.json with measured ones, marking each score measured or estimated. The monthly report reads from these files."
+    },
+    {
+      "id": "planner",
+      "name": "Planner",
+      "audits": "Everything the other workers wrote, against the plan",
+      "sources": [
+        "data/*.json",
+        "reports/workers/*"
+      ],
+      "writes": [
+        "data/plan.json",
+        "data/page-updates.json staging"
+      ],
+      "cadence": "weekly",
+      "mode": "agent",
+      "brief": "Read every worker output since the last planning pass. Reprioritize data/plan.json: what moved, what is blocked, what the opportunity scores now say to build next. Stage the next unit of work in data/page-updates.json or a content branch. One unit per PR. Every staged claim must trace to a data file per CLAUDE.md rule 1."
+    },
+    {
+      "id": "reviewer",
+      "name": "Adversarial Reviewer",
+      "audits": "Every PR before merge, against CLAUDE.md and the data files",
+      "sources": [
+        "the open PR diff",
+        "CLAUDE.md",
+        "data/*.json"
+      ],
+      "writes": [
+        "PR review comments"
+      ],
+      "cadence": "per PR",
+      "mode": "agent",
+      "brief": "Attack the PR. Find: claims without a data source, review text not verbatim from data/reviews.json, UNVERIFIED fields shipping, banned language, dash characters in copy, titles without geo tokens, schema not generated from data. Approve only when nothing survives. Alternate implementer and reviewer roles between agents on every PR."
+    },
+    {
+      "id": "deployer",
+      "name": "Deployer",
+      "audits": "The gap between approved staged changes and the live site",
+      "sources": [
+        "data/page-updates.json",
+        "schema/dist/",
+        "the Duda API"
+      ],
+      "writes": [
+        "the Duda draft, then production on publish",
+        "reports/deploy-log.md",
+        "data/performance/indexnow-log.json"
+      ],
+      "cadence": "on approval",
+      "mode": "auto",
+      "auto": [
+        "node scripts/seo-validate.js",
+        "node scripts/push-duda.js",
+        "node scripts/connectors/indexnow.js"
+      ],
+      "brief": "Run the validator; refuse on failure. Dry run the diff, apply on recorded human approval, republish, submit the updated URLs to IndexNow so Bing and the AI engines recrawl immediately, then schedule the verify crawl. Log every push with the commit hash it came from."
+    }
+  ]
+}

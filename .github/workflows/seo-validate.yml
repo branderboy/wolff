@@ -1,0 +1,23 @@
+name: SEO Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build schema from data
+        run: npm run schema:build
+      - name: SEO regression gate
+        run: npm run seo:validate
+        # Fails the build on: missing/duplicate/overlength titles, titles
+        # without a geo token, duplicate descriptions, template bleed (the
+        # careers-title-on-/blog bug), 404s on internally linked URLs,
+        # multiple H1s, critically thin pages, unsourced Review schema.
