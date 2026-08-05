@@ -8,7 +8,7 @@
       "demand": 5, "fit": 5, "winnability": 4, "score": 100,
       "ownedBy": "GVD Renovations + Capital Construction (dedicated pages, 921 reviews)",
       "wolffToday": "3 blog posts + 3 unlabeled case studies (Silk & Sage, Cream & Cashmere, Sculpted Slate)",
-      "play": "Launch /kitchen-remodeling with the three case studies, sourced reviews, and real investment bands. Re-slug case studies to carry service + city.",
+      "play": "Launch /kitchen-remodeling with the three case studies, sourced reviews, and real investment bands. Give the case studies service and city slugs.",
       "targetUrl": "/kitchen-remodeling",
       "phase": "phase-2"
     },
@@ -29,8 +29,8 @@
       "query": "Wolff Construction / Wolff Construction Rocklin reviews",
       "demand": 4, "fit": 5, "winnability": 5, "score": 100,
       "ownedBy": "Wolff Construction SF (Houzz profile ranks for the shared name)",
-      "wolffToday": "Bare 18-char brand title, no schema, no address on site",
-      "play": "Entity layer: CSLB 1056036 identifier in schema, geo in every title, claim Rocklin Houzz, NAP everywhere. Referral validation is the highest-converting traffic that exists.",
+      "wolffToday": "Bare 18 character brand title, no schema, no address on site",
+      "play": "Entity layer: CSLB 1056036 identifier in schema, geo in every title, claim Rocklin Houzz, NAP everywhere. Referral validation is the highest converting traffic that exists.",
       "targetUrl": "sitewide + /about",
       "phase": "phase-1"
     },
@@ -52,7 +52,7 @@
       "demand": 4, "fit": 4, "winnability": 4, "score": 64,
       "ownedBy": "Thin, generic statewide ADU content; no strong local luxury owner",
       "wolffToday": "Homepage tile with no page behind it",
-      "play": "Launch /home-additions-adu with Rocklin setback rules and real per-sqft bands. Least-served cluster with real permit-backed answers.",
+      "play": "Launch /home-additions-adu with Rocklin setback rules and real per square foot bands. Least served cluster with real permit backed answers.",
       "targetUrl": "/home-additions-adu",
       "phase": "phase-2"
     },
@@ -74,7 +74,7 @@
       "demand": 3, "fit": 5, "winnability": 4, "score": 60,
       "ownedBy": "Whoever the engines can verify: today that is directory data and GVD's cost content",
       "wolffToday": "Nothing machine-readable: no schema, no address, placeholder profiles",
-      "play": "Retrieval layer: Houzz, GBP, NARI/NKBA directories, partner links, YouTube transcripts. Extraction-formatted answers attributed to named team members.",
+      "play": "Retrieval layer: Houzz, GBP, NARI/NKBA directories, partner links, YouTube transcripts. Extraction formatted answers attributed to named team members.",
       "targetUrl": "off-site + FAQ blocks sitewide",
       "phase": "phase-1"
     },
@@ -103,7 +103,7 @@
     {
       "id": "city-pages",
       "intent": "find-contractor",
-      "query": "remodeling contractor Granite Bay / Rocklin (city-level)",
+      "query": "remodeling contractor Granite Bay / Rocklin (city level)",
       "demand": 3, "fit": 4, "winnability": 3, "score": 36,
       "ownedBy": "GVD's city matrix",
       "wolffToday": "Blog geo-focus is 100% Granite Bay; homepage names no market at all",

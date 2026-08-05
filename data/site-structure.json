@@ -9,14 +9,14 @@
   ],
   "tree": [
     { "url": "/", "role": "Market + service hub. Must name the full service area.", "status": "staged", "children": [
-      { "url": "/kitchen-remodeling", "role": "Service hub: highest-value intent", "status": "missing", "proof": ["/projects/silk-and-sage", "/projects/cream-and-cashmere", "/projects/sculpted-slate"], "spokes": ["/what-does-a-luxury-kitchen-remodel-look-like-in-granite-bay", "/what-is-the-cost-and-roi-of-luxury-kitchens-in-granite-bay", "/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay"] },
+      { "url": "/kitchen-remodeling", "role": "Service hub: highest value intent", "status": "missing", "proof": ["/projects/silk-and-sage", "/projects/cream-and-cashmere", "/projects/sculpted-slate"], "spokes": ["/what-does-a-luxury-kitchen-remodel-look-like-in-granite-bay", "/what-is-the-cost-and-roi-of-luxury-kitchens-in-granite-bay", "/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay"] },
       { "url": "/full-home-renovation", "role": "Service hub", "status": "missing", "spokes": ["/what-does-a-luxury-home-remodel-actually-include-in-granite-bay-ca", "/a-luxury-home-remodel-built-for-the-next-20-years-in-granite-bay-ca", "/luxury-home-remodel-in-granite-bay-ca-turning-vision-into-timeless-design"] },
-      { "url": "/home-additions-adu", "role": "Service hub: least-served cluster", "status": "missing", "spokes": [] },
+      { "url": "/home-additions-adu", "role": "Service hub: least served cluster", "status": "missing", "spokes": [] },
       { "url": "/bathroom-remodeling", "role": "Service hub", "status": "missing", "spokes": ["/what-should-i-look-for-in-a-luxury-bathroom-contractor-in-granite-bay-ca", "/luxury-bathroom-remodel-granite-bay-ca"] },
       { "url": "/projects", "role": "Proof hub (nav currently points at #)", "status": "missing", "children": [
-        { "url": "/projects/silk-and-sage", "role": "Case study, re-slugged from /silk-and-sage (301)", "status": "staged" },
-        { "url": "/projects/cream-and-cashmere", "role": "Case study, re-slugged (301)", "status": "staged" },
-        { "url": "/projects/sculpted-slate", "role": "Case study, re-slugged (301)", "status": "staged" }
+        { "url": "/projects/silk-and-sage", "role": "Case study, moved from /silk-and-sage (301)", "status": "staged" },
+        { "url": "/projects/cream-and-cashmere", "role": "Case study, moved (301)", "status": "staged" },
+        { "url": "/projects/sculpted-slate", "role": "Case study, moved (301)", "status": "staged" }
       ]},
       { "url": "/granite-bay", "role": "City page: after service pages exist", "status": "missing" },
       { "url": "/rocklin", "role": "City page: HQ market", "status": "missing" },

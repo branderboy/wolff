@@ -120,10 +120,10 @@ function renderOverview() {
 
   $('#stats').innerHTML = [
     [c.pages, 'pages in last crawl', false],
-    [c.fails ?? '—', 'validator failures', (c.fails ?? 0) > 0],
-    [c.warns ?? '—', 'warnings', false],
+    [c.fails ?? '·', 'validator failures', (c.fails ?? 0) > 0],
+    [c.warns ?? '·', 'warnings', false],
     [c.staged, 'staged page fixes', false],
-    [donePct + '%', '90-day plan complete', false],
+    [donePct + '%', 'plan complete', false],
   ].map(([n, l, bad]) => `<div class="stat"><b class="${bad ? 'bad' : ''}">${n}</b><span>${l}</span></div>`).join('');
 
   const dot = $('#health-dot'), txt = $('#health-text');
@@ -154,7 +154,7 @@ function renderPages() {
     const title = s
       ? `<div class="old">${esc(p.title || '(none)')}</div><div class="new">${esc(s.title)}</div>`
       : esc(p.title || '(none)');
-    return `<tr><td class="path" title="${esc(p.path)}">${esc(p.path)}</td><td>${esc(p.title || '(none)')}</td><td>${s ? `<span class="new">${esc(s.title)}</span>` : '<span class="muted">—</span>'}</td><td>${p.wordCount || 0}</td><td>${status}</td></tr>`;
+    return `<tr><td class="path" title="${esc(p.path)}">${esc(p.path)}</td><td>${esc(p.title || '(none)')}</td><td>${s ? `<span class="new">${esc(s.title)}</span>` : '<span class="muted">·</span>'}</td><td>${p.wordCount || 0}</td><td>${status}</td></tr>`;
   });
   $('#pages-table tbody').innerHTML = rows.join('');
   $('#pages-count').textContent = `· ${rows.length} URLs`;
@@ -213,7 +213,7 @@ function renderPlan() {
 function renderDeploy() {
   const b = $('#duda-badge');
   if (STATE.dudaReady) { b.textContent = 'credentials present'; b.className = 'badge ok'; }
-  else { b.textContent = 'credentials missing — Apply disabled'; b.className = 'badge fail'; }
+  else { b.textContent = 'credentials missing, Apply disabled'; b.className = 'badge fail'; }
   armApply();
 }
 function armApply() {

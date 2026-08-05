@@ -33,7 +33,7 @@
         },
         {
           "id": "pipeline",
-          "title": "Duda API push pipeline built (dry-run tested)",
+          "title": "Duda API push pipeline built (dry run tested)",
           "status": "done"
         },
         {
@@ -46,7 +46,7 @@
     {
       "id": "phase-1",
       "name": "Foundation",
-      "days": "Days 1-30",
+      "days": "Days 1 to 30",
       "tasks": [
         {
           "id": "duda-access",
@@ -98,7 +98,7 @@
     {
       "id": "phase-2",
       "name": "Customer journey",
-      "days": "Days 31-60",
+      "days": "Days 31 to 60",
       "tasks": [
         {
           "id": "svc-kitchen",
@@ -117,7 +117,7 @@
         },
         {
           "id": "projects-hub",
-          "title": "Projects hub; case studies re-slugged with service + city",
+          "title": "Projects hub; case studies carry service and city slugs",
           "status": "todo"
         },
         {
@@ -140,7 +140,7 @@
     {
       "id": "phase-3",
       "name": "Expand and learn",
-      "days": "Days 61-90",
+      "days": "Days 61 to 90",
       "tasks": [
         {
           "id": "city-pages",
@@ -169,7 +169,7 @@
         },
         {
           "id": "report-90",
-          "title": "90-day report by intent; next roadmap",
+          "title": "Day 90 report by intent; next roadmap",
           "status": "todo"
         }
       ]

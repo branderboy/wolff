@@ -11,8 +11,8 @@
         "kitchen remodeling Granite Bay (dedicated /cities/granite-bay-ca/kitchen-remodeling/ page)",
         "cost answers: publishes $35,000 to $150,000+ ranges an LLM can cite"
       ],
-      "structure": "service x city page matrix",
-      "wolffAngle": "Cannot be out-reviewed. Beat with specificity: named PM, permit record, real investment bands with scope attached, deeper single reviews."
+      "structure": "service by city page matrix",
+      "wolffAngle": "Cannot be out reviewed. Beat with specificity: named PM, permit record, real investment bands with scope attached, deeper single reviews."
     },
     {
       "id": "capital-construction",
@@ -20,7 +20,7 @@
       "threat": "high",
       "model": "volume",
       "owns": ["/kitchen-remodeling/granite-bay-ca/ dedicated page"],
-      "structure": "service x city page matrix",
+      "structure": "service by city page matrix",
       "wolffAngle": "Same playbook as GVD; same counter."
     },
     {
@@ -75,5 +75,5 @@
       "wolffAngle": "Not a service competitor; an identity competitor. Countered by the entity layer: CSLB identifier in schema, Rocklin/Granite Bay in every title, claimed Rocklin Houzz profile, consistent NAP across every citation."
     }
   ],
-  "keyFinding": "On the audited money query, seven competitors appeared and Wolff appeared nowhere. Every competitor that ranks has dedicated service or service-x-city pages. Wolff has zero. That is the structural gap the opportunity matrix closes."
+  "keyFinding": "On the audited money query, seven competitors appeared and Wolff appeared nowhere. Every competitor that ranks has dedicated service or service by city pages. Wolff has zero. That is the structural gap the opportunity matrix closes."
 }
