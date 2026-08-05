@@ -62,6 +62,7 @@ const routes = {
       { id: 'semantic', name: 'Embeddings (Voyage or OpenAI)', feeds: 'Which page best matches each search; gaps and overlap', ready: Boolean(process.env.VOYAGE_API_KEY || process.env.OPENAI_API_KEY), lastData: perf('semantic-map.json'), setup: 'Either key works, Voyage free tier or your OpenAI key: npm run connect:semantic' },
       { id: 'citations', name: 'Citation checker', feeds: 'Your profiles across the web say Rocklin and match your NAP', ready: true, lastData: perf('sameas-audit.json'), setup: 'No key needed: npm run connect:citations' },
       { id: 'trends', name: 'Google Trends', feeds: 'When Californians research each service; the months to publish into', ready: true, lastData: perf('seasonality.json'), setup: 'No key needed: npm run connect:trends' },
+      { id: 'indexnow', name: 'IndexNow', feeds: 'Instant indexing of published fixes on Bing, which feeds ChatGPT search and Copilot', ready: true, lastData: perf('indexnow-log.json'), setup: 'One key file hosted at the site root, then: npm run connect:indexnow' },
     ];
     const workers = readJson('data/workers.json', { workers: [] });
     for (const w of workers.workers) {

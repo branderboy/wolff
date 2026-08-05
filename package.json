@@ -21,7 +21,8 @@
     "connect:speed": "node scripts/connectors/pagespeed.js",
     "connect:semantic": "node scripts/connectors/embeddings.js",
     "connect:citations": "node scripts/connectors/sameas.js",
-    "connect:trends": "node scripts/connectors/trends.js"
+    "connect:trends": "node scripts/connectors/trends.js",
+    "connect:indexnow": "node scripts/connectors/indexnow.js"
   },
   "engines": {
     "node": ">=18"
