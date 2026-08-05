@@ -69,6 +69,7 @@ const routes = {
     const recommendations = readJson('data/page-recommendations.json', { pages: [] });
     const perf = (rel) => { try { return fs.statSync(path.join(ROOT, 'data', 'performance', rel)).mtime.toISOString().slice(0, 10); } catch { return null; } };
     const connections = [
+      { id: 'crawl', name: 'Website crawl', feeds: 'Every page of the live site captured: titles, descriptions, headlines, word counts. The analysis runs on this', ready: pages.pages?.length > 0, lastData: pages.pages?.length ? `${pages.pages.length} pages captured` : null, setup: 'Re run any time: npm run crawl:import' },
       { id: 'duda', name: 'Duda (your website)', feeds: 'Publishing fixes to the site', ready: Boolean(process.env.DUDA_API_USER && process.env.DUDA_API_PASS && process.env.DUDA_SITE_NAME), lastData: null, setup: 'API keys from Bullsai; the day one ask' },
       { id: 'gsc', name: 'Google Search Console', feeds: 'Real searches you already appear for', ready: Boolean(process.env.GSC_SITE_URL && process.env.GOOGLE_APPLICATION_CREDENTIALS), lastData: perf('gsc-queries.json'), setup: 'Free. CSV export works with zero setup: npm run connect:gsc' },
       { id: 'volumes', name: 'DataForSEO', feeds: 'Search volumes for every target query', ready: Boolean(process.env.DATAFORSEO_LOGIN && process.env.DATAFORSEO_PASSWORD), lastData: perf('volumes.json'), setup: 'Pay as you go, under $1 for this set: npm run connect:volumes' },

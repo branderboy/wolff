@@ -38,6 +38,7 @@ const state = {
   })(),
   dudaReady: false,
   connections: [
+    { id: 'crawl', name: 'Website crawl', feeds: 'Every page of the live site captured: titles, descriptions, headlines, word counts. The analysis runs on this', ready: true, lastData: null, setup: 'Re run any time: npm run crawl:import' },
     { id: 'duda', name: 'Duda (your website)', feeds: 'Publishing fixes to the site', ready: false, lastData: null, setup: 'API keys from Bullsai; the day one ask' },
     { id: 'gsc', name: 'Google Search Console', feeds: 'Real searches you already appear for', ready: false, lastData: perf('gsc-queries.json'), setup: 'Free. CSV export works with zero setup: npm run connect:gsc' },
     { id: 'volumes', name: 'DataForSEO', feeds: 'Search volumes for every target query', ready: false, lastData: perf('volumes.json'), setup: 'Pay as you go, under $1 for this set: npm run connect:volumes' },
@@ -48,6 +49,10 @@ const state = {
     { id: 'indexnow', name: 'IndexNow', feeds: 'Instant indexing of published fixes on Bing, which feeds ChatGPT search and Copilot', ready: true, lastData: perf('indexnow-log.json'), setup: 'One key file hosted at the site root, then: npm run connect:indexnow' },
   ],
 };
+
+const crawlRow = state.connections.find((x) => x.id === 'crawl');
+crawlRow.ready = (state.pages.pages || []).length > 0;
+crawlRow.lastData = crawlRow.ready ? `${state.pages.pages.length} pages captured` : null;
 
 fs.mkdirSync(OUT, { recursive: true });
 fs.writeFileSync(path.join(OUT, 'static-state.json'), JSON.stringify(state) + '\n');
