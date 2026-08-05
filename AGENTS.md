@@ -42,6 +42,10 @@ specific, most human entity in the Placer County luxury remodel space.
 7. **Qualification over volume.** CTAs are "preconstruction consultation",
    never "free estimate". Content states minimum budget and what Wolff does
    NOT take (small repairs, cosmetic-only, investor flips, no-design jobs).
+8. **NEVER use dark backgrounds.** Anywhere. Not in the app UI, not in
+   decks, not in reports, not in generated pages. Light backgrounds only
+   (white or light warm neutrals), dark text, bronze accents. This is a
+   standing owner directive; do not revisit it.
 
 ## Page standards (enforced by `npm run seo:validate`)
 

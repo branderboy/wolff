@@ -1,15 +1,16 @@
+/* Rule 8 (CLAUDE.md): NEVER use dark backgrounds. Light only. */
 :root {
-  --bg: #211d19;
-  --panel: #2b2621;
-  --panel2: #363029;
-  --line: #453c33;
-  --ink: #f2ede5;
-  --muted: #a99f91;
-  --bronze: #c29660;
-  --bronze-dark: #a97e48;
-  --red: #d06046;
-  --green: #7fae7a;
-  --amber: #d9a94e;
+  --bg: #ffffff;
+  --panel: #faf7f1;
+  --panel2: #f1ebe1;
+  --line: #e3dccf;
+  --ink: #26221e;
+  --muted: #6e675e;
+  --bronze: #a97e48;
+  --bronze-dark: #8a6335;
+  --red: #b0442e;
+  --green: #4c7f46;
+  --amber: #b9882e;
 }
 * { box-sizing: border-box; margin: 0; }
 body { background: var(--bg); color: var(--ink); font: 14px/1.5 "Segoe UI", system-ui, sans-serif; }
@@ -64,8 +65,8 @@ td .new { color: var(--ink); }
 
 .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; border: 1px solid var(--line); color: var(--muted); vertical-align: middle; white-space: nowrap; }
 .badge.fail { color: #fff; background: var(--red); border-color: var(--red); }
-.badge.warn { color: #201a12; background: var(--amber); border-color: var(--amber); }
-.badge.ok { color: #16210f; background: var(--green); border-color: var(--green); }
+.badge.warn { color: #fff; background: var(--amber); border-color: var(--amber); }
+.badge.ok { color: #fff; background: var(--green); border-color: var(--green); }
 .badge.staged { color: var(--bronze); border-color: var(--bronze-dark); }
 
 .btn { background: var(--bronze-dark); color: #fff; border: none; border-radius: 8px; padding: 9px 18px; font: inherit; cursor: pointer; }
@@ -112,7 +113,7 @@ input { background: var(--panel2); border: 1px solid var(--line); color: var(--i
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 14px; font-size: 12px; color: var(--muted); }
 .legend span { display: flex; align-items: center; gap: 6px; }
 
-pre { background: #171310; border: 1px solid var(--line); border-radius: 8px; padding: 14px; font-size: 12px; overflow-x: auto; white-space: pre-wrap; max-height: 420px; overflow-y: auto; color: #cfc6b8; }
+pre { background: #f5f1e9; border: 1px solid var(--line); border-radius: 8px; padding: 14px; font-size: 12px; overflow-x: auto; white-space: pre-wrap; max-height: 420px; overflow-y: auto; color: #3a332b; }
 
 @media (max-width: 900px) {
   .stat-row { grid-template-columns: repeat(2, 1fr); }
