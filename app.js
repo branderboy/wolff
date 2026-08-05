@@ -148,6 +148,8 @@ function renderOverview() {
     txt.classList.replace('text-red-600', 'text-green-700');
     pill.classList.replace('border-red-500', 'border-green-600');
   }
+  const src = $('#health-source');
+  if (src && c.fails !== null) src.textContent = `Data collected: ${c.pages} pages captured from the live site • then analyzed against the search rules`;
 
   const v = STATE.validation;
   if (v?.findings?.length) {
