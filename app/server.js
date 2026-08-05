@@ -59,7 +59,7 @@ const routes = {
       { id: 'gsc', name: 'Google Search Console', feeds: 'Real searches you already appear for', ready: Boolean(process.env.GSC_SITE_URL && process.env.GOOGLE_APPLICATION_CREDENTIALS), lastData: perf('gsc-queries.json'), setup: 'Free. CSV export works with zero setup: npm run connect:gsc' },
       { id: 'volumes', name: 'DataForSEO', feeds: 'Search volumes for every target query', ready: Boolean(process.env.DATAFORSEO_LOGIN && process.env.DATAFORSEO_PASSWORD), lastData: perf('volumes.json'), setup: 'Pay as you go, under $1 for this set: npm run connect:volumes' },
       { id: 'speed', name: 'PageSpeed Insights', feeds: 'Site speed scores per page', ready: true, lastData: perf('speed.json'), setup: 'Free, works now: npm run connect:speed' },
-      { id: 'semantic', name: 'Voyage AI embeddings', feeds: 'Which page best matches each search; gaps and overlap', ready: Boolean(process.env.VOYAGE_API_KEY), lastData: perf('semantic-map.json'), setup: 'Free tier: npm run connect:semantic' },
+      { id: 'semantic', name: 'Embeddings (Voyage or OpenAI)', feeds: 'Which page best matches each search; gaps and overlap', ready: Boolean(process.env.VOYAGE_API_KEY || process.env.OPENAI_API_KEY), lastData: perf('semantic-map.json'), setup: 'Either key works, Voyage free tier or your OpenAI key: npm run connect:semantic' },
       { id: 'citations', name: 'Citation checker', feeds: 'Your profiles across the web say Rocklin and match your NAP', ready: true, lastData: perf('sameas-audit.json'), setup: 'No key needed: npm run connect:citations' },
     ];
     const workers = readJson('data/workers.json', { workers: [] });

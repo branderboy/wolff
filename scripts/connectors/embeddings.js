@@ -2,10 +2,11 @@
 'use strict';
 
 // Embeddings connector: semantic match between target searches and pages.
-// Anthropic has no embeddings endpoint; Voyage AI is the embeddings provider
-// recommended for Claude pipelines.
+// Anthropic has no embeddings endpoint, so this supports two providers and
+// uses whichever key is present (Voyage first since its tier is free):
 //
-//   VOYAGE_API_KEY in .env (voyageai.com; generous free tier)
+//   VOYAGE_API_KEY  (voyageai.com, free tier)   or
+//   OPENAI_API_KEY  (text-embedding-3-small, ~$0.02 per million tokens)
 //   node scripts/connectors/embeddings.js
 //
 // Embeds every opportunity query and every page (title + description), then
@@ -18,26 +19,33 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..', '..');
-const KEY = process.env.VOYAGE_API_KEY;
+const VOYAGE = process.env.VOYAGE_API_KEY;
+const OPENAI = process.env.OPENAI_API_KEY;
+const provider = VOYAGE ? 'voyage' : OPENAI ? 'openai' : null;
 
 const opps = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'opportunities.json'), 'utf8')).opportunities;
 const pages = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'pages.json'), 'utf8')).pages
   .filter((p) => p.statusCode === 200);
 
-if (!KEY) {
+if (!provider) {
   console.log(`Not connected. Ready to map ${opps.length} target searches against ${pages.length} pages.`);
-  console.log('Setup: get a key at voyageai.com (Anthropic\'s recommended embeddings partner,');
-  console.log('free tier covers this), put VOYAGE_API_KEY in .env, rerun.');
+  console.log('Setup: put either key in .env and rerun:');
+  console.log('  VOYAGE_API_KEY  - voyageai.com, free tier covers this easily');
+  console.log('  OPENAI_API_KEY  - text-embedding-3-small, costs pennies');
   process.exit(0);
 }
 
 async function embed(texts) {
-  const res = await fetch('https://api.voyageai.com/v1/embeddings', {
+  const url = provider === 'voyage' ? 'https://api.voyageai.com/v1/embeddings' : 'https://api.openai.com/v1/embeddings';
+  const body = provider === 'voyage'
+    ? { input: texts, model: 'voyage-3.5', input_type: 'document' }
+    : { input: texts, model: 'text-embedding-3-small' };
+  const res = await fetch(url, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ input: texts, model: 'voyage-3.5', input_type: 'document' }),
+    headers: { Authorization: `Bearer ${provider === 'voyage' ? VOYAGE : OPENAI}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error(`Voyage ${res.status}: ${await res.text()}`);
+  if (!res.ok) throw new Error(`${provider} ${res.status}: ${await res.text()}`);
   return (await res.json()).data.map((d) => d.embedding);
 }
 
@@ -69,7 +77,7 @@ const cos = (a, b) => {
   const outDir = path.join(ROOT, 'data', 'performance');
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'semantic-map.json'), JSON.stringify({
-    fetchedAt: new Date().toISOString(), model: 'voyage-3.5', map,
+    fetchedAt: new Date().toISOString(), model: provider === 'voyage' ? 'voyage-3.5' : 'text-embedding-3-small', map,
   }, null, 2) + '\n');
 
   const gaps = map.filter((m) => m.gap).length;
