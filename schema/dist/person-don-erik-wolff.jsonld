@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.wolffconstruction.com/#don-erik-wolff",
+  "name": "Don Erik Wolff",
+  "jobTitle": "Founder",
+  "url": "https://www.wolffconstruction.com/don-erik-wolff",
+  "worksFor": {
+    "@id": "https://www.wolffconstruction.com/#organization"
+  }
+}

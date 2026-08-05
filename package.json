@@ -1,0 +1,30 @@
+{
+  "name": "wolff-search-ops",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Search operating system for Wolff Construction (Rocklin, CA): SEO/AEO/GEO data layer, CI validation gate, and Duda CMS deployment pipeline",
+  "scripts": {
+    "app": "node app/server.js",
+    "crawl:import": "node scripts/import-crawl.js",
+    "seo:validate": "node scripts/seo-validate.js",
+    "seo:validate:live": "node scripts/seo-validate.js --live",
+    "seo:report": "node scripts/seo-validate.js --report reports/seo-failures.md",
+    "schema:build": "node scripts/build-schema.js",
+    "duda:diff": "node scripts/push-duda.js",
+    "duda:push": "node scripts/push-duda.js --apply",
+    "duda:push:all": "node scripts/push-duda.js --apply --schema --publish",
+    "worker": "node scripts/run-worker.js",
+    "brand:sync": "node scripts/brand-sync.js",
+    "recs:build": "node scripts/build-recommendations.js",
+    "connect:volumes": "node scripts/connectors/dataforseo.js",
+    "connect:gsc": "node scripts/connectors/gsc.js",
+    "connect:speed": "node scripts/connectors/pagespeed.js",
+    "connect:semantic": "node scripts/connectors/embeddings.js",
+    "connect:citations": "node scripts/connectors/sameas.js",
+    "connect:trends": "node scripts/connectors/trends.js",
+    "connect:indexnow": "node scripts/connectors/indexnow.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

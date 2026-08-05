@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.wolffconstruction.com/bathroom-remodeling#service",
+  "name": "Luxury Bathroom Remodeling",
+  "serviceType": "Luxury Bathroom Remodeling",
+  "provider": {
+    "@id": "https://www.wolffconstruction.com/#organization"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Rocklin, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Granite Bay, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Roseville, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Loomis, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Folsom, CA"
+    },
+    {
+      "@type": "City",
+      "name": "El Dorado Hills, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Auburn, CA"
+    }
+  ],
+  "url": "https://www.wolffconstruction.com/bathroom-remodeling"
+}

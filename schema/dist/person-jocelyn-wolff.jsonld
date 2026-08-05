@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.wolffconstruction.com/#jocelyn-wolff",
+  "name": "Jocelyn Wolff",
+  "jobTitle": "Co-Owner",
+  "url": "https://www.wolffconstruction.com/jocelyn-wolff",
+  "worksFor": {
+    "@id": "https://www.wolffconstruction.com/#organization"
+  }
+}

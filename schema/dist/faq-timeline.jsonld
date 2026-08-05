@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.wolffconstruction.com/our-process#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a full home remodel take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to move out during a whole home renovation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a kitchen remodel take in Granite Bay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    }
+  ]
+}

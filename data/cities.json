@@ -1,0 +1,17 @@
+{
+  "primary": [
+    { "id": "rocklin", "name": "Rocklin", "region": "CA", "county": "Placer County", "isHq": true, "phase": 1 },
+    { "id": "granite-bay", "name": "Granite Bay", "region": "CA", "county": "Placer County", "phase": 1 },
+    { "id": "roseville", "name": "Roseville", "region": "CA", "county": "Placer County", "phase": 2 },
+    { "id": "loomis", "name": "Loomis", "region": "CA", "county": "Placer County", "phase": 2 }
+  ],
+  "secondary": [
+    { "id": "folsom", "name": "Folsom", "region": "CA", "county": "Sacramento County", "phase": 3 },
+    { "id": "el-dorado-hills", "name": "El Dorado Hills", "region": "CA", "county": "El Dorado County", "phase": 3 },
+    { "id": "auburn", "name": "Auburn", "region": "CA", "county": "Placer County", "phase": 3 }
+  ],
+  "geoTokens": [
+    "Rocklin", "Granite Bay", "Roseville", "Loomis", "Folsom",
+    "El Dorado Hills", "Auburn", "Placer County", "El Dorado County", "Sacramento"
+  ]
+}

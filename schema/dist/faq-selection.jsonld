@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.wolffconstruction.com/how-to-find-the-top-luxury-home-contractors-in-granite-bay#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I vet a luxury contractor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What questions should I ask before signing with a remodeling contractor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I choose between remodeling contractors in Granite Bay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TODO: 40-60 word direct answer, attributed to a named team member, sourced from data/."
+      }
+    }
+  ]
+}

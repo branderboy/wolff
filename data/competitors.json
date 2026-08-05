@@ -1,0 +1,79 @@
+{
+  "note": "The competitive set from the audit: who actually appeared for 'luxury kitchen remodel Granite Bay CA contractor' and adjacent money terms, plus the brand-name competitor. Every claim here traces to research/Construction website.docx. Refresh quarterly or when a new name enters the local pack.",
+  "competitors": [
+    {
+      "id": "gvd",
+      "name": "GVD Renovations",
+      "threat": "high",
+      "model": "volume",
+      "proof": { "reviews": 921 },
+      "owns": [
+        "kitchen remodeling Granite Bay (dedicated /cities/granite-bay-ca/kitchen-remodeling/ page)",
+        "cost answers: publishes $35,000 to $150,000+ ranges an LLM can cite"
+      ],
+      "structure": "service by city page matrix",
+      "wolffAngle": "Cannot be out reviewed. Beat with specificity: named PM, permit record, real investment bands with scope attached, deeper single reviews."
+    },
+    {
+      "id": "capital-construction",
+      "name": "Capital Construction",
+      "threat": "high",
+      "model": "volume",
+      "owns": ["/kitchen-remodeling/granite-bay-ca/ dedicated page"],
+      "structure": "service by city page matrix",
+      "wolffAngle": "Same playbook as GVD; same counter."
+    },
+    {
+      "id": "kitchen-mart",
+      "name": "Kitchen Mart",
+      "threat": "medium",
+      "model": "volume",
+      "owns": ["dedicated kitchen service/city pages in the Sacramento metro"],
+      "wolffAngle": "Showroom volume brand; does not compete for $150k+ structural remodels. Qualification content separates the markets."
+    },
+    {
+      "id": "david-lanni",
+      "name": "David Lanni Construction",
+      "threat": "medium",
+      "model": "boutique",
+      "owns": ["dedicated service or city pages that surfaced in the target SERP"],
+      "wolffAngle": "Closest model to Wolff. Wolff's verifiable evidence layer (license, permits, memberships, named team) is the differentiator."
+    },
+    {
+      "id": "tenax",
+      "name": "Tenax Construction",
+      "threat": "medium",
+      "model": "boutique",
+      "owns": ["dedicated service or city pages that surfaced in the target SERP"],
+      "wolffAngle": "Same as above."
+    },
+    {
+      "id": "aar",
+      "name": "AAR Construction",
+      "threat": "low",
+      "model": "volume",
+      "owns": ["dedicated service or city pages that surfaced in the target SERP"],
+      "wolffAngle": "Broad remodeler; loses on luxury proof depth."
+    },
+    {
+      "id": "tankersley",
+      "name": "Tankersley Construction",
+      "threat": "low",
+      "model": "boutique",
+      "owns": ["dedicated service or city pages that surfaced in the target SERP"],
+      "wolffAngle": "Loses on luxury proof depth and review specificity."
+    },
+    {
+      "id": "wolff-sf",
+      "name": "Wolff Construction (San Francisco)",
+      "threat": "critical",
+      "model": "brand-collision",
+      "owns": [
+        "the Houzz profile that ranks for the shared brand name",
+        "brand SERP ambiguity: searches for 'Wolff Construction' can resolve to the wrong firm"
+      ],
+      "wolffAngle": "Not a service competitor; an identity competitor. Countered by the entity layer: CSLB identifier in schema, Rocklin/Granite Bay in every title, claimed Rocklin Houzz profile, consistent NAP across every citation."
+    }
+  ],
+  "keyFinding": "On the audited money query, seven competitors appeared and Wolff appeared nowhere. Every competitor that ranks has dedicated service or service by city pages. Wolff has zero. That is the structural gap the opportunity matrix closes."
+}

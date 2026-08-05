@@ -1,0 +1,105 @@
+{
+  "note": "Proposed metadata for every page with a live defect. push-duda.js diffs this against data/pages.json (last crawl) and pushes only changes. Every title carries a geo token and disambiguates from the San Francisco Wolff Construction. Approve with client before --apply.",
+  "redirects": [
+    {
+      "from": "/construction",
+      "to": "/our-process",
+      "reason": "Internally linked URL returns 404 (16 unique inlinks in crawl). 301 until a real destination exists."
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Wolff Construction | Luxury Remodeling in Granite Bay & Rocklin",
+      "metaDescription": "Rocklin, CA luxury remodeling contractor serving Granite Bay & Placer County. Whole home renovations, kitchens, additions & ADUs. CSLB #1056036.",
+      "note": "Kills the bare 18-char brand title; wins the brand-disambiguation fight in the SERP itself"
+    },
+    {
+      "path": "/contact",
+      "title": "Contact Wolff Construction | Rocklin, CA Remodeling Contractor",
+      "metaDescription": "Schedule a preconstruction consultation with Wolff Construction in Rocklin, CA. Serving Granite Bay, Roseville, Loomis, Folsom & El Dorado Hills."
+    },
+    {
+      "path": "/our-process",
+      "title": "Our Design-Build Process | Wolff Construction, Rocklin CA",
+      "metaDescription": "How Wolff Construction plans, permits & builds luxury remodels in Placer County: preconstruction, design coordination, and a named PM on every job."
+    },
+    {
+      "path": "/blog",
+      "title": "Remodeling Advice for Granite Bay & Placer County | Wolff Blog",
+      "metaDescription": "Cost, timeline, permit, and planning guidance for luxury remodels in Granite Bay, Rocklin & Placer County from the Wolff Construction team.",
+      "note": "FIXES the live bug: /blog currently carries the careers page title and description"
+    },
+    {
+      "path": "/silk-and-sage",
+      "title": "Silk & Sage | Granite Bay Luxury Kitchen Remodel | Wolff",
+      "metaDescription": "Tour Silk & Sage, a luxury kitchen remodel by Wolff Construction in Granite Bay, CA — scope, design decisions, and the team behind the build.",
+      "note": "Keep the display name, add service + city; page copy also needs expansion (85 words)"
+    },
+    {
+      "path": "/cream-and-cashmere",
+      "title": "Cream & Cashmere | Granite Bay Kitchen Remodel | Wolff",
+      "metaDescription": "Inside Cream & Cashmere, a Granite Bay, CA luxury kitchen remodel by Wolff Construction — layout changes, materials, and project scope.",
+      "note": "Page copy needs expansion (87 words)"
+    },
+    {
+      "path": "/sculpted-slate",
+      "title": "Sculpted Slate | Granite Bay Kitchen Remodel | Wolff",
+      "metaDescription": "Sculpted Slate: a luxury kitchen remodel in Granite Bay, CA by Wolff Construction. See the design decisions, finishes, and full project story.",
+      "note": "Page copy needs expansion (77 words)"
+    },
+    {
+      "path": "/the-team",
+      "title": "Meet the Team | Wolff Construction, Rocklin CA",
+      "metaDescription": "Meet the Wolff Construction team — founder Don Erik Wolff, Jocelyn Wolff, and lead PM Jared Schneider — building luxury remodels in Placer County."
+    },
+    {
+      "path": "/testimonials",
+      "title": "Client Reviews | Wolff Construction, Rocklin & Granite Bay",
+      "metaDescription": "Read detailed client reviews of Wolff Construction — kitchen remodels, primary baths, and whole home renovations across Granite Bay & Rocklin, CA."
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy Policy | Wolff Construction",
+      "metaDescription": "Privacy policy for wolffconstruction.com, the website of Wolff Construction, a Rocklin, CA remodeling contractor."
+    },
+    {
+      "path": "/don-erik-wolff",
+      "title": "Don Erik Wolff | Founder, Wolff Construction, Rocklin CA",
+      "metaDescription": "Meet Don Erik Wolff, founder of Wolff Construction, a Rocklin, CA luxury remodeling contractor serving Granite Bay & Placer County. CSLB #1056036."
+    },
+    {
+      "path": "/jocelyn-wolff",
+      "title": "Jocelyn Wolff | Wolff Construction, Rocklin CA",
+      "metaDescription": "Meet Jocelyn Wolff of Wolff Construction, the Rocklin, CA luxury remodeling firm serving Granite Bay, Roseville & Placer County."
+    },
+    {
+      "path": "/jared-schneider",
+      "title": "Jared Schneider | Lead PM, Wolff Construction Rocklin CA",
+      "metaDescription": "Meet Jared Schneider, lead project manager at Wolff Construction, running luxury remodels in Granite Bay & Rocklin from day one to final walkthrough."
+    },
+    {
+      "path": "/salina-godinez",
+      "title": "Salina Godinez | Wolff Construction, Rocklin CA",
+      "metaDescription": "Meet Salina Godinez of Wolff Construction, the Rocklin, CA luxury remodeling contractor serving Granite Bay & Placer County."
+    },
+    {
+      "path": "/what-should-i-look-for-in-a-luxury-bathroom-contractor-in-granite-bay-ca",
+      "title": "What to Look for in a Luxury Bathroom Contractor | Granite Bay",
+      "metaDescription": "What should you look for in a luxury bathroom contractor in Granite Bay, CA? Licensing, portfolio depth, process, and the questions that separate pros.",
+      "note": "Existing title had no geo token"
+    },
+    {
+      "path": "/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay",
+      "title": "Top Rated Luxury Kitchen Remodel Team in Granite Bay, CA",
+      "metaDescription": "Wolff Construction is Granite Bay's top rated luxury kitchen and bathroom remodel team. See the reviews, the projects, and the people behind them.",
+      "note": "Existing title ('...Near Me') had no geo token"
+    },
+    {
+      "path": "/creating-your-living-masterpiece-a-guide-to-a-bathroom-remodel-and-luxury-kitchen-remodel-in-granite-bay-ca",
+      "title": "Bathroom & Kitchen Remodel Guide | Granite Bay, CA | Wolff",
+      "metaDescription": "A practical guide to planning a combined bathroom and luxury kitchen remodel in Granite Bay, CA — scope, sequencing, and budget considerations.",
+      "note": "Existing title was 108 chars and description was the sitewide duplicate"
+    }
+  ]
+}
