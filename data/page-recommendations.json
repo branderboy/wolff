@@ -1,0 +1,679 @@
+{
+  "note": "Per-page optimization checklists generated from crawl + site check + staged fixes + site plan. Rebuild with npm run recs:build after any of those change.",
+  "generatedAt": "2026-08-05T05:42:15.652Z",
+  "pages": [
+    {
+      "path": "/silk-and-sage",
+      "targetQuery": "luxury kitchen remodel Granite Bay (as proof for /kitchen-remodeling)",
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Expand the page copy: scope, materials, decisions, timeline, investment band",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Silk & Sage | Granite Bay Luxury Kitchen Remodel | Wolff\"",
+          "severity": "ready to publish"
+        },
+        {
+          "step": "Feature this project on /kitchen-remodeling with a client review",
+          "severity": "structure"
+        },
+        {
+          "step": "Name the project manager and link to the team page",
+          "severity": "structure"
+        },
+        {
+          "step": "Grow the copy from 85 to 600+ words with verifiable specifics",
+          "severity": "content"
+        }
+      ],
+      "score": 60
+    },
+    {
+      "path": "/cream-and-cashmere",
+      "targetQuery": "luxury kitchen remodel Granite Bay (as proof for /kitchen-remodeling)",
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Expand the page copy: scope, materials, decisions, timeline, investment band",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Cream & Cashmere | Granite Bay Kitchen Remodel | Wolff\"",
+          "severity": "ready to publish"
+        },
+        {
+          "step": "Feature this project on /kitchen-remodeling with a client review",
+          "severity": "structure"
+        },
+        {
+          "step": "Name the project manager and link to the team page",
+          "severity": "structure"
+        },
+        {
+          "step": "Grow the copy from 87 to 600+ words with verifiable specifics",
+          "severity": "content"
+        }
+      ],
+      "score": 60
+    },
+    {
+      "path": "/sculpted-slate",
+      "targetQuery": "luxury kitchen remodel Granite Bay (as proof for /kitchen-remodeling)",
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Expand the page copy: scope, materials, decisions, timeline, investment band",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Sculpted Slate | Granite Bay Kitchen Remodel | Wolff\"",
+          "severity": "ready to publish"
+        },
+        {
+          "step": "Feature this project on /kitchen-remodeling with a client review",
+          "severity": "structure"
+        },
+        {
+          "step": "Name the project manager and link to the team page",
+          "severity": "structure"
+        },
+        {
+          "step": "Grow the copy from 77 to 600+ words with verifiable specifics",
+          "severity": "content"
+        }
+      ],
+      "score": 60
+    },
+    {
+      "path": "/",
+      "targetQuery": "luxury home remodeling Granite Bay and Rocklin",
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Keep exactly one main headline",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Wolff Construction | Luxury Remodeling in Granite Bay & Rocklin\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 57
+    },
+    {
+      "path": "/jared-schneider",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Add enough copy for Google to understand the page",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Jared Schneider | Lead PM, Wolff Construction Rocklin CA\"",
+          "severity": "ready to publish"
+        },
+        {
+          "step": "Grow the copy from 243 to 300+ words with verifiable specifics",
+          "severity": "content"
+        }
+      ],
+      "score": 48
+    },
+    {
+      "path": "/salina-godinez",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Add enough copy for Google to understand the page",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Salina Godinez | Wolff Construction, Rocklin CA\"",
+          "severity": "ready to publish"
+        },
+        {
+          "step": "Grow the copy from 253 to 300+ words with verifiable specifics",
+          "severity": "content"
+        }
+      ],
+      "score": 48
+    },
+    {
+      "path": "/the-team",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Meet the Team | Wolff Construction, Rocklin CA\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 46
+    },
+    {
+      "path": "/privacy",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Add one clear main headline",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Privacy Policy | Wolff Construction\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 46
+    },
+    {
+      "path": "/jocelyn-wolff",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Jocelyn Wolff | Wolff Construction, Rocklin CA\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 46
+    },
+    {
+      "path": "/don-erik-wolff",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Rewrite the page title so it says the service and the city",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Don Erik Wolff | Founder, Wolff Construction, Rocklin CA\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 46
+    },
+    {
+      "path": "/blog",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Replace the pasted metadata from the wrong page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Remodeling Advice for Granite Bay & Placer County | Wolff Blog\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 35
+    },
+    {
+      "path": "/creating-your-living-masterpiece-a-guide-to-a-bathroom-remodel-and-luxury-kitchen-remodel-in-granite-bay-ca",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Shorten the page title so Google does not cut it off",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Bathroom & Kitchen Remodel Guide | Granite Bay, CA | Wolff\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 24
+    },
+    {
+      "path": "/careers",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Write a unique description for this page",
+          "severity": "costs rankings"
+        }
+      ],
+      "score": 23
+    },
+    {
+      "path": "/what-should-i-look-for-in-a-luxury-bathroom-contractor-in-granite-bay-ca",
+      "targetQuery": "supports /bathroom-remodeling for \"luxury bathroom remodel\"",
+      "steps": [
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Publish the rewritten title: \"What to Look for in a Luxury Bathroom Contractor | Granite Bay\"",
+          "severity": "ready to publish"
+        },
+        {
+          "step": "Link this post up to /bathroom-remodeling once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 14
+    },
+    {
+      "path": "/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay",
+      "targetQuery": "supports /kitchen-remodeling for \"luxury kitchen remodel\"",
+      "steps": [
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Publish the rewritten title: \"Top Rated Luxury Kitchen Remodel Team in Granite Bay, CA\"",
+          "severity": "ready to publish"
+        },
+        {
+          "step": "Link this post up to /kitchen-remodeling once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 14
+    },
+    {
+      "path": "/contact",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Contact Wolff Construction | Rocklin, CA Remodeling Contractor\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 13
+    },
+    {
+      "path": "/our-process",
+      "targetQuery": "who manages permits for a remodel / how long does Granite Bay plan check take",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Give this page its own unique title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Publish the rewritten title: \"Our Design-Build Process | Wolff Construction, Rocklin CA\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 13
+    },
+    {
+      "path": "/testimonials",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Add the city to the page title",
+          "severity": "costs rankings"
+        },
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Publish the rewritten title: \"Client Reviews | Wolff Construction, Rocklin & Granite Bay\"",
+          "severity": "ready to publish"
+        }
+      ],
+      "score": 13
+    },
+    {
+      "path": "/construction",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Redirect this dead address to a live page",
+          "severity": "costs rankings"
+        }
+      ],
+      "score": 11
+    },
+    {
+      "path": "/what-does-a-luxury-kitchen-remodel-look-like-in-granite-bay",
+      "targetQuery": "supports /kitchen-remodeling for \"luxury kitchen remodel\"",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Link this post up to /kitchen-remodeling once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 2
+    },
+    {
+      "path": "/what-does-a-luxury-home-remodel-actually-include-in-granite-bay-ca",
+      "targetQuery": "supports /full-home-renovation for \"whole home renovation\"",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Link this post up to /full-home-renovation once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 2
+    },
+    {
+      "path": "/luxury-bathroom-remodel-granite-bay-ca",
+      "targetQuery": "supports /bathroom-remodeling for \"luxury bathroom remodel\"",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Link this post up to /bathroom-remodeling once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 2
+    },
+    {
+      "path": "/a-luxury-home-remodel-built-for-the-next-20-years-in-granite-bay-ca",
+      "targetQuery": "supports /full-home-renovation for \"whole home renovation\"",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Link this post up to /full-home-renovation once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 2
+    },
+    {
+      "path": "/what-is-the-cost-and-roi-of-luxury-kitchens-in-granite-bay",
+      "targetQuery": "supports /kitchen-remodeling for \"luxury kitchen remodel\"",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Link this post up to /kitchen-remodeling once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 2
+    },
+    {
+      "path": "/luxury-home-remodel-in-granite-bay-ca-turning-vision-into-timeless-design",
+      "targetQuery": "supports /full-home-renovation for \"whole home renovation\"",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        },
+        {
+          "step": "Link this post up to /full-home-renovation once that page is live",
+          "severity": "structure"
+        }
+      ],
+      "score": 2
+    },
+    {
+      "path": "/how-to-find-the-top-luxury-home-contractors-in-granite-bay",
+      "targetQuery": "how to choose a luxury remodeling contractor / best contractor Granite Bay",
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        }
+      ],
+      "score": 1
+    },
+    {
+      "path": "/what-does-a-luxury-home-contractor-consider-before-a-project-in-granite-bay",
+      "targetQuery": null,
+      "steps": [
+        {
+          "step": "Remove the outdated keywords tag",
+          "severity": "worth fixing"
+        }
+      ],
+      "score": 1
+    }
+  ]
+}

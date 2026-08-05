@@ -14,7 +14,8 @@
     "duda:push": "node scripts/push-duda.js --apply",
     "duda:push:all": "node scripts/push-duda.js --apply --schema --publish",
     "worker": "node scripts/run-worker.js",
-    "brand:sync": "node scripts/brand-sync.js"
+    "brand:sync": "node scripts/brand-sync.js",
+    "recs:build": "node scripts/build-recommendations.js"
   },
   "engines": {
     "node": ">=18"

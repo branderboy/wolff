@@ -52,13 +52,14 @@ const routes = {
     const opportunities = readJson('data/opportunities.json', { opportunities: [] });
     const structure = readJson('data/site-structure.json', { tree: [], linkingRules: [] });
     const dudaReady = Boolean(process.env.DUDA_API_USER && process.env.DUDA_API_PASS && process.env.DUDA_SITE_NAME);
+    const recommendations = readJson('data/page-recommendations.json', { pages: [] });
     const workers = readJson('data/workers.json', { workers: [] });
     for (const w of workers.workers) {
       try {
         w.lastOrder = fs.statSync(path.join(ROOT, 'reports', 'workers', w.id, 'workorder.md')).mtime.toISOString().slice(0, 10);
       } catch { w.lastOrder = null; }
     }
-    send(res, 200, { pages, updates, plan, validation, dudaReady, competitors, opportunities, structure, workers, company: { displayName: company.displayName, license: company.license } });
+    send(res, 200, { pages, updates, plan, validation, dudaReady, competitors, opportunities, structure, workers, recommendations, company: { displayName: company.displayName, license: company.license } });
   },
 
   'POST /api/run/validate': (req, res) => {

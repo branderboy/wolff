@@ -174,18 +174,31 @@ function renderWorkers() {
 // ------------------------------------------------------------------ pages
 function renderPages() {
   const staged = new Map((STATE.updates.pages || []).map((u) => [u.path, u]));
-  const rows = (STATE.pages.pages || []).map((p) => {
+  const recs = new Map((STATE.recommendations?.pages || []).map((r) => [r.path, r]));
+  const rows = (STATE.pages.pages || []).map((p, i) => {
     const s = staged.get(p.path);
+    const r = recs.get(p.path);
     const status = p.statusCode === 404
       ? '<span class="badge fail">dead page</span>'
       : s ? '<span class="badge staged">fix ready</span>' : '<span class="badge">fine as is</span>';
-    const title = s
-      ? `<div class="old">${esc(p.title || '(none)')}</div><div class="new">${esc(s.title)}</div>`
-      : esc(p.title || '(none)');
-    return `<tr><td class="path" title="${esc(p.path)}">${esc(p.path)}</td><td>${esc(p.title || '(none)')}</td><td>${s ? `<span class="new">${esc(s.title)}</span>` : '<span class="muted">·</span>'}</td><td>${p.wordCount || 0}</td><td>${status}</td></tr>`;
+    const main = `<tr class="pagerow" data-row="${i}"><td class="path" title="${esc(p.path)}">${esc(p.path)}</td><td>${esc(p.title || '(none)')}</td><td>${s ? `<span class="new">${esc(s.title)}</span>` : '<span class="muted">·</span>'}</td><td>${p.wordCount || 0}</td><td>${status}${r ? ` <span class="badge staged">${r.steps.length} steps</span>` : ''}</td></tr>`;
+    const detail = r ? `<tr class="recrow" data-detail="${i}" style="display:none"><td colspan="5">
+      <div class="rec">
+        ${r.targetQuery ? `<p><b>The search this page should win:</b> ${esc(r.targetQuery)}</p>` : ''}
+        <p><b>How to optimize it:</b></p>
+        <ul>${r.steps.map((st) => `<li><span class="badge ${st.severity === 'costs rankings' ? 'fail' : st.severity === 'ready to publish' ? 'staged' : ''}">${esc(st.severity)}</span> ${esc(st.step)}</li>`).join('')}</ul>
+      </div>
+    </td></tr>` : '';
+    return main + detail;
   });
   $('#pages-table tbody').innerHTML = rows.join('');
-  $('#pages-count').textContent = `· ${rows.length} URLs`;
+  $('#pages-count').textContent = `· ${(STATE.pages.pages || []).length} URLs · click a page for its optimization checklist`;
+  document.querySelectorAll('.pagerow').forEach((tr) => {
+    tr.addEventListener('click', () => {
+      const d = document.querySelector(`[data-detail="${tr.dataset.row}"]`);
+      if (d) d.style.display = d.style.display === 'none' ? '' : 'none';
+    });
+  });
 }
 
 // ------------------------------------------------------------------ validator
