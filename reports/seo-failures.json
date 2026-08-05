@@ -1,0 +1,393 @@
+{
+  "generatedAt": "2026-08-05T01:41:50.795Z",
+  "mode": "csv",
+  "pageCount": 27,
+  "failCount": 35,
+  "warnCount": 29,
+  "findings": [
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "h1-multiple",
+      "url": "https://www.wolffconstruction.com/",
+      "detail": "More than one H1: \"WOLFF CONSTRUCTION\" / \"Built with Integrity\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/contact",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/our-process",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/careers",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/silk-and-sage",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/silk-and-sage",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/silk-and-sage",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "content-critically-thin",
+      "url": "https://www.wolffconstruction.com/silk-and-sage",
+      "detail": "85 words. A project page under 90 words cannot rank or be cited for anything."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/cream-and-cashmere",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/cream-and-cashmere",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/cream-and-cashmere",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "content-critically-thin",
+      "url": "https://www.wolffconstruction.com/cream-and-cashmere",
+      "detail": "87 words. A project page under 90 words cannot rank or be cited for anything."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/the-team",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/the-team",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/the-team",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/privacy",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/privacy",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "h1-missing",
+      "url": "https://www.wolffconstruction.com/privacy",
+      "detail": "Page has no H1."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/blog",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/sculpted-slate",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/sculpted-slate",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/sculpted-slate",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "content-critically-thin",
+      "url": "https://www.wolffconstruction.com/sculpted-slate",
+      "detail": "77 words. A project page under 90 words cannot rank or be cited for anything."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/testimonials",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction Testimonials\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/testimonials",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/what-does-a-luxury-kitchen-remodel-look-like-in-granite-bay",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/what-should-i-look-for-in-a-luxury-bathroom-contractor-in-granite-bay-ca",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"What Should I Look for in a Luxury Bathroom Contractor?\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/what-should-i-look-for-in-a-luxury-bathroom-contractor-in-granite-bay-ca",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "description-too-long",
+      "url": "https://www.wolffconstruction.com/what-does-a-luxury-home-remodel-actually-include-in-granite-bay-ca",
+      "detail": "Description is 174 chars (max 160)."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/what-does-a-luxury-home-remodel-actually-include-in-granite-bay-ca",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/how-to-find-the-top-luxury-home-contractors-in-granite-bay",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/luxury-bathroom-remodel-granite-bay-ca",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-long",
+      "url": "https://www.wolffconstruction.com/creating-your-living-masterpiece-a-guide-to-a-bathroom-remodel-and-luxury-kitchen-remodel-in-granite-bay-ca",
+      "detail": "Title is 109 chars (max 65): \"Creating Your Living Masterpiece: A Guide to a Bathroom Remodel and Luxury Kitchen Remodel in Granite Bay, CA\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/creating-your-living-masterpiece-a-guide-to-a-bathroom-remodel-and-luxury-kitchen-remodel-in-granite-bay-ca",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Who Is the Top Rated Luxury Kitchen Remodel Team Near Me?\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/what-does-a-luxury-home-contractor-consider-before-a-project-in-granite-bay",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/jared-schneider",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/jared-schneider",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/jared-schneider",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "content-thin",
+      "url": "https://www.wolffconstruction.com/jared-schneider",
+      "detail": "243 words (target 300+ for indexable marketing pages)."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/jocelyn-wolff",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/jocelyn-wolff",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/jocelyn-wolff",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/don-erik-wolff",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/don-erik-wolff",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/don-erik-wolff",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-too-short",
+      "url": "https://www.wolffconstruction.com/salina-godinez",
+      "detail": "Title is 18 chars (min 25): \"Wolff Construction\". A bare brand title concedes the SERP — and the brand fight with the SF Wolff Construction."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-no-geo",
+      "url": "https://www.wolffconstruction.com/salina-godinez",
+      "detail": "Title carries no geo token (Rocklin, Granite Bay, Roseville, Loomis, ...): \"Wolff Construction\""
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/salina-godinez",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "content-thin",
+      "url": "https://www.wolffconstruction.com/salina-godinez",
+      "detail": "253 words (target 300+ for indexable marketing pages)."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/a-luxury-home-remodel-built-for-the-next-20-years-in-granite-bay-ca",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/what-is-the-cost-and-roi-of-luxury-kitchens-in-granite-bay",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "http-404",
+      "url": "https://www.wolffconstruction.com/construction",
+      "detail": "Returns 404 with 2 internal inlinks. Fix the link or redirect the URL."
+    },
+    {
+      "severity": "WARN",
+      "check": "meta-keywords-present",
+      "url": "https://www.wolffconstruction.com/luxury-home-remodel-in-granite-bay-ca-turning-vision-into-timeless-design",
+      "detail": "Meta keywords tag present (\"Wolff Construction\"). Dead since 2009. Remove it."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-duplicate",
+      "url": "https://www.wolffconstruction.com/\n  https://www.wolffconstruction.com/silk-and-sage\n  https://www.wolffconstruction.com/cream-and-cashmere\n  https://www.wolffconstruction.com/the-team\n  https://www.wolffconstruction.com/privacy\n  https://www.wolffconstruction.com/sculpted-slate\n  https://www.wolffconstruction.com/jared-schneider\n  https://www.wolffconstruction.com/jocelyn-wolff\n  https://www.wolffconstruction.com/don-erik-wolff\n  https://www.wolffconstruction.com/salina-godinez",
+      "detail": "10 pages share the title \"Wolff Construction\"."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-duplicate",
+      "url": "https://www.wolffconstruction.com/contact\n  https://www.wolffconstruction.com/our-process",
+      "detail": "2 pages share the title \"Wolff Construction | Rocklin Contractor\"."
+    },
+    {
+      "severity": "FAIL",
+      "check": "title-duplicate",
+      "url": "https://www.wolffconstruction.com/careers\n  https://www.wolffconstruction.com/blog",
+      "detail": "2 pages share the title \"Join Wolff Construction Team\"."
+    },
+    {
+      "severity": "FAIL",
+      "check": "description-duplicate",
+      "url": "https://www.wolffconstruction.com/\n  https://www.wolffconstruction.com/silk-and-sage\n  https://www.wolffconstruction.com/cream-and-cashmere\n  https://www.wolffconstruction.com/the-team\n  https://www.wolffconstruction.com/privacy\n  https://www.wolffconstruction.com/sculpted-slate\n  https://www.wolffconstruction.com/creating-your-living-masterpiece-a-guide-to-a-bathroom-remodel-and-luxury-kitchen-remodel-in-granite-bay-ca\n  https://www.wolffconstruction.com/jared-schneider\n  https://www.wolffconstruction.com/jocelyn-wolff\n  https://www.wolffconstruction.com/don-erik-wolff\n  https://www.wolffconstruction.com/salina-godinez",
+      "detail": "11 pages share the same meta description (\"Wolff Construction is a trusted, 5-star rated builder known for qualit...\")."
+    },
+    {
+      "severity": "FAIL",
+      "check": "description-duplicate",
+      "url": "https://www.wolffconstruction.com/careers\n  https://www.wolffconstruction.com/blog",
+      "detail": "2 pages share the same meta description (\"Empower your career with Wolff Construction. Submit your info & resume...\")."
+    },
+    {
+      "severity": "FAIL",
+      "check": "template-bleed",
+      "url": "https://www.wolffconstruction.com/blog",
+      "detail": "Non-careers page carries careers metadata: \"Join Wolff Construction Team\". This is the live /blog bug."
+    }
+  ]
+}

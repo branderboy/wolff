@@ -43,6 +43,8 @@ const args = process.argv.slice(2);
 const LIVE = args.includes('--live');
 const reportIdx = args.indexOf('--report');
 const reportPath = reportIdx > -1 ? args[reportIdx + 1] : null;
+const jsonIdx = args.indexOf('--json');
+const jsonPath = jsonIdx > -1 ? args[jsonIdx + 1] : null;
 
 const findings = [];
 function add(severity, check, url, detail) {
@@ -245,6 +247,18 @@ function checkLiveHtml(page) {
     console.log(`\n[${f.severity}] ${f.check}\n  ${f.url}\n  ${f.detail}`);
   }
   console.log(`\n${'='.repeat(60)}\n${fails.length} FAIL, ${warns.length} WARN across ${pages.length} pages`);
+
+  if (jsonPath) {
+    fs.writeFileSync(jsonPath, JSON.stringify({
+      generatedAt: new Date().toISOString(),
+      mode: LIVE ? 'live' : 'csv',
+      pageCount: pages.length,
+      failCount: fails.length,
+      warnCount: warns.length,
+      findings,
+    }, null, 2) + '\n');
+    console.log(`JSON written to ${jsonPath}`);
+  }
 
   if (reportPath) {
     const lines = [

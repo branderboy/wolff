@@ -1,0 +1,173 @@
+{
+  "note": "The 90-day plan as trackable tasks. Statuses: done, in_progress, todo, blocked. The ops console reads and writes this file; git history is the audit trail.",
+  "phases": [
+    {
+      "id": "phase-0",
+      "name": "Pre-engagement (already delivered)",
+      "days": "Day 0",
+      "tasks": [
+        {
+          "id": "audit",
+          "title": "Full site audit and competitive teardown",
+          "status": "done"
+        },
+        {
+          "id": "crawl",
+          "title": "Crawl imported: 27 pages scored in data/pages.json",
+          "status": "done"
+        },
+        {
+          "id": "validator",
+          "title": "seo:validate CI gate built; 35 live failures documented",
+          "status": "done"
+        },
+        {
+          "id": "payload",
+          "title": "Fix payload staged for 17 defective pages",
+          "status": "done"
+        },
+        {
+          "id": "schema",
+          "title": "Entity, person, service and FAQ schema generated",
+          "status": "done"
+        },
+        {
+          "id": "pipeline",
+          "title": "Duda API push pipeline built (dry-run tested)",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "id": "phase-1",
+      "name": "Foundation",
+      "days": "Days 1-30",
+      "tasks": [
+        {
+          "id": "duda-access",
+          "title": "Obtain Duda API credentials from account owner (Bullsai)",
+          "status": "blocked"
+        },
+        {
+          "id": "verify-facts",
+          "title": "Verify NAP, license facts, team roles, review sources with client",
+          "status": "todo"
+        },
+        {
+          "id": "push-metadata",
+          "title": "Push staged metadata payload (fixes /blog bug, all titles)",
+          "status": "todo"
+        },
+        {
+          "id": "push-schema",
+          "title": "Deploy entity schema site-wide with CSLB identifier",
+          "status": "todo"
+        },
+        {
+          "id": "og-fix",
+          "title": "Real project photo og:image + summary_large_image",
+          "status": "todo"
+        },
+        {
+          "id": "nap-contact",
+          "title": "Full NAP, map and hours on contact page",
+          "status": "todo"
+        },
+        {
+          "id": "redirect-404",
+          "title": "301 /construction to /our-process; blog into main nav",
+          "status": "todo"
+        },
+        {
+          "id": "houzz",
+          "title": "Claim and build the Rocklin Houzz profile",
+          "status": "todo"
+        },
+        {
+          "id": "gbp",
+          "title": "Rebuild Google Business Profile around target projects",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "Customer journey",
+      "days": "Days 31-60",
+      "tasks": [
+        {
+          "id": "svc-kitchen",
+          "title": "Launch /kitchen-remodeling service page",
+          "status": "todo"
+        },
+        {
+          "id": "svc-fullhome",
+          "title": "Launch /full-home-renovation service page",
+          "status": "todo"
+        },
+        {
+          "id": "svc-adu",
+          "title": "Launch /home-additions-adu service page",
+          "status": "todo"
+        },
+        {
+          "id": "projects-hub",
+          "title": "Projects hub; case studies re-slugged with service + city",
+          "status": "todo"
+        },
+        {
+          "id": "reviews-schema",
+          "title": "Testimonials with sourced Review/AggregateRating schema",
+          "status": "todo"
+        },
+        {
+          "id": "internal-links",
+          "title": "Internal links: services <-> projects <-> people <-> reviews",
+          "status": "todo"
+        },
+        {
+          "id": "cost-guide",
+          "title": "First cost guide with real investment bands",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Expand and learn",
+      "days": "Days 61-90",
+      "tasks": [
+        {
+          "id": "city-pages",
+          "title": "Granite Bay and Rocklin city pages live",
+          "status": "todo"
+        },
+        {
+          "id": "answer-content",
+          "title": "Timeline, permit and ADU answer content (AEO clusters)",
+          "status": "todo"
+        },
+        {
+          "id": "partner-links",
+          "title": "Partner link outreach: designers, realtors, NARI, NKBA",
+          "status": "todo"
+        },
+        {
+          "id": "cwv",
+          "title": "Core Web Vitals pass on heaviest templates",
+          "status": "todo"
+        },
+        {
+          "id": "kill-pr",
+          "title": "Kill syndicated press release spend; reallocate",
+          "status": "todo"
+        },
+        {
+          "id": "report-90",
+          "title": "90-day report by intent; next roadmap",
+          "status": "todo"
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@
   "private": true,
   "description": "Search operating system for Wolff Construction (Rocklin, CA): SEO/AEO/GEO data layer, CI validation gate, and Duda CMS deployment pipeline",
   "scripts": {
+    "app": "node app/server.js",
     "crawl:import": "node scripts/import-crawl.js",
     "seo:validate": "node scripts/seo-validate.js",
     "seo:validate:live": "node scripts/seo-validate.js --live",

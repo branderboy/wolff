@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wolff Search Ops</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="mark"></span>
+    <div>
+      <h1>Wolff Search Ops</h1>
+      <p id="sub">Rocklin, CA · CSLB 1056036</p>
+    </div>
+  </div>
+  <div class="health" id="health">
+    <span class="dot" id="health-dot"></span>
+    <span id="health-text">loading…</span>
+  </div>
+</header>
+
+<nav id="tabs">
+  <button data-tab="overview" class="active">Overview</button>
+  <button data-tab="pages">Pages</button>
+  <button data-tab="validator">Validator</button>
+  <button data-tab="plan">90-Day Plan</button>
+  <button data-tab="deploy">Deploy</button>
+</nav>
+
+<main>
+  <section id="tab-overview" class="tab active">
+    <div class="stat-row" id="stats"></div>
+    <div class="two-col">
+      <div class="card">
+        <h2>The loop</h2>
+        <div class="pipeline" id="pipeline">
+          <span>Crawl</span><span>Validate</span><span>Prioritize</span><span>Stage</span>
+          <span>Approve</span><span>Push</span><span>Verify</span><span>Report</span>
+        </div>
+        <p class="muted">Git is the source of truth. Duda is the deploy target. Every step here is a script in <code>scripts/</code>; this console just drives them.</p>
+      </div>
+      <div class="card">
+        <h2>Worst offenders</h2>
+        <ul class="offenders" id="offenders"><li class="muted">Run the validator to populate.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-pages" class="tab">
+    <div class="card">
+      <h2>Page inventory <span class="muted" id="pages-count"></span></h2>
+      <p class="muted">Current metadata from the last crawl vs the staged fix in <code>data/page-updates.json</code>.</p>
+      <div class="table-wrap"><table id="pages-table">
+        <thead><tr><th>Path</th><th>Current title</th><th>Staged title</th><th>Words</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="tab-validator" class="tab">
+    <div class="card">
+      <div class="row-between">
+        <h2>SEO regression gate</h2>
+        <button class="btn" id="run-validate">Run validator</button>
+      </div>
+      <p class="muted" id="validate-meta">Same gate CI runs. Fails the build on any regression.</p>
+      <div id="findings"></div>
+    </div>
+  </section>
+
+  <section id="tab-plan" class="tab">
+    <div id="phases" class="phases"></div>
+    <p class="muted center">Click a task to cycle status: todo → in progress → done. Changes persist to <code>data/plan.json</code>; commit them for the audit trail.</p>
+  </section>
+
+  <section id="tab-deploy" class="tab">
+    <div class="two-col">
+      <div class="card">
+        <h2>Dry run</h2>
+        <p class="muted">Diff staged changes against the last crawl. Nothing is sent anywhere.</p>
+        <div class="btn-row">
+          <button class="btn" id="run-diff">Duda diff</button>
+          <button class="btn ghost" id="run-schema">Rebuild schema</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Apply <span class="badge" id="duda-badge">checking…</span></h2>
+        <p class="muted">Pushes staged metadata to the Duda <b>draft</b>. The validator must pass first. Type <code>PUSH TO WOLFF</code> to arm.</p>
+        <div class="btn-row">
+          <input id="confirm-input" placeholder="type confirmation phrase" autocomplete="off">
+          <button class="btn danger" id="run-apply" disabled>Apply</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Console output</h2>
+      <pre id="console-out">Ready.</pre>
+    </div>
+  </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
