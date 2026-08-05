@@ -272,14 +272,22 @@ $('#run-validate').addEventListener('click', async () => {
 // ------------------------------------------------------------------ plan
 const CYCLE = { todo: 'in_progress', in_progress: 'done', done: 'todo', blocked: 'todo' };
 function renderPlan() {
+  const OWNER = { you: 'you', client: 'Wolff', ai: 'AI team' };
   $('#phases').innerHTML = STATE.plan.phases.map((ph) => {
     const done = ph.tasks.filter((t) => t.status === 'done').length;
     const pct = Math.round((done / ph.tasks.length) * 100);
     return `<div class="phase">
       <div class="days">${esc(ph.days)}</div>
       <h3>${esc(ph.name)}</h3>
+      ${ph.goal ? `<p class="goal">${esc(ph.goal)}</p>` : ''}
       <div class="progress"><i style="width:${pct}%"></i></div>
-      ${ph.tasks.map((t) => `<div class="task ${t.status}" data-id="${t.id}"><span class="st"></span><span>${esc(t.title)}</span></div>`).join('')}
+      ${ph.tasks.map((t) => `<div class="task ${t.status}" data-id="${t.id}">
+        <span class="st"></span>
+        <span>
+          <span class="badge owner">${esc(OWNER[t.owner] || t.owner || '')}</span> ${esc(t.title)}
+          ${t.done ? `<span class="donewhen">Done when: ${esc(t.done)}</span>` : ''}
+        </span>
+      </div>`).join('')}
     </div>`;
   }).join('');
   document.querySelectorAll('.task').forEach((el) => {

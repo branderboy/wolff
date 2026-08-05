@@ -186,3 +186,9 @@ pre {
 .rec ul { list-style: none; }
 .rec li { padding: 7px 0; border-bottom: 1px solid var(--wash); display: flex; gap: 10px; align-items: baseline; }
 .rec li:last-child { border-bottom: none; }
+
+/* ---------- plan: owners, goals, done criteria ---------- */
+.phase .goal { color: var(--stone); font-size: 12px; margin-top: 8px; }
+.badge.owner { color: var(--brass); border-color: var(--hair); font-size: 9.5px; padding: 1px 6px; margin-right: 4px; }
+.donewhen { display: block; color: var(--stone); font-size: 11px; margin-top: 3px; }
+.task.done .donewhen { text-decoration: none; }

@@ -1,175 +1,195 @@
 {
-  "note": "The 90-day plan as trackable tasks. Statuses: done, in_progress, todo, blocked. The ops console reads and writes this file; git history is the audit trail.",
+  "note": "The 90 day plan, data first. The connectors are just tools; the plan is organized around what gets captured and what gets done with it. Order: capture your own data, capture competitor data, act on what the data says, then re capture to prove movement. Every task has an owner (you, client, ai), a checkable done criterion, and blocked items carry their workaround. The console reads and writes this file.",
   "phases": [
     {
-      "id": "phase-0",
-      "name": "Pre-engagement (already delivered)",
-      "days": "Day 0",
-      "tasks": [
-        {
-          "id": "audit",
-          "title": "Full site audit and competitive teardown",
-          "status": "done"
-        },
-        {
-          "id": "crawl",
-          "title": "Crawl imported: 27 pages scored in data/pages.json",
-          "status": "done"
-        },
-        {
-          "id": "validator",
-          "title": "seo:validate CI gate built; 35 live failures documented",
-          "status": "done"
-        },
-        {
-          "id": "payload",
-          "title": "Fix payload staged for 17 defective pages",
-          "status": "done"
-        },
-        {
-          "id": "schema",
-          "title": "Entity, person, service and FAQ schema generated",
-          "status": "done"
-        },
-        {
-          "id": "pipeline",
-          "title": "Duda API push pipeline built (dry run tested)",
-          "status": "done"
-        },
-        {
-          "id": "intel",
-          "title": "Competitor set, opportunity matrix and target site structure defined",
-          "status": "done"
-        }
-      ]
-    },
-    {
       "id": "phase-1",
-      "name": "Foundation",
-      "days": "Days 1 to 30",
+      "name": "Capture your data",
+      "days": "Days 1 to 10",
+      "goal": "Every first party source lands in data/ with a baseline number. Nothing gets decided until this exists.",
       "tasks": [
+        {
+          "id": "cap-gsc",
+          "title": "Search Console: verify, share access, pull 90 days of queries and positions",
+          "owner": "client",
+          "done": "gsc-queries.json populated; we know every search Wolff already appears for",
+          "status": "todo"
+        },
+        {
+          "id": "cap-ga",
+          "title": "Google Analytics: access and pull traffic, conversions, enquiry paths",
+          "owner": "client",
+          "done": "We know which pages produce enquiries today, even if the answer is none",
+          "status": "todo"
+        },
+        {
+          "id": "cap-site",
+          "title": "Website data: fresh crawl, site check baseline, speed scores per template",
+          "owner": "ai",
+          "done": "Baseline recorded: failure count, word counts, speed scores, saved as day 1 numbers",
+          "status": "in_progress"
+        },
+        {
+          "id": "cap-business",
+          "title": "Business model data: permits from CSLB, Rocklin and Placer County records, BuildZoom history, verified company facts",
+          "owner": "ai",
+          "done": "data/projects.json holds the permit record; zero UNVERIFIED flags left in company.json after the client facts call",
+          "status": "todo"
+        },
+        {
+          "id": "cap-structured",
+          "title": "Structured data online: what exists about Wolff across the web, schema on site, every profile and citation",
+          "owner": "ai",
+          "done": "Citation audit complete; every profile graded live, weak, or unclaimed, and the SF Wolff confusion points mapped",
+          "status": "todo"
+        },
         {
           "id": "duda-access",
-          "title": "Obtain Duda API credentials from account owner (Bullsai)",
+          "title": "Duda API keys from Bullsai, requested in the same conversation as the data access",
+          "owner": "client",
+          "done": "Keys in .env and a test diff runs. Workaround if refused: publishing goes manual from the Preview screen, nothing waits",
           "status": "blocked"
-        },
-        {
-          "id": "verify-facts",
-          "title": "Verify NAP, license facts, team roles, review sources with client",
-          "status": "todo"
-        },
-        {
-          "id": "push-metadata",
-          "title": "Push staged metadata payload (fixes /blog bug, all titles)",
-          "status": "todo"
-        },
-        {
-          "id": "push-schema",
-          "title": "Deploy entity schema site-wide with CSLB identifier",
-          "status": "todo"
-        },
-        {
-          "id": "og-fix",
-          "title": "Real project photo og:image + summary_large_image",
-          "status": "todo"
-        },
-        {
-          "id": "nap-contact",
-          "title": "Full NAP, map and hours on contact page",
-          "status": "todo"
-        },
-        {
-          "id": "redirect-404",
-          "title": "301 /construction to /our-process; blog into main nav",
-          "status": "todo"
-        },
-        {
-          "id": "houzz",
-          "title": "Claim and build the Rocklin Houzz profile",
-          "status": "todo"
-        },
-        {
-          "id": "gbp",
-          "title": "Rebuild Google Business Profile around target projects",
-          "status": "todo"
         }
       ]
     },
     {
       "id": "phase-2",
-      "name": "Customer journey",
-      "days": "Days 31 to 60",
+      "name": "Capture competitor data",
+      "days": "Days 11 to 21",
+      "goal": "Every target search has a named owner, a measured volume, and a season. The win scores stop being judgment.",
       "tasks": [
         {
-          "id": "svc-kitchen",
-          "title": "Launch /kitchen-remodeling service page",
+          "id": "cap-serps",
+          "title": "SERP capture: who ranks for all 17 target searches, with which pages and what proof",
+          "owner": "ai",
+          "done": "competitors.json updated from live results, not from the audit snapshot",
           "status": "todo"
         },
         {
-          "id": "svc-fullhome",
-          "title": "Launch /full-home-renovation service page",
+          "id": "cap-competitor-pages",
+          "title": "Competitor inventory: review counts, published cost ranges, page structures, new entrants",
+          "owner": "ai",
+          "done": "Each competitor row lists what they own and the counter, verified this month",
           "status": "todo"
         },
         {
-          "id": "svc-adu",
-          "title": "Launch /home-additions-adu service page",
+          "id": "cap-volumes",
+          "title": "Search volumes and difficulty for every target query",
+          "owner": "you",
+          "done": "Win scores rescored as measured; the plan order reflects real demand",
           "status": "todo"
         },
         {
-          "id": "projects-hub",
-          "title": "Projects hub; case studies carry service and city slugs",
+          "id": "cap-seasonality",
+          "title": "Seasonality: five years of California interest per service",
+          "owner": "you",
+          "done": "Each service has peak months and a publish by date the content calendar obeys",
           "status": "todo"
         },
         {
-          "id": "reviews-schema",
-          "title": "Testimonials with sourced Review/AggregateRating schema",
-          "status": "todo"
-        },
-        {
-          "id": "internal-links",
-          "title": "Internal links: services <-> projects <-> people <-> reviews",
-          "status": "todo"
-        },
-        {
-          "id": "cost-guide",
-          "title": "First cost guide with real investment bands",
+          "id": "cap-ai-baseline",
+          "title": "AI citation baseline: ask ChatGPT, Perplexity and Copilot the six target questions, log who gets named today",
+          "owner": "ai",
+          "done": "Day 1 citation log saved so day 90 has something honest to compare against",
           "status": "todo"
         }
       ]
     },
     {
       "id": "phase-3",
-      "name": "Expand and learn",
-      "days": "Days 61 to 90",
+      "name": "Act on what the data says",
+      "days": "Days 22 to 60",
+      "goal": "Fixes and pages ship in the order the captured data dictates. Success: failures near zero and Wolff appears for kitchen remodel Granite Bay, up from nowhere.",
       "tasks": [
         {
-          "id": "city-pages",
-          "title": "Granite Bay and Rocklin city pages live",
+          "id": "push-metadata",
+          "title": "Publish the 17 page fix payload including the blog bug",
+          "owner": "you",
+          "done": "Re crawl shows failures under 10; blog no longer wears the careers title",
+          "status": "todo"
+        },
+        {
+          "id": "push-entity",
+          "title": "Entity package: NAP on contact, schema sitewide with the CSLB number, IndexNow key hosted",
+          "owner": "you",
+          "done": "Rich results test passes and an IndexNow submission returns accepted",
+          "status": "todo"
+        },
+        {
+          "id": "svc-pages",
+          "title": "The three missing service pages, built with captured proof: kitchen first, then full home, then additions and ADU",
+          "owner": "ai",
+          "done": "Each indexed, passing site check, carrying real investment bands and sourced reviews",
+          "status": "todo"
+        },
+        {
+          "id": "projects-hub",
+          "title": "Projects hub; case studies moved to service and city slugs with redirects",
+          "owner": "ai",
+          "done": "Old addresses 301 to new ones; nav no longer points at nothing",
+          "status": "todo"
+        },
+        {
+          "id": "reviews-schema",
+          "title": "Testimonials rebuilt with verified review schema",
+          "owner": "you",
+          "done": "Star eligibility confirmed; every review traceable to a live source",
+          "status": "todo"
+        },
+        {
+          "id": "profiles",
+          "title": "Houzz Rocklin claimed, GBP rebuilt, every weak citation fixed",
+          "owner": "client",
+          "done": "Citation audit reports zero weak and zero unclaimed; GBP Q&A seeded with the cost questions",
+          "status": "todo"
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "name": "Prove it, then reload",
+      "days": "Days 61 to 90",
+      "goal": "Publish the proof content the season calls for, re capture everything, and aim the next 90 days with numbers.",
+      "tasks": [
+        {
+          "id": "cost-guide",
+          "title": "Cost guide with real investment bands, timed to the captured seasonality",
+          "owner": "you",
+          "done": "Live before the next research peak; GVD is no longer the only local number an AI can cite",
           "status": "todo"
         },
         {
           "id": "answer-content",
-          "title": "Timeline, permit and ADU answer content (AEO clusters)",
+          "title": "Permit and timeline answers on the process page, built from the permit record",
+          "owner": "ai",
+          "done": "Question shaped headings, direct answers in the first 50 words, named attribution",
           "status": "todo"
         },
         {
           "id": "partner-links",
-          "title": "Partner link outreach: designers, realtors, NARI, NKBA",
+          "title": "Three real partner links secured, Nar Design Group first; press release syndication killed",
+          "owner": "client",
+          "done": "Three live links that say Rocklin; the PR subscription cancelled and budget moved",
           "status": "todo"
         },
         {
-          "id": "cwv",
-          "title": "Core Web Vitals pass on heaviest templates",
+          "id": "recapture",
+          "title": "Re capture everything: crawl, site check, positions, AI citations, GSC",
+          "owner": "ai",
+          "done": "Day 90 versus day 1 on every number: failures, positions for all 17 targets, who the AI engines name",
           "status": "todo"
         },
         {
-          "id": "kill-pr",
-          "title": "Kill syndicated press release spend; reallocate",
+          "id": "consult-tracking",
+          "title": "Consultation intake asks budget so lead quality is measurable",
+          "owner": "client",
+          "done": "Every enquiry records a stated budget band",
           "status": "todo"
         },
         {
-          "id": "report-90",
-          "title": "Day 90 report by intent; next roadmap",
+          "id": "next-90",
+          "title": "Next 90 day plan built from the recaptured data",
+          "owner": "you",
+          "done": "Every priority in it traces to a number in data/performance/",
           "status": "todo"
         }
       ]
