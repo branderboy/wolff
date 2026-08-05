@@ -3,13 +3,13 @@
    builder would print. */
 
 :root {
-  --ground: #fdfcf9;
+  --ground: #ffffff;
   --panel: #ffffff;
-  --wash: #f6f3ec;
-  --hair: #e8e2d6;
-  --ink: #211c15;
-  --stone: #877d6f;
-  --brass: #9c7a3c;
+  --wash: #f4f1ea;
+  --hair: #d9d2c2;
+  --ink: #14100b;
+  --stone: #5c5344;
+  --brass: #8a6b33;
   --critical: #9c3b22;
   --good: #66794b;
   --caution: #a8842c;
@@ -18,20 +18,20 @@
 }
 
 * { box-sizing: border-box; margin: 0; }
-body { background: var(--ground); color: var(--ink); font: 13.5px/1.55 var(--sans); }
+body { background: var(--ground); color: var(--ink); font: 14px/1.6 var(--sans); }
 code { color: var(--brass); font-size: 12px; }
 button { font: inherit; cursor: pointer; }
 
 .caps { }
 .kicker, nav button, th, .badge, .btn, .days, .legend, .masthead-sub, .statusline {
-  text-transform: uppercase; letter-spacing: .14em; font-size: 10.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .14em; font-size: 11px; font-weight: 700;
 }
 
 /* ---------- masthead ---------- */
 header { text-align: center; padding: 34px 28px 0; }
 header h1 {
-  font-family: var(--display); font-weight: 300; font-size: 27px;
-  letter-spacing: .38em; text-transform: uppercase; text-indent: .38em;
+  font-family: var(--display); font-weight: 700; font-size: 31px;
+  letter-spacing: .3em; text-transform: uppercase; text-indent: .3em;
 }
 .masthead-sub { color: var(--stone); margin-top: 6px; }
 .masthead-sub b { color: var(--brass); font-weight: 600; }
@@ -42,14 +42,14 @@ header h1 {
 
 nav {
   display: flex; justify-content: center; gap: 34px;
-  border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair);
+  border-top: 1px solid var(--hair); border-bottom: 3px solid var(--ink);
   margin-top: 22px; padding: 0 28px;
 }
 nav button {
   background: none; border: none; color: var(--stone);
-  padding: 15px 2px 13px; border-bottom: 2px solid transparent;
+  padding: 16px 2px 14px; border-bottom: 3px solid transparent; margin-bottom: -3px;
 }
-nav button.active { color: var(--ink); border-bottom-color: var(--brass); }
+nav button.active { color: var(--ink); border-bottom-color: var(--brass); font-weight: 700; }
 nav button:hover { color: var(--ink); }
 
 main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
@@ -57,7 +57,7 @@ main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
 
 /* ---------- section furniture ---------- */
 .card { background: var(--panel); border: 1px solid var(--hair); padding: 26px 30px; margin-bottom: 22px; }
-.card h2 { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 10px; }
+.card h2 { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 12px; }
 .card h2 .muted { font-family: var(--sans); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
 .muted { color: var(--stone); font-weight: 400; }
 .center { text-align: center; }
@@ -68,13 +68,13 @@ main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
 
 /* ---------- stats ---------- */
 .stat-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; margin-bottom: 26px; }
-.stat { border-top: 2px solid var(--ink); padding-top: 12px; }
+.stat { border-top: 3px solid var(--ink); padding-top: 14px; }
 .stat b {
-  display: block; font-family: var(--display); font-weight: 200; font-size: 46px;
-  line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: .02em;
+  display: block; font-family: var(--display); font-weight: 500; font-size: 54px;
+  line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: 0;
 }
 .stat b.bad { color: var(--critical); }
-.stat span { color: var(--stone); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; display: block; margin-top: 8px; }
+.stat span { color: var(--stone); text-transform: uppercase; letter-spacing: .12em; font-size: 10.5px; font-weight: 700; display: block; margin-top: 10px; }
 
 /* ---------- process line ---------- */
 .pipeline { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; row-gap: 6px; margin: 14px 0 12px; }
@@ -89,7 +89,7 @@ main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
 .offenders li { padding: 9px 0; border-bottom: 1px solid var(--hair); display: flex; gap: 12px; align-items: baseline; }
 .offenders li:last-child { border-bottom: none; }
 .offenders .n {
-  font-family: var(--display); font-size: 17px; font-weight: 300; color: var(--critical);
+  font-family: var(--display); font-size: 19px; font-weight: 700; color: var(--critical);
   min-width: 26px; text-align: right; font-variant-numeric: tabular-nums;
 }
 
@@ -100,13 +100,13 @@ main { padding: 34px 28px 80px; max-width: 1240px; margin: 0 auto; }
 /* ---------- tables ---------- */
 .table-wrap { overflow-x: auto; margin-top: 14px; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { text-align: left; color: var(--stone); padding: 10px 12px 8px; border-bottom: 1px solid var(--ink); white-space: nowrap; }
+th { text-align: left; color: var(--ink); padding: 10px 12px 9px; border-bottom: 2px solid var(--ink); white-space: nowrap; }
 td { padding: 11px 12px; border-bottom: 1px solid var(--hair); vertical-align: top; }
 tr:last-child td { border-bottom: none; }
 td.path { color: var(--brass); white-space: nowrap; max-width: 260px; overflow: hidden; text-overflow: ellipsis; font-family: ui-monospace, 'Courier New', monospace; font-size: 12px; }
 td .old { color: var(--stone); text-decoration: line-through; text-decoration-color: rgba(156, 59, 34, .5); }
 td .new { color: var(--ink); }
-.score { font-family: var(--display); font-size: 22px; font-weight: 300; color: var(--ink); font-variant-numeric: tabular-nums; }
+.score { font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
 #opps-table td:nth-child(3) { min-width: 180px; }
 #opps-table td:nth-child(4), #opps-table td:nth-child(5) { min-width: 170px; }
 #opps-table td:nth-child(6) { min-width: 300px; }
@@ -119,7 +119,7 @@ td .new { color: var(--ink); }
 .badge.staged { color: var(--brass); border-color: var(--brass); }
 
 /* ---------- controls ---------- */
-.btn { background: var(--ink); color: var(--ground); border: 1px solid var(--ink); padding: 11px 22px; }
+.btn { background: var(--ink); color: #ffffff; border: 1px solid var(--ink); padding: 13px 26px; }
 .btn:hover { background: var(--brass); border-color: var(--brass); }
 .btn:disabled { opacity: .35; cursor: not-allowed; }
 .btn.ghost { background: transparent; color: var(--ink); }
@@ -139,7 +139,7 @@ input:focus { outline: none; border-color: var(--brass); }
 /* ---------- plan ---------- */
 .phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 18px; }
 .phase { background: var(--panel); border: 1px solid var(--hair); padding: 22px 24px; }
-.phase h3 { font-family: var(--display); font-size: 13px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; margin-top: 6px; }
+.phase h3 { font-family: var(--display); font-size: 14px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-top: 6px; }
 .phase .days { color: var(--brass); }
 .progress { height: 2px; background: var(--hair); margin: 14px 0 10px; }
 .progress i { display: block; height: 100%; background: var(--brass); }
