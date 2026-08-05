@@ -51,6 +51,13 @@ Git is the source of truth. Duda has no SSH, FTP, or git remote — the Duda
 REST API (`scripts/push-duda.js`) is the bridge, giving diffs, review,
 rollback, and history on a platform that natively offers none of that.
 
+**Built for many sites, not one.** Nothing here is hand built for this
+client: facts live in data files, pages render from templates, and the
+validator, console, workers, and connectors are all parameterized by those
+files. Onboarding the next contractor site is clone, import crawl, fill in
+the data files — the same audit and pipeline exist for that client within a
+day. See `docs/application.md` for the full mapping to the job thesis.
+
 ## Rules
 
 All content and claim rules live in [CLAUDE.md](CLAUDE.md). The short
