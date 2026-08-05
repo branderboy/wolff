@@ -42,6 +42,13 @@ function body(req, cb) {
 }
 
 const routes = {
+  'GET /search-flow.svg': (req, res) => {
+    fs.readFile(path.join(ROOT, 'docs', 'search-flow.svg'), (err, data) => {
+      if (err) return send(res, 404, { error: 'diagram not found' });
+      send(res, 200, data, 'image/svg+xml');
+    });
+  },
+
   'GET /api/state': (req, res) => {
     const pages = readJson('data/pages.json', { pages: [] });
     const updates = readJson('data/page-updates.json', { pages: [], redirects: [] });
