@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1000" viewBox="0 0 1240 1000" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a6b33"/>
+    </marker>
+  </defs>
+
+  <rect width="1240" height="1000" fill="#ffffff"/>
+
+  <!-- masthead -->
+  <text x="620" y="52" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="8" fill="#14100b">THE SEARCH OPERATING SYSTEM</text>
+  <text x="620" y="74" text-anchor="middle" font-size="12" letter-spacing="2" fill="#5c5344">HOW DATA BECOMES RANKINGS FOR WOLFF CONSTRUCTION · ROCKLIN, CA</text>
+  <line x1="40" y1="90" x2="1200" y2="90" stroke="#14100b" stroke-width="2"/>
+
+  <!-- band 1 · learn -->
+  <text x="40" y="118" font-size="11" font-weight="700" letter-spacing="3" fill="#8a6b33">1 · LEARN · EIGHT FEEDS, MOSTLY FREE</text>
+
+  <g font-size="11.5">
+    <rect x="40"  y="128" width="176" height="60" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="128" y="152" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">SEARCH CONSOLE</text>
+    <text x="128" y="170" text-anchor="middle" fill="#5c5344" font-size="10.5">real queries and positions</text>
+
+    <rect x="232" y="128" width="176" height="60" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="320" y="152" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">DATAFORSEO</text>
+    <text x="320" y="170" text-anchor="middle" fill="#5c5344" font-size="10.5">search volumes per target</text>
+
+    <rect x="424" y="128" width="176" height="60" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="512" y="152" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">PAGESPEED</text>
+    <text x="512" y="170" text-anchor="middle" fill="#5c5344" font-size="10.5">speed scores per page</text>
+
+    <rect x="616" y="128" width="176" height="60" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="704" y="152" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">GOOGLE TRENDS</text>
+    <text x="704" y="170" text-anchor="middle" fill="#5c5344" font-size="10.5">seasonality by service</text>
+
+    <rect x="808" y="128" width="176" height="60" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="896" y="152" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">EMBEDDINGS</text>
+    <text x="896" y="170" text-anchor="middle" fill="#5c5344" font-size="10.5">search to page matching</text>
+
+    <rect x="1000" y="128" width="200" height="60" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="1100" y="152" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">CITATIONS + CRAWL</text>
+    <text x="1100" y="170" text-anchor="middle" fill="#5c5344" font-size="10.5">profiles, site audit findings</text>
+  </g>
+
+  <line x1="128"  y1="188" x2="128"  y2="222" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="320"  y1="188" x2="320"  y2="222" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="512"  y1="188" x2="512"  y2="222" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="704"  y1="188" x2="704"  y2="222" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="896"  y1="188" x2="896"  y2="222" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="1100" y1="188" x2="1100" y2="222" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+  <!-- band 2 · one source of truth -->
+  <rect x="40" y="226" width="1160" height="56" fill="#f4f1ea" stroke="#d9d2c2"/>
+  <text x="620" y="250" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="3" fill="#14100b">ONE SOURCE OF TRUTH · DATA IN GIT</text>
+  <text x="620" y="269" text-anchor="middle" font-size="11" fill="#5c5344">every fact, score, fix and plan lives in versioned files · nothing ships unless it traces to a source here</text>
+
+  <line x1="252" y1="282" x2="252" y2="316" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="620" y1="282" x2="620" y2="316" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="988" y1="282" x2="988" y2="316" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+  <!-- band 3 · decide -->
+  <text x="40" y="310" font-size="11" font-weight="700" letter-spacing="3" fill="#8a6b33">2 · DECIDE · THE CONSOLE SCREENS</text>
+  <g font-size="11.5">
+    <rect x="40" y="320" width="368" height="58" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="224" y="343" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">WHERE YOU STAND</text>
+    <text x="224" y="361" text-anchor="middle" fill="#5c5344" font-size="10.5">what is broken and who outranks you</text>
+
+    <rect x="436" y="320" width="368" height="58" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="620" y="343" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">WHAT TO WIN</text>
+    <text x="620" y="361" text-anchor="middle" fill="#5c5344" font-size="10.5">searches ranked by win score</text>
+
+    <rect x="832" y="320" width="368" height="58" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="1016" y="343" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">SITE PLAN</text>
+    <text x="1016" y="361" text-anchor="middle" fill="#5c5344" font-size="10.5">the pages to build, in order</text>
+  </g>
+
+  <line x1="620" y1="378" x2="620" y2="412" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+  <!-- band 4 · ai team -->
+  <text x="40" y="406" font-size="11" font-weight="700" letter-spacing="3" fill="#8a6b33">3 · WORK · THE AI TEAM</text>
+  <rect x="40" y="416" width="1160" height="58" fill="#ffffff" stroke="#8a6b33"/>
+  <text x="620" y="440" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="2" fill="#14100b">EIGHT ASSISTANTS · GBP · COMPETITORS · MARKET · PERMITS · DATA · PLANNER · REVIEWER · DEPLOYER</text>
+  <text x="620" y="459" text-anchor="middle" font-size="11" fill="#5c5344">each reads the data, does one job on a schedule, and writes findings back for your approval</text>
+
+  <line x1="620" y1="474" x2="620" y2="508" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+  <!-- band 5 · ship pipeline -->
+  <text x="40" y="502" font-size="11" font-weight="700" letter-spacing="3" fill="#8a6b33">4 · SHIP · NOTHING SKIPS THE GATE</text>
+  <g font-size="11.5">
+    <rect x="40" y="512" width="250" height="58" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="165" y="535" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">STAGE THE FIX</text>
+    <text x="165" y="553" text-anchor="middle" fill="#5c5344" font-size="10.5">new titles, pages, schema</text>
+
+    <line x1="290" y1="541" x2="336" y2="541" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+    <rect x="340" y="512" width="250" height="58" fill="#ffffff" stroke="#9c3b22" stroke-width="1.5"/>
+    <text x="465" y="535" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#9c3b22">SITE CHECK</text>
+    <text x="465" y="553" text-anchor="middle" fill="#5c5344" font-size="10.5">blocks any mistake from returning</text>
+
+    <line x1="590" y1="541" x2="636" y2="541" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+    <rect x="640" y="512" width="250" height="58" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="765" y="535" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">YOU APPROVE</text>
+    <text x="765" y="553" text-anchor="middle" fill="#5c5344" font-size="10.5">facts and brand claims, always</text>
+
+    <line x1="890" y1="541" x2="936" y2="541" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+    <rect x="940" y="512" width="260" height="58" fill="#14100b"/>
+    <text x="1070" y="535" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#ffffff">PUBLISH TO DUDA</text>
+    <text x="1070" y="553" text-anchor="middle" fill="#d9d2c2" font-size="10.5">draft first, then live</text>
+  </g>
+
+  <line x1="1000" y1="570" x2="340" y2="604" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="1090" y1="570" x2="920" y2="604" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+  <!-- band 6 · announce -->
+  <text x="40" y="600" font-size="11" font-weight="700" letter-spacing="3" fill="#8a6b33">5 · ANNOUNCE · BOTH DOORS</text>
+  <g font-size="11.5">
+    <rect x="40" y="608" width="560" height="58" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="320" y="631" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">INDEXNOW · INSTANT</text>
+    <text x="320" y="649" text-anchor="middle" fill="#5c5344" font-size="10.5">Bing, Yahoo, DuckDuckGo · feeds ChatGPT search and Copilot</text>
+
+    <rect x="640" y="608" width="560" height="58" fill="#ffffff" stroke="#d9d2c2"/>
+    <text x="920" y="631" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">SITEMAP IN SEARCH CONSOLE</text>
+    <text x="920" y="649" text-anchor="middle" fill="#5c5344" font-size="10.5">the Google path · request indexing on key pages</text>
+  </g>
+
+  <line x1="320" y1="666" x2="320" y2="700" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="920" y1="666" x2="920" y2="700" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+  <!-- band 7 · customers -->
+  <g font-size="11.5">
+    <rect x="40" y="704" width="560" height="58" fill="#f4f1ea" stroke="#d9d2c2"/>
+    <text x="320" y="727" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">AI ANSWERS AND BING FAMILY</text>
+    <text x="320" y="745" text-anchor="middle" fill="#5c5344" font-size="10.5">older, affluent homeowners · exactly the Wolff client</text>
+
+    <rect x="640" y="704" width="560" height="58" fill="#f4f1ea" stroke="#d9d2c2"/>
+    <text x="920" y="727" text-anchor="middle" font-weight="700" letter-spacing="1" fill="#14100b">GOOGLE RESULTS AND MAPS</text>
+    <text x="920" y="745" text-anchor="middle" fill="#5c5344" font-size="10.5">the volume channel · local pack and organic</text>
+  </g>
+
+  <line x1="320" y1="762" x2="560" y2="796" stroke="#8a6b33" marker-end="url(#arrow)"/>
+  <line x1="920" y1="762" x2="680" y2="796" stroke="#8a6b33" marker-end="url(#arrow)"/>
+
+  <!-- band 8 · measure -->
+  <text x="40" y="794" font-size="11" font-weight="700" letter-spacing="3" fill="#8a6b33">6 · MEASURE · NOT TRAFFIC</text>
+  <rect x="40" y="800" width="1160" height="58" fill="#ffffff" stroke="#66794b" stroke-width="1.5"/>
+  <text x="620" y="824" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="2" fill="#14100b">BRANDED SEARCH WON · AI CITATIONS · LOCAL PACK POSITION · QUALIFIED CONSULTATIONS</text>
+  <text x="620" y="843" text-anchor="middle" font-size="11" fill="#5c5344">two to four right budget consultations a month is the goal · sessions are a vanity number</text>
+
+  <!-- the loop -->
+  <polyline points="1200,829 1224,829 1224,254 1204,254" fill="none" stroke="#8a6b33" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="1218" y="560" font-size="10.5" font-weight="700" letter-spacing="3" fill="#8a6b33" transform="rotate(-90 1218 560)">RESULTS FLOW BACK AS NEW DATA</text>
+
+  <!-- footer -->
+  <line x1="40" y1="898" x2="1200" y2="898" stroke="#d9d2c2"/>
+  <text x="620" y="926" text-anchor="middle" font-size="11" letter-spacing="2" fill="#5c5344">EVERY PASS AROUND THE LOOP MAKES THE NEXT DECISION SMARTER · GIT KEEPS THE RECORD · YOU KEEP THE APPROVALS</text>
+  <text x="620" y="950" text-anchor="middle" font-size="10.5" letter-spacing="2" fill="#8a6b33">WOLFF CONSTRUCTION · SEARCH OPERATIONS · CSLB 1056036</text>
+</svg>
