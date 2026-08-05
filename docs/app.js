@@ -158,6 +158,14 @@ function renderOverview() {
     }
     const top = Object.entries(perUrl).sort((a, b) => b[1] - a[1]).slice(0, 6);
     $('#offenders').innerHTML = top.map(([u, n]) => `<li><span class="n">${n}</span>${esc(u)}</li>`).join('');
+
+    const byCheck = {};
+    for (const f of v.findings.filter((f) => f.severity === 'FAIL')) byCheck[f.check] = (byCheck[f.check] || 0) + 1;
+    const bt = $('#breakdown-title');
+    if (bt && c.fails) bt.textContent = `What the ${c.fails} problems are`;
+    const bd = $('#problem-breakdown');
+    if (bd) bd.innerHTML = Object.entries(byCheck).sort((a, b) => b[1] - a[1])
+      .map(([k, n]) => `<li><span class="n">${n}</span>${esc(plain(k))}</li>`).join('');
   }
 }
 
