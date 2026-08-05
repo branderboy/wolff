@@ -130,17 +130,24 @@ function renderOverview() {
   const donePct = Math.round((allTasks.filter((t) => t.status === 'done').length / allTasks.length) * 100);
 
   $('#stats').innerHTML = [
-    [c.pages, 'pages on your site', false],
-    [c.fails ?? '·', 'problems hurting rankings', (c.fails ?? 0) > 0],
-    [c.warns ?? '·', 'smaller issues', false],
-    [c.staged, 'fixes written and ready', false],
-    [donePct + '%', 'of the plan done', false],
-  ].map(([n, l, bad]) => `<div class="stat"><b class="${bad ? 'bad' : ''}">${n}</b><span>${l}</span></div>`).join('');
+    [c.pages, 'Pages On Your Site', false],
+    [c.fails ?? '·', 'Problems Hurting Rankings', (c.fails ?? 0) > 0],
+    [c.warns ?? '·', 'Smaller Issues', false],
+    [c.staged, 'Fixes Written And Ready', false],
+    [donePct + '%', 'Of The Plan Done', false],
+  ].map(([n, l, bad]) => `<div class="flex flex-col items-center text-center p-4">
+    <div class="text-6xl font-black tracking-tighter mb-2 ${bad ? 'text-red-500' : 'text-slate-900'}">${n}</div>
+    <div class="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-slate-500 uppercase">${l}</div>
+  </div>`).join('');
 
-  const dot = $('#health-dot'), txt = $('#health-text');
-  if (c.fails === null) { dot.className = 'dot'; txt.textContent = 'site not checked yet'; }
-  else if (c.fails > 0) { dot.className = 'dot bad'; txt.textContent = `${c.fails} problems live on your site`; }
-  else { dot.className = 'dot ok'; txt.textContent = 'site is clean'; }
+  const pill = $('#health-pill'), txt = $('#health-text');
+  if (c.fails === null) { txt.textContent = 'Site Not Checked Yet'; }
+  else if (c.fails > 0) { txt.textContent = `${c.fails} Problems Live On Your Site`; }
+  else {
+    txt.textContent = 'Site Is Clean';
+    txt.classList.replace('text-red-600', 'text-green-700');
+    pill.classList.replace('border-red-500', 'border-green-600');
+  }
 
   const v = STATE.validation;
   if (v?.findings?.length) {
