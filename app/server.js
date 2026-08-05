@@ -53,13 +53,22 @@ const routes = {
     const structure = readJson('data/site-structure.json', { tree: [], linkingRules: [] });
     const dudaReady = Boolean(process.env.DUDA_API_USER && process.env.DUDA_API_PASS && process.env.DUDA_SITE_NAME);
     const recommendations = readJson('data/page-recommendations.json', { pages: [] });
+    const perf = (rel) => { try { return fs.statSync(path.join(ROOT, 'data', 'performance', rel)).mtime.toISOString().slice(0, 10); } catch { return null; } };
+    const connections = [
+      { id: 'duda', name: 'Duda (your website)', feeds: 'Publishing fixes to the site', ready: Boolean(process.env.DUDA_API_USER && process.env.DUDA_API_PASS && process.env.DUDA_SITE_NAME), lastData: null, setup: 'API keys from Bullsai; the day one ask' },
+      { id: 'gsc', name: 'Google Search Console', feeds: 'Real searches you already appear for', ready: Boolean(process.env.GSC_SITE_URL && process.env.GOOGLE_APPLICATION_CREDENTIALS), lastData: perf('gsc-queries.json'), setup: 'Free. CSV export works with zero setup: npm run connect:gsc' },
+      { id: 'volumes', name: 'DataForSEO', feeds: 'Search volumes for every target query', ready: Boolean(process.env.DATAFORSEO_LOGIN && process.env.DATAFORSEO_PASSWORD), lastData: perf('volumes.json'), setup: 'Pay as you go, under $1 for this set: npm run connect:volumes' },
+      { id: 'speed', name: 'PageSpeed Insights', feeds: 'Site speed scores per page', ready: true, lastData: perf('speed.json'), setup: 'Free, works now: npm run connect:speed' },
+      { id: 'semantic', name: 'Voyage AI embeddings', feeds: 'Which page best matches each search; gaps and overlap', ready: Boolean(process.env.VOYAGE_API_KEY), lastData: perf('semantic-map.json'), setup: 'Free tier: npm run connect:semantic' },
+      { id: 'citations', name: 'Citation checker', feeds: 'Your profiles across the web say Rocklin and match your NAP', ready: true, lastData: perf('sameas-audit.json'), setup: 'No key needed: npm run connect:citations' },
+    ];
     const workers = readJson('data/workers.json', { workers: [] });
     for (const w of workers.workers) {
       try {
         w.lastOrder = fs.statSync(path.join(ROOT, 'reports', 'workers', w.id, 'workorder.md')).mtime.toISOString().slice(0, 10);
       } catch { w.lastOrder = null; }
     }
-    send(res, 200, { pages, updates, plan, validation, dudaReady, competitors, opportunities, structure, workers, recommendations, company: { displayName: company.displayName, license: company.license } });
+    send(res, 200, { pages, updates, plan, validation, dudaReady, competitors, opportunities, structure, workers, recommendations, connections, company: { displayName: company.displayName, license: company.license } });
   },
 
   'POST /api/run/validate': (req, res) => {

@@ -1,6 +1,6 @@
 {
   "note": "Per-page optimization checklists generated from crawl + site check + staged fixes + site plan. Rebuild with npm run recs:build after any of those change.",
-  "generatedAt": "2026-08-05T05:42:15.652Z",
+  "generatedAt": "2026-08-05T05:50:40.677Z",
   "pages": [
     {
       "path": "/silk-and-sage",

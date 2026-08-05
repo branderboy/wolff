@@ -15,7 +15,12 @@
     "duda:push:all": "node scripts/push-duda.js --apply --schema --publish",
     "worker": "node scripts/run-worker.js",
     "brand:sync": "node scripts/brand-sync.js",
-    "recs:build": "node scripts/build-recommendations.js"
+    "recs:build": "node scripts/build-recommendations.js",
+    "connect:volumes": "node scripts/connectors/dataforseo.js",
+    "connect:gsc": "node scripts/connectors/gsc.js",
+    "connect:speed": "node scripts/connectors/pagespeed.js",
+    "connect:semantic": "node scripts/connectors/embeddings.js",
+    "connect:citations": "node scripts/connectors/sameas.js"
   },
   "engines": {
     "node": ">=18"

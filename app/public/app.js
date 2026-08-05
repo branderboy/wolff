@@ -23,6 +23,7 @@ async function load() {
   renderCompetitors();
   renderOpportunities();
   renderStructure();
+  renderConnections();
   renderWorkers();
   renderPages();
   renderFindings(STATE.validation);
@@ -142,6 +143,20 @@ function renderOverview() {
     const top = Object.entries(perUrl).sort((a, b) => b[1] - a[1]).slice(0, 6);
     $('#offenders').innerHTML = top.map(([u, n]) => `<li><span class="n">${n}</span>${esc(u)}</li>`).join('');
   }
+}
+
+// ------------------------------------------------------------------ connections
+function renderConnections() {
+  const cs = STATE.connections || [];
+  const tbody = document.querySelector('#connections-table tbody');
+  if (!tbody) return;
+  tbody.innerHTML = cs.map((c) => `<tr>
+    <td><b>${esc(c.name)}</b></td>
+    <td class="muted">${esc(c.feeds)}</td>
+    <td><span class="badge ${c.ready ? 'ok' : 'fail'}">${c.ready ? 'connected' : 'not connected'}</span></td>
+    <td class="muted">${c.lastData ? esc(c.lastData) : 'none yet'}</td>
+    <td class="muted">${esc(c.setup)}</td>
+  </tr>`).join('');
 }
 
 // ------------------------------------------------------------------ workers

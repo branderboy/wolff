@@ -20,6 +20,9 @@ const updates = read('data/page-updates.json', { pages: [], redirects: [] });
 const findings = read('reports/seo-failures.json', { findings: [] }).findings;
 const services = read('data/services.json', { core: [] }).core;
 const opps = read('data/opportunities.json', { opportunities: [] }).opportunities;
+const speed = read('data/performance/speed.json', { results: [] }).results;
+const gsc = read('data/performance/gsc-queries.json', { rows: [] }).rows;
+const semantic = read('data/performance/semantic-map.json', { map: [] }).map;
 
 const PLAIN = {
   'title-too-short': 'Rewrite the page title so it says the service and the city',
@@ -79,6 +82,16 @@ for (const p of pages) {
   if (p.wordCount > 0 && p.wordCount < targetWords && !['/contact', '/careers', '/privacy'].includes(slugPath)) {
     actions.push({ step: `Grow the copy from ${p.wordCount} to ${targetWords}+ words with verifiable specifics`, severity: 'content' });
   }
+
+  // 6. Connected data, when it exists
+  const slow = speed.find((s) => s.path === slugPath && s.strategy === 'mobile' && s.performance < 60);
+  if (slow) actions.push({ step: `Speed up this page on phones (score ${slow.performance}/100${slow.lcpElement ? ', biggest culprit: ' + slow.lcpElement.slice(0, 60) : ''})`, severity: 'costs rankings' });
+  const nearMiss = gsc.filter((r) => r.page && r.page.endsWith(slugPath) && r.impressions > 20 && r.position > 10);
+  for (const n of nearMiss.slice(0, 2)) {
+    actions.push({ step: `Google already shows this page for "${n.query}" at position ${Math.round(n.position)}; one fix away from clicks`, severity: 'quick win' });
+  }
+  const overlap = semantic.find((m) => m.cannibalization && (m.bestPage.path === slugPath || m.runnerUp?.path === slugPath));
+  if (overlap) actions.push({ step: `Competes with ${overlap.bestPage.path === slugPath ? overlap.runnerUp.path : overlap.bestPage.path} for "${overlap.query}"; differentiate or merge`, severity: 'worth fixing' });
 
   if (!actions.length) continue;
   recs.push({
