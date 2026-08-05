@@ -22,7 +22,8 @@
     "connect:semantic": "node scripts/connectors/embeddings.js",
     "connect:citations": "node scripts/connectors/sameas.js",
     "connect:trends": "node scripts/connectors/trends.js",
-    "connect:indexnow": "node scripts/connectors/indexnow.js"
+    "connect:indexnow": "node scripts/connectors/indexnow.js",
+    "pages:build": "node scripts/build-static.js"
   },
   "engines": {
     "node": ">=18"
