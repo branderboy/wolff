@@ -61,6 +61,7 @@ const routes = {
       { id: 'speed', name: 'PageSpeed Insights', feeds: 'Site speed scores per page', ready: true, lastData: perf('speed.json'), setup: 'Free, works now: npm run connect:speed' },
       { id: 'semantic', name: 'Embeddings (Voyage or OpenAI)', feeds: 'Which page best matches each search; gaps and overlap', ready: Boolean(process.env.VOYAGE_API_KEY || process.env.OPENAI_API_KEY), lastData: perf('semantic-map.json'), setup: 'Either key works, Voyage free tier or your OpenAI key: npm run connect:semantic' },
       { id: 'citations', name: 'Citation checker', feeds: 'Your profiles across the web say Rocklin and match your NAP', ready: true, lastData: perf('sameas-audit.json'), setup: 'No key needed: npm run connect:citations' },
+      { id: 'trends', name: 'Google Trends', feeds: 'When Californians research each service; the months to publish into', ready: true, lastData: perf('seasonality.json'), setup: 'No key needed: npm run connect:trends' },
     ];
     const workers = readJson('data/workers.json', { workers: [] });
     for (const w of workers.workers) {
