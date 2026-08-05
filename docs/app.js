@@ -142,9 +142,9 @@ function renderOverview() {
 
   const pill = $('#health-pill'), txt = $('#health-text');
   if (c.fails === null) { txt.textContent = 'Site Not Checked Yet'; }
-  else if (c.fails > 0) { txt.textContent = `${c.fails} Problems Live On Your Site`; }
+  else if (c.fails > 0) { txt.textContent = `${c.fails} Problems Identified On Your Website`; }
   else {
-    txt.textContent = 'Site Is Clean';
+    txt.textContent = 'No Problems Identified On Your Website';
     txt.classList.replace('text-red-600', 'text-green-700');
     pill.classList.replace('border-red-500', 'border-green-600');
   }
