@@ -19,10 +19,87 @@ document.querySelectorAll('nav button').forEach((b) => {
 async function load() {
   STATE = await (await fetch('/api/state')).json();
   renderOverview();
+  renderHistory();
+  renderCompetitors();
+  renderOpportunities();
+  renderStructure();
   renderPages();
   renderFindings(STATE.validation);
   renderPlan();
   renderDeploy();
+}
+
+// ------------------------------------------------------------------ history
+function renderHistory() {
+  const pages = STATE.pages.pages || [];
+  const live = pages.filter((p) => p.statusCode === 200);
+  const titles = {};
+  live.forEach((p) => { titles[p.title] = (titles[p.title] || 0) + 1; });
+  const dupTitlePages = live.filter((p) => titles[p.title] > 1).length;
+  const thin = live.filter((p) => p.wordCount > 0 && p.wordCount < 300).length;
+  const geoGB = live.filter((p) => (p.title || '').includes('Granite Bay')).length;
+  const geoRock = live.filter((p) => (p.title || '').includes('Rocklin')).length;
+  const geoNone = live.length - live.filter((p) => /Granite Bay|Rocklin|Placer|Roseville|Folsom|Loomis|Auburn|El Dorado|Sacramento/.test(p.title || '')).length;
+  const rows = [
+    [dupTitlePages, 'pages share a duplicated title'],
+    [thin, 'indexable pages under 300 words'],
+    [pages.filter((p) => p.statusCode === 404).length, 'internally linked 404s'],
+    [geoGB, 'titles carry Granite Bay (all blog posts)'],
+    [geoRock, 'titles carry Rocklin (the HQ market)'],
+    [geoNone, 'titles carry no geography at all'],
+  ];
+  $('#history').innerHTML = '<ul class="offenders">' + rows.map(([n, l]) =>
+    `<li><span class="n">${n}</span>${esc(l)}</li>`).join('') + '</ul>' +
+    '<p class="muted" style="margin-top:8px">The pattern: search relevance lives in blog posts aimed at one city while every money page is invisible. History says fix structure, not publish more posts.</p>';
+}
+
+// ------------------------------------------------------------------ competitors
+function renderCompetitors() {
+  const c = STATE.competitors;
+  $('#competitor-finding').textContent = c.keyFinding || '';
+  const rank = { critical: 0, high: 1, medium: 2, low: 3 };
+  $('#competitors-table tbody').innerHTML = (c.competitors || [])
+    .slice().sort((a, b) => rank[a.threat] - rank[b.threat])
+    .map((x) => `<tr>
+      <td><b>${esc(x.name)}</b>${x.proof?.reviews ? `<div class="muted">${x.proof.reviews} reviews</div>` : ''}</td>
+      <td><span class="badge ${x.threat === 'critical' || x.threat === 'high' ? 'fail' : x.threat === 'medium' ? 'warn' : ''}">${esc(x.threat)}</span></td>
+      <td>${esc(x.model)}</td>
+      <td>${(x.owns || []).map(esc).join('<br>')}</td>
+      <td class="muted">${esc(x.wolffAngle || '')}</td>
+    </tr>`).join('');
+}
+
+// ------------------------------------------------------------------ opportunities
+function renderOpportunities() {
+  const opps = (STATE.opportunities.opportunities || []).slice().sort((a, b) => b.score - a.score);
+  $('#opps-table tbody').innerHTML = opps.map((o) => `<tr>
+    <td><b class="score">${o.score}</b></td>
+    <td><span class="badge staged">${esc(o.intent)}</span></td>
+    <td>${esc(o.query)}</td>
+    <td class="muted">${esc(o.ownedBy)}</td>
+    <td class="muted">${esc(o.wolffToday)}</td>
+    <td>${esc(o.play)}</td>
+    <td class="path">${esc(o.targetUrl)}</td>
+  </tr>`).join('');
+}
+
+// ------------------------------------------------------------------ structure
+function renderStructure() {
+  const s = STATE.structure;
+  $('#linking-rules').innerHTML = (s.linkingRules || []).map((r) => `<li>${esc(r)}</li>`).join('');
+  function node(n, depth) {
+    const kids = (n.children || []).map((c) => node(c, depth + 1)).join('');
+    const extras = [
+      n.proof?.length ? `${n.proof.length} proof projects` : '',
+      n.spokes?.length ? `${n.spokes.length} blog spokes` : '',
+    ].filter(Boolean).join(' · ');
+    return `<div class="tnode" style="margin-left:${depth * 18}px">
+      <i class="lg ${esc(n.status)}"></i>
+      <code>${esc(n.url)}</code>
+      <span class="muted">${esc(n.role)}${extras ? ' · ' + extras : ''}</span>
+    </div>` + kids;
+  }
+  $('#tree').innerHTML = (s.tree || []).map((n) => node(n, 0)).join('');
 }
 
 function counts() {

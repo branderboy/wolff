@@ -1,0 +1,36 @@
+{
+  "note": "The target information architecture. Status per node: live-ok (exists, healthy), live-weak (exists, needs work), staged (fix in page-updates.json), missing (must be built). The rule that produced it: every customer intent gets a permanent page, blog posts support service pages (spokes to hubs), projects prove services, people prove the entity, and every page is at most 2 clicks from home.",
+  "linkingRules": [
+    "Service pages link to: their proof projects, their supporting blog posts, relevant reviews, the process page, and the qualifying CTA",
+    "Blog posts link UP to their service page (hub), never only sideways",
+    "Project pages link to: their service page, their city page (when live), the team members who ran the job, and the client review",
+    "Team pages link to: projects they ran and the about page; the about page is the entity home",
+    "No orphans: every indexable page reachable from nav or a hub in 2 clicks"
+  ],
+  "tree": [
+    { "url": "/", "role": "Market + service hub. Must name the full service area.", "status": "staged", "children": [
+      { "url": "/kitchen-remodeling", "role": "Service hub: highest-value intent", "status": "missing", "proof": ["/projects/silk-and-sage", "/projects/cream-and-cashmere", "/projects/sculpted-slate"], "spokes": ["/what-does-a-luxury-kitchen-remodel-look-like-in-granite-bay", "/what-is-the-cost-and-roi-of-luxury-kitchens-in-granite-bay", "/who-is-the-top-rated-luxury-kitchen-bathroom-remodel-team-granite-bay"] },
+      { "url": "/full-home-renovation", "role": "Service hub", "status": "missing", "spokes": ["/what-does-a-luxury-home-remodel-actually-include-in-granite-bay-ca", "/a-luxury-home-remodel-built-for-the-next-20-years-in-granite-bay-ca", "/luxury-home-remodel-in-granite-bay-ca-turning-vision-into-timeless-design"] },
+      { "url": "/home-additions-adu", "role": "Service hub: least-served cluster", "status": "missing", "spokes": [] },
+      { "url": "/bathroom-remodeling", "role": "Service hub", "status": "missing", "spokes": ["/what-should-i-look-for-in-a-luxury-bathroom-contractor-in-granite-bay-ca", "/luxury-bathroom-remodel-granite-bay-ca"] },
+      { "url": "/projects", "role": "Proof hub (nav currently points at #)", "status": "missing", "children": [
+        { "url": "/projects/silk-and-sage", "role": "Case study, re-slugged from /silk-and-sage (301)", "status": "staged" },
+        { "url": "/projects/cream-and-cashmere", "role": "Case study, re-slugged (301)", "status": "staged" },
+        { "url": "/projects/sculpted-slate", "role": "Case study, re-slugged (301)", "status": "staged" }
+      ]},
+      { "url": "/granite-bay", "role": "City page: after service pages exist", "status": "missing" },
+      { "url": "/rocklin", "role": "City page: HQ market", "status": "missing" },
+      { "url": "/our-process", "role": "Process + permits + timeline answers (AEO)", "status": "staged" },
+      { "url": "/about", "role": "Entity home: history, license, address, memberships", "status": "missing", "children": [
+        { "url": "/the-team", "role": "Team hub", "status": "staged" },
+        { "url": "/don-erik-wolff", "role": "Founder (Person schema)", "status": "staged" },
+        { "url": "/jocelyn-wolff", "role": "Person", "status": "staged" },
+        { "url": "/jared-schneider", "role": "Lead PM (named in AEO answers)", "status": "staged" },
+        { "url": "/salina-godinez", "role": "Person", "status": "staged" }
+      ]},
+      { "url": "/testimonials", "role": "Review hub with sourced schema; reviews syndicate to service pages", "status": "staged" },
+      { "url": "/blog", "role": "Supporting content hub (into main nav)", "status": "staged" },
+      { "url": "/contact", "role": "Qualification: NAP, map, preconstruction consultation", "status": "staged" }
+    ]}
+  ]
+}

@@ -96,6 +96,22 @@ input { background: var(--panel2); border: 1px solid var(--line); color: var(--i
 .task.blocked .st { background: var(--red); border-color: var(--red); }
 .task.blocked { color: var(--red); }
 
+.score { font-family: Cambria, serif; font-size: 18px; color: var(--bronze); }
+.rules { list-style: none; }
+.rules li { padding: 8px 0 8px 18px; border-bottom: 1px solid var(--line); font-size: 13px; position: relative; }
+.rules li::before { content: "→"; position: absolute; left: 0; color: var(--bronze); }
+.rules li:last-child { border-bottom: none; }
+.tnode { display: flex; gap: 8px; align-items: baseline; padding: 5px 0; font-size: 13px; }
+.tnode code { flex: none; }
+.tnode .muted { font-size: 12px; }
+.lg { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; background: var(--muted); position: relative; top: 0; }
+.lg.ok, .lg.live-ok { background: var(--green); }
+.lg.weak, .lg.live-weak { background: var(--amber); }
+.lg.staged { background: var(--bronze); }
+.lg.missing { background: var(--red); }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 14px; font-size: 12px; color: var(--muted); }
+.legend span { display: flex; align-items: center; gap: 6px; }
+
 pre { background: #171310; border: 1px solid var(--line); border-radius: 8px; padding: 14px; font-size: 12px; overflow-x: auto; white-space: pre-wrap; max-height: 420px; overflow-y: auto; color: #cfc6b8; }
 
 @media (max-width: 900px) {

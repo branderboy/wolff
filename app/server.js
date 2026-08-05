@@ -48,8 +48,11 @@ const routes = {
     const plan = readJson('data/plan.json', { phases: [] });
     const validation = readJson('reports/seo-failures.json');
     const company = readJson('data/company.json', {});
+    const competitors = readJson('data/competitors.json', { competitors: [] });
+    const opportunities = readJson('data/opportunities.json', { opportunities: [] });
+    const structure = readJson('data/site-structure.json', { tree: [], linkingRules: [] });
     const dudaReady = Boolean(process.env.DUDA_API_USER && process.env.DUDA_API_PASS && process.env.DUDA_SITE_NAME);
-    send(res, 200, { pages, updates, plan, validation, dudaReady, company: { displayName: company.displayName, license: company.license } });
+    send(res, 200, { pages, updates, plan, validation, dudaReady, competitors, opportunities, structure, company: { displayName: company.displayName, license: company.license } });
   },
 
   'POST /api/run/validate': (req, res) => {

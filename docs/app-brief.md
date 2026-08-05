@@ -3,12 +3,21 @@
 ## What this is
 
 A local web application (runs on your machine, `npm run app`, opens in the
-browser) that operationalizes the Wolff search program. It is the cockpit for
-the weekly loop:
+browser) that operationalizes the Wolff search program. It starts with
+intelligence, not fixes:
 
 ```
-CRAWL -> VALIDATE -> PRIORITIZE -> STAGE -> APPROVE -> PUSH -> VERIFY -> REPORT
+HISTORY -> COMPETITORS -> OPPORTUNITIES -> STRUCTURE -> STAGE -> APPROVE -> PUSH -> VERIFY -> REPORT
+   |            |               |              |                                              |
+ crawl +     who owns      intent x service  target IA                            report feeds back
+ baseline    each SERP     x market, scored  every intent                         into history
+                           by winnability    gets a page
 ```
+
+Nothing gets staged until the first four say it should. The intelligence
+layer is data (`data/pages.json`, `data/competitors.json`,
+`data/opportunities.json`, `data/site-structure.json`) so it is versioned,
+reviewable, and refreshable like everything else.
 
 Git stays the source of truth. Duda stays the deploy target. The console is
 how the operator drives both without touching a terminal or the Duda editor.
@@ -30,7 +39,9 @@ what is staged, what is approved, what shipped, and what moved.
 
 | Screen | What it does |
 |---|---|
-| Overview | Health at a glance: pages, failures, warnings, staged changes, 90-day progress, worst offenders |
+| Intelligence | Historical crawl findings, health stats, and the competitor landscape: who owns what, threat level, and Wolff's angle against each |
+| Opportunities | The scored matrix: intent × service × market, demand × fit × winnability, who owns the answer today, and the play |
+| Structure | The target site tree with per-node status (live/weak/staged/missing), proof and spoke counts, and the internal linking rules |
 | Pages | Every crawled page: current title/description vs staged fix, defect badges |
 | Validator | Run `seo:validate` on demand, grouped results by check and severity |
 | 90-Day Plan | The three phases as live task boards; statuses persist to `data/plan.json` |

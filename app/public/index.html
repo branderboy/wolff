@@ -22,7 +22,9 @@
 </header>
 
 <nav id="tabs">
-  <button data-tab="overview" class="active">Overview</button>
+  <button data-tab="overview" class="active">Intelligence</button>
+  <button data-tab="opportunities">Opportunities</button>
+  <button data-tab="structure">Structure</button>
   <button data-tab="pages">Pages</button>
   <button data-tab="validator">Validator</button>
   <button data-tab="plan">90-Day Plan</button>
@@ -32,18 +34,61 @@
 <main>
   <section id="tab-overview" class="tab active">
     <div class="stat-row" id="stats"></div>
+    <div class="card">
+      <h2>The process</h2>
+      <div class="pipeline" id="pipeline">
+        <span>History</span><span>Competitors</span><span>Opportunities</span><span>Structure</span>
+        <span>Stage</span><span>Approve</span><span>Push</span><span>Verify</span><span>Report</span>
+      </div>
+      <p class="muted">Intelligence first: what history says, who owns each search, which opportunities match customer intent, what structure wins. Only then stage, approve, push. The report feeds back into history.</p>
+    </div>
     <div class="two-col">
       <div class="card">
-        <h2>The loop</h2>
-        <div class="pipeline" id="pipeline">
-          <span>Crawl</span><span>Validate</span><span>Prioritize</span><span>Stage</span>
-          <span>Approve</span><span>Push</span><span>Verify</span><span>Report</span>
-        </div>
-        <p class="muted">Git is the source of truth. Duda is the deploy target. Every step here is a script in <code>scripts/</code>; this console just drives them.</p>
+        <h2>Historical data <span class="muted">· data/pages.json (last crawl)</span></h2>
+        <div id="history"></div>
       </div>
       <div class="card">
         <h2>Worst offenders</h2>
         <ul class="offenders" id="offenders"><li class="muted">Run the validator to populate.</li></ul>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Competitor landscape <span class="muted">· data/competitors.json</span></h2>
+      <p class="muted" id="competitor-finding"></p>
+      <div class="table-wrap"><table id="competitors-table">
+        <thead><tr><th>Competitor</th><th>Threat</th><th>Model</th><th>What they own</th><th>How Wolff beats them</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="tab-opportunities" class="tab">
+    <div class="card">
+      <h2>Opportunity matrix <span class="muted">· intent × service × market, scored demand × fit × winnability</span></h2>
+      <p class="muted">Sorted by score. Every row names who owns the answer today, what Wolff has, and the play. This is what gets staged next.</p>
+      <div class="table-wrap"><table id="opps-table">
+        <thead><tr><th>Score</th><th>Intent</th><th>Target query</th><th>Owned today by</th><th>Wolff today</th><th>The play</th><th>Target URL</th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <section id="tab-structure" class="tab">
+    <div class="two-col">
+      <div class="card">
+        <h2>Target site structure</h2>
+        <p class="muted">Every intent gets a permanent page; blogs are spokes to service hubs; projects prove services; max 2 clicks from home.</p>
+        <div id="tree"></div>
+      </div>
+      <div class="card">
+        <h2>Linking rules</h2>
+        <ul id="linking-rules" class="rules"></ul>
+        <div class="legend">
+          <span><i class="lg ok"></i> live, healthy</span>
+          <span><i class="lg weak"></i> live, weak</span>
+          <span><i class="lg staged"></i> fix staged</span>
+          <span><i class="lg missing"></i> missing, must build</span>
+        </div>
       </div>
     </div>
   </section>

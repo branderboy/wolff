@@ -35,6 +35,11 @@
           "id": "pipeline",
           "title": "Duda API push pipeline built (dry-run tested)",
           "status": "done"
+        },
+        {
+          "id": "intel",
+          "title": "Competitor set, opportunity matrix and target site structure defined",
+          "status": "done"
         }
       ]
     },

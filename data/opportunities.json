@@ -1,0 +1,115 @@
+{
+  "note": "The opportunity matrix: customer intent x service x market, scored against who owns the answer today and what Wolff can credibly claim. score = demand (1-5) x fit to Wolff's model (1-5) x winnability vs incumbent (1-5), max 125. This file drives prioritization; the console sorts by it. Sources: research/profile-and-plan.md intents 1-6, the audit's competitor findings, data/questions.json clusters.",
+  "opportunities": [
+    {
+      "id": "kitchen-granite-bay",
+      "intent": "find-contractor",
+      "query": "luxury kitchen remodel Granite Bay",
+      "demand": 5, "fit": 5, "winnability": 4, "score": 100,
+      "ownedBy": "GVD Renovations + Capital Construction (dedicated pages, 921 reviews)",
+      "wolffToday": "3 blog posts + 3 unlabeled case studies (Silk & Sage, Cream & Cashmere, Sculpted Slate)",
+      "play": "Launch /kitchen-remodeling with the three case studies, sourced reviews, and real investment bands. Re-slug case studies to carry service + city.",
+      "targetUrl": "/kitchen-remodeling",
+      "phase": "phase-2"
+    },
+    {
+      "id": "cost-cluster",
+      "intent": "understand-cost",
+      "query": "luxury kitchen remodel cost Granite Bay / whole home renovation cost Placer County",
+      "demand": 5, "fit": 5, "winnability": 4, "score": 100,
+      "ownedBy": "GVD (only competitor publishing ranges: $35k-$150k+). Everyone else silent.",
+      "wolffToday": "One ROI blog post; no ranges anywhere",
+      "play": "Publish real investment bands with scope attached. The LLM cites whoever gives a number with context. Transparency IS the brand argument.",
+      "targetUrl": "/kitchen-remodeling + cost guide",
+      "phase": "phase-2"
+    },
+    {
+      "id": "brand-disambiguation",
+      "intent": "validate-referral",
+      "query": "Wolff Construction / Wolff Construction Rocklin reviews",
+      "demand": 4, "fit": 5, "winnability": 5, "score": 100,
+      "ownedBy": "Wolff Construction SF (Houzz profile ranks for the shared name)",
+      "wolffToday": "Bare 18-char brand title, no schema, no address on site",
+      "play": "Entity layer: CSLB 1056036 identifier in schema, geo in every title, claim Rocklin Houzz, NAP everywhere. Referral validation is the highest-converting traffic that exists.",
+      "targetUrl": "sitewide + /about",
+      "phase": "phase-1"
+    },
+    {
+      "id": "whole-home-rocklin",
+      "intent": "find-contractor",
+      "query": "whole home renovation contractor Rocklin / Granite Bay",
+      "demand": 4, "fit": 5, "winnability": 4, "score": 80,
+      "ownedBy": "Fragmented; no dominant local owner at the luxury tier",
+      "wolffToday": "3 strong blog posts, no service page",
+      "play": "Launch /full-home-renovation. The blog posts become supporting spokes linking up to it.",
+      "targetUrl": "/full-home-renovation",
+      "phase": "phase-2"
+    },
+    {
+      "id": "adu-rocklin",
+      "intent": "understand-cost",
+      "query": "ADU builder Rocklin / ADU cost per square foot Placer County",
+      "demand": 4, "fit": 4, "winnability": 4, "score": 64,
+      "ownedBy": "Thin, generic statewide ADU content; no strong local luxury owner",
+      "wolffToday": "Homepage tile with no page behind it",
+      "play": "Launch /home-additions-adu with Rocklin setback rules and real per-sqft bands. Least-served cluster with real permit-backed answers.",
+      "targetUrl": "/home-additions-adu",
+      "phase": "phase-2"
+    },
+    {
+      "id": "bathroom-granite-bay",
+      "intent": "find-contractor",
+      "query": "luxury bathroom remodel Granite Bay",
+      "demand": 3, "fit": 5, "winnability": 4, "score": 60,
+      "ownedBy": "Same volume set as kitchens, weaker grip",
+      "wolffToday": "2 solid blog posts carrying the intent alone",
+      "play": "Launch /bathroom-remodeling; wire the two posts to it as spokes.",
+      "targetUrl": "/bathroom-remodeling",
+      "phase": "phase-2"
+    },
+    {
+      "id": "ai-recommendation",
+      "intent": "ai-recommendation",
+      "query": "who are the best luxury remodeling contractors in Granite Bay? (asked to ChatGPT/Perplexity/Gemini)",
+      "demand": 3, "fit": 5, "winnability": 4, "score": 60,
+      "ownedBy": "Whoever the engines can verify: today that is directory data and GVD's cost content",
+      "wolffToday": "Nothing machine-readable: no schema, no address, placeholder profiles",
+      "play": "Retrieval layer: Houzz, GBP, NARI/NKBA directories, partner links, YouTube transcripts. Extraction-formatted answers attributed to named team members.",
+      "targetUrl": "off-site + FAQ blocks sitewide",
+      "phase": "phase-1"
+    },
+    {
+      "id": "process-permits",
+      "intent": "understand-process",
+      "query": "who manages permits for a remodel / how long does Granite Bay plan check take",
+      "demand": 3, "fit": 4, "winnability": 5, "score": 60,
+      "ownedBy": "Nobody locally. Generic national content only.",
+      "wolffToday": "Permit management is a stated capability with zero content",
+      "play": "Process page upgrade + permit answer content. Wolff's permit record makes this uniquely credible.",
+      "targetUrl": "/our-process",
+      "phase": "phase-3"
+    },
+    {
+      "id": "compare-contractors",
+      "intent": "compare",
+      "query": "how to choose a luxury remodeling contractor / best contractor Granite Bay",
+      "demand": 3, "fit": 4, "winnability": 3, "score": 36,
+      "ownedBy": "Listicles and directories",
+      "wolffToday": "One good blog post (how to find top contractors)",
+      "play": "Upgrade the existing post with extraction formatting + FAQ schema; add the vetting checklist only Wolff publishes (license lookup, permit history, named PM).",
+      "targetUrl": "/how-to-find-the-top-luxury-home-contractors-in-granite-bay",
+      "phase": "phase-3"
+    },
+    {
+      "id": "city-pages",
+      "intent": "find-contractor",
+      "query": "remodeling contractor Granite Bay / Rocklin (city-level)",
+      "demand": 3, "fit": 4, "winnability": 3, "score": 36,
+      "ownedBy": "GVD's city matrix",
+      "wolffToday": "Blog geo-focus is 100% Granite Bay; homepage names no market at all",
+      "play": "Granite Bay and Rocklin city pages after service pages exist to link to. Cities before that would be doors to nowhere.",
+      "targetUrl": "/granite-bay, /rocklin",
+      "phase": "phase-3"
+    }
+  ]
+}
