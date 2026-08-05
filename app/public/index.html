@@ -15,42 +15,42 @@
 </header>
 
 <nav id="tabs">
-  <button data-tab="overview" class="active">Intelligence</button>
-  <button data-tab="opportunities">Opportunities</button>
-  <button data-tab="structure">Structure</button>
-  <button data-tab="workers">Workers</button>
-  <button data-tab="pages">Pages</button>
-  <button data-tab="validator">Validator</button>
+  <button data-tab="overview" class="active">Where You Stand</button>
+  <button data-tab="opportunities">What To Win</button>
+  <button data-tab="structure">Site Plan</button>
+  <button data-tab="workers">AI Team</button>
+  <button data-tab="pages">Your Pages</button>
+  <button data-tab="validator">Site Check</button>
   <button data-tab="plan">The 90 Days</button>
-  <button data-tab="deploy">Deploy</button>
+  <button data-tab="deploy">Publish</button>
 </nav>
 
 <main>
   <section id="tab-overview" class="tab active">
     <div class="stat-row" id="stats"></div>
     <div class="card">
-      <h2>The process</h2>
+      <h2>How this works</h2>
       <div class="pipeline" id="pipeline">
-        <span>History</span><span>Competitors</span><span>Opportunities</span><span>Structure</span>
-        <span>Stage</span><span>Approve</span><span>Push</span><span>Verify</span><span>Report</span>
+        <span>See what is broken</span><span>See who outranks you</span><span>Pick the searches to win</span><span>Plan the pages</span>
+        <span>Write the fixes</span><span>You approve</span><span>Publish</span><span>Check it worked</span><span>Monthly report</span>
       </div>
-      <p class="muted">Intelligence first: what history says, who owns each search, which opportunities match customer intent, what structure wins. Only then stage, approve, push. The report feeds back into history.</p>
+      <p class="muted">First we learn: what is broken on your site, who outranks you, and which searches are worth winning. Then we fix, you approve, we publish to your website, and we measure. Every month the numbers tell us what to do next.</p>
     </div>
     <div class="two-col">
       <div class="card">
-        <h2>Historical data <span class="muted">· data/pages.json (last crawl)</span></h2>
+        <h2>What the scan of your site found</h2>
         <div id="history"></div>
       </div>
       <div class="card">
-        <h2>Worst offenders</h2>
-        <ul class="offenders" id="offenders"><li class="muted">Run the validator to populate.</li></ul>
+        <h2>Pages with the most problems</h2>
+        <ul class="offenders" id="offenders"><li class="muted">Run the site check to fill this in.</li></ul>
       </div>
     </div>
     <div class="card">
-      <h2>Competitor landscape <span class="muted">· data/competitors.json</span></h2>
+      <h2>Who you are up against</h2>
       <p class="muted" id="competitor-finding"></p>
       <div class="table-wrap"><table id="competitors-table">
-        <thead><tr><th>Competitor</th><th>Threat</th><th>Model</th><th>What they own</th><th>How Wolff beats them</th></tr></thead>
+        <thead><tr><th>Competitor</th><th>Danger</th><th>Their game</th><th>What they rank for</th><th>How you beat them</th></tr></thead>
         <tbody></tbody>
       </table></div>
     </div>
@@ -58,10 +58,10 @@
 
   <section id="tab-opportunities" class="tab">
     <div class="card">
-      <h2>Opportunity matrix <span class="muted">· intent × service × market, scored demand × fit × winnability</span></h2>
-      <p class="muted">Sorted by score. Every row names who owns the answer today, what Wolff has, and the play. This is what gets staged next.</p>
+      <h2>The searches worth winning</h2>
+      <p class="muted">Ranked by win score: how many people search it, how well it fits your business, and how beatable the current winner is. Higher score means we go after it sooner.</p>
       <div class="table-wrap"><table id="opps-table">
-        <thead><tr><th>Score</th><th>Intent</th><th>Target query</th><th>Owned today by</th><th>Wolff today</th><th>The play</th><th>Target URL</th></tr></thead>
+        <thead><tr><th>Win score</th><th>Why they search</th><th>What they type into Google</th><th>Who wins it today</th><th>What you have now</th><th>What we do about it</th><th>The page that wins it</th></tr></thead>
         <tbody></tbody>
       </table></div>
     </div>
@@ -70,18 +70,18 @@
   <section id="tab-structure" class="tab">
     <div class="two-col">
       <div class="card">
-        <h2>Target site structure</h2>
-        <p class="muted">Every intent gets a permanent page; blogs are spokes to service hubs; projects prove services; max 2 clicks from home.</p>
+        <h2>The pages your website needs</h2>
+        <p class="muted">Every kind of customer search gets its own page. Blog posts feed the service pages. Project photos prove the work. Everything reachable in two clicks.</p>
         <div id="tree"></div>
       </div>
       <div class="card">
-        <h2>Linking rules</h2>
+        <h2>How the pages connect</h2>
         <ul id="linking-rules" class="rules"></ul>
         <div class="legend">
-          <span><i class="lg ok"></i> live, healthy</span>
-          <span><i class="lg weak"></i> live, weak</span>
-          <span><i class="lg staged"></i> fix staged</span>
-          <span><i class="lg missing"></i> missing, must build</span>
+          <span><i class="lg ok"></i> already good</span>
+          <span><i class="lg weak"></i> live but weak</span>
+          <span><i class="lg staged"></i> fix written, ready</span>
+          <span><i class="lg missing"></i> does not exist yet</span>
         </div>
       </div>
     </div>
@@ -89,25 +89,25 @@
 
   <section id="tab-workers" class="tab">
     <div class="card">
-      <h2>The AI worker fleet <span class="muted">· data/workers.json</span></h2>
-      <p class="muted">Each worker is a scoped agent job: a mission, the sources it audits, the files it owns, a cadence. Generate the work order here, hand it to a Claude or Codex agent, and the validator plus human approval gate everything that ships.</p>
+      <h2>Your AI team</h2>
+      <p class="muted">Eight AI assistants, each with one job: check your Google Business Profile, watch your competitors, listen to the market, dig up your permit history from government records, pull your Google performance data, plan the next moves, double check every change, and publish. Click a button to create that assistant's assignment for the month.</p>
       <div class="table-wrap"><table id="workers-table">
-        <thead><tr><th>Worker</th><th>Audits</th><th>Writes to</th><th>Cadence</th><th>Mode</th><th></th></tr></thead>
+        <thead><tr><th>Assistant</th><th>What it checks</th><th>What it updates</th><th>How often</th><th>Runs</th><th></th></tr></thead>
         <tbody></tbody>
       </table></div>
     </div>
     <div class="card">
-      <h2>Work order</h2>
-      <pre id="worker-out">Select a worker and generate its work order. Auto workers also run their local scripts.</pre>
+      <h2>The assignment</h2>
+      <pre id="worker-out">Pick an assistant above and press Create Assignment. What appears here is the complete brief that AI assistant follows.</pre>
     </div>
   </section>
 
   <section id="tab-pages" class="tab">
     <div class="card">
-      <h2>Page inventory <span class="muted" id="pages-count"></span></h2>
-      <p class="muted">Current metadata from the last crawl vs the staged fix in <code>data/page-updates.json</code>.</p>
+      <h2>Every page on your site <span class="muted" id="pages-count"></span></h2>
+      <p class="muted">What Google sees on each page today, next to the rewritten version that is ready to publish.</p>
       <div class="table-wrap"><table id="pages-table">
-        <thead><tr><th>Path</th><th>Current title</th><th>Staged title</th><th>Words</th><th>Status</th></tr></thead>
+        <thead><tr><th>Page</th><th>Title Google sees now</th><th>New title, ready to go</th><th>Words</th><th>Status</th></tr></thead>
         <tbody></tbody>
       </table></div>
     </div>
@@ -116,41 +116,41 @@
   <section id="tab-validator" class="tab">
     <div class="card">
       <div class="row-between">
-        <h2>SEO regression gate</h2>
-        <button class="btn" id="run-validate">Run validator</button>
+        <h2>Automatic site check</h2>
+        <button class="btn" id="run-validate">Check the site</button>
       </div>
-      <p class="muted" id="validate-meta">Same gate CI runs. Fails the build on any regression.</p>
+      <p class="muted" id="validate-meta">Scans every page for the mistakes that cost rankings. The same check runs before anything publishes, so a mistake that gets fixed can never sneak back.</p>
       <div id="findings"></div>
     </div>
   </section>
 
   <section id="tab-plan" class="tab">
     <div id="phases" class="phases"></div>
-    <p class="muted center">Click a task to cycle status: todo → in progress → done. Changes persist to <code>data/plan.json</code>; commit them for the audit trail.</p>
+    <p class="muted center">Click any task to move it along: to do, then in progress, then done. Green means finished, amber means underway, red means waiting on someone.</p>
   </section>
 
   <section id="tab-deploy" class="tab">
     <div class="two-col">
       <div class="card">
-        <h2>Dry run</h2>
-        <p class="muted">Diff staged changes against the last crawl. Nothing is sent anywhere.</p>
+        <h2>Preview</h2>
+        <p class="muted">See exactly what would change on your website, before and after, without touching anything.</p>
         <div class="btn-row">
-          <button class="btn" id="run-diff">Duda diff</button>
-          <button class="btn ghost" id="run-schema">Rebuild schema</button>
+          <button class="btn" id="run-diff">Preview the changes</button>
+          <button class="btn ghost" id="run-schema">Rebuild Google business info</button>
         </div>
       </div>
       <div class="card">
-        <h2>Apply <span class="badge" id="duda-badge">checking…</span></h2>
-        <p class="muted">Pushes staged metadata to the Duda <b>draft</b>. The validator must pass first. Type <code>PUSH TO WOLFF</code> to arm.</p>
+        <h2>Publish <span class="badge" id="duda-badge">checking</span></h2>
+        <p class="muted">Sends the approved fixes to your website builder as a <b>draft</b>, never straight to live. The site check must pass first. Type <code>PUSH TO WOLFF</code> to unlock the button.</p>
         <div class="btn-row">
-          <input id="confirm-input" placeholder="type confirmation phrase" autocomplete="off">
-          <button class="btn danger" id="run-apply" disabled>Apply</button>
+          <input id="confirm-input" placeholder="type PUSH TO WOLFF to unlock" autocomplete="off">
+          <button class="btn danger" id="run-apply" disabled>Publish</button>
         </div>
       </div>
     </div>
     <div class="card">
-      <h2>Console output</h2>
-      <pre id="console-out">Ready.</pre>
+      <h2>Details</h2>
+      <pre id="console-out">Ready when you are.</pre>
     </div>
   </section>
 </main>

@@ -42,16 +42,16 @@ function renderHistory() {
   const geoRock = live.filter((p) => (p.title || '').includes('Rocklin')).length;
   const geoNone = live.length - live.filter((p) => /Granite Bay|Rocklin|Placer|Roseville|Folsom|Loomis|Auburn|El Dorado|Sacramento/.test(p.title || '')).length;
   const rows = [
-    [dupTitlePages, 'pages share a duplicated title'],
-    [thin, 'indexable pages under 300 words'],
-    [pages.filter((p) => p.statusCode === 404).length, 'internally linked 404s'],
-    [geoGB, 'titles carry Granite Bay (all blog posts)'],
-    [geoRock, 'titles carry Rocklin (the HQ market)'],
-    [geoNone, 'titles carry no geography at all'],
+    [dupTitlePages, 'pages where Google sees the same title and cannot tell them apart'],
+    [thin, 'pages too thin to rank (under 300 words)'],
+    [pages.filter((p) => p.statusCode === 404).length, 'link on your own site that goes to a dead page'],
+    [geoGB, 'pages aimed at Granite Bay (all of them blog posts)'],
+    [geoRock, 'pages aimed at Rocklin, your home base'],
+    [geoNone, 'pages that never say where you work'],
   ];
   $('#history').innerHTML = '<ul class="offenders">' + rows.map(([n, l]) =>
     `<li><span class="n">${n}</span>${esc(l)}</li>`).join('') + '</ul>' +
-    '<p class="muted" style="margin-top:8px">The pattern: search relevance lives in blog posts aimed at one city while every money page is invisible. History says fix structure, not publish more posts.</p>';
+    '<p class="muted" style="margin-top:8px">Translation: the only pages Google understands are blog posts about one city. The pages that actually sell your services are invisible. The fix is building the right pages, not writing more posts.</p>';
 }
 
 // ------------------------------------------------------------------ competitors
@@ -120,17 +120,17 @@ function renderOverview() {
   const donePct = Math.round((allTasks.filter((t) => t.status === 'done').length / allTasks.length) * 100);
 
   $('#stats').innerHTML = [
-    [c.pages, 'pages in last crawl', false],
-    [c.fails ?? '·', 'validator failures', (c.fails ?? 0) > 0],
-    [c.warns ?? '·', 'warnings', false],
-    [c.staged, 'staged page fixes', false],
-    [donePct + '%', 'plan complete', false],
+    [c.pages, 'pages on your site', false],
+    [c.fails ?? '·', 'problems hurting rankings', (c.fails ?? 0) > 0],
+    [c.warns ?? '·', 'smaller issues', false],
+    [c.staged, 'fixes written and ready', false],
+    [donePct + '%', 'of the plan done', false],
   ].map(([n, l, bad]) => `<div class="stat"><b class="${bad ? 'bad' : ''}">${n}</b><span>${l}</span></div>`).join('');
 
   const dot = $('#health-dot'), txt = $('#health-text');
-  if (c.fails === null) { dot.className = 'dot'; txt.textContent = 'validator not run yet'; }
-  else if (c.fails > 0) { dot.className = 'dot bad'; txt.textContent = `${c.fails} failures live`; }
-  else { dot.className = 'dot ok'; txt.textContent = 'gate passing'; }
+  if (c.fails === null) { dot.className = 'dot'; txt.textContent = 'site not checked yet'; }
+  else if (c.fails > 0) { dot.className = 'dot bad'; txt.textContent = `${c.fails} problems live on your site`; }
+  else { dot.className = 'dot ok'; txt.textContent = 'site is clean'; }
 
   const v = STATE.validation;
   if (v?.findings?.length) {
@@ -152,13 +152,13 @@ function renderWorkers() {
     <td class="muted">${esc(w.audits)}</td>
     <td class="muted">${(w.writes || []).map(esc).join('<br>')}</td>
     <td><span class="badge">${esc(w.cadence)}</span></td>
-    <td><span class="badge ${w.mode === 'auto' ? 'ok' : 'staged'}">${esc(w.mode)}</span></td>
-    <td><button class="btn ghost" data-worker="${esc(w.id)}">Work order</button></td>
+    <td><span class="badge ${w.mode === 'auto' ? 'ok' : 'staged'}">${w.mode === 'auto' ? 'by itself' : 'AI agent'}</span></td>
+    <td><button class="btn ghost" data-worker="${esc(w.id)}">Create assignment</button></td>
   </tr>`).join('');
   document.querySelectorAll('[data-worker]').forEach((b) => {
     b.addEventListener('click', async () => {
       b.disabled = true;
-      $('#worker-out').textContent = 'Generating work order for ' + b.dataset.worker + '...';
+      $('#worker-out').textContent = 'Writing the assignment for ' + b.dataset.worker + '...';
       const r = await (await fetch('/api/worker/run', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: b.dataset.worker }),
@@ -177,8 +177,8 @@ function renderPages() {
   const rows = (STATE.pages.pages || []).map((p) => {
     const s = staged.get(p.path);
     const status = p.statusCode === 404
-      ? '<span class="badge fail">404</span>'
-      : s ? '<span class="badge staged">fix staged</span>' : '<span class="badge">ok as-is</span>';
+      ? '<span class="badge fail">dead page</span>'
+      : s ? '<span class="badge staged">fix ready</span>' : '<span class="badge">fine as is</span>';
     const title = s
       ? `<div class="old">${esc(p.title || '(none)')}</div><div class="new">${esc(s.title)}</div>`
       : esc(p.title || '(none)');
@@ -189,16 +189,46 @@ function renderPages() {
 }
 
 // ------------------------------------------------------------------ validator
+const CHECK_LABELS = {
+  'title-too-short': 'Page title too short for Google to work with',
+  'title-too-long': 'Page title too long, Google cuts it off',
+  'title-no-geo': 'Page title never says where you work',
+  'title-duplicate': 'Several pages share the exact same title',
+  'title-missing': 'Page has no title at all',
+  'description-duplicate': 'Several pages share the same description',
+  'description-missing': 'No description under your Google listing',
+  'description-too-long': 'Description too long, Google cuts it off',
+  'description-too-short': 'Description too short to sell the click',
+  'meta-keywords-present': 'Outdated keywords tag, dead since 2009',
+  'h1-missing': 'Page has no main headline',
+  'h1-multiple': 'Page has more than one main headline',
+  'content-critically-thin': 'Almost no text, Google will not rank it',
+  'content-thin': 'Not enough text on the page',
+  'http-404': 'Link on your site goes to a dead page',
+  'template-bleed': 'Wrong page title pasted from another page',
+  'canonical-mismatch': 'Page points Google to a different address',
+  'internal-redirect': 'Link takes a detour instead of going direct',
+  'og-image-missing': 'No photo when the page is shared',
+  'og-image-favicon': 'Shares show a tiny logo instead of a project photo',
+  'twitter-card-small': 'Shares on X show a small card instead of a big photo',
+  'jsonld-missing': 'No business info coded for Google on this page',
+  'jsonld-invalid': 'Business info code is broken',
+  'review-schema-unsourced': 'Star rating claim with no verified review behind it',
+  'img-missing-alt': 'Photos missing descriptions for image search',
+  'banned-buzzword': 'Fluffy language that means nothing to Google',
+  'fetch-failed': 'Could not load this page to check it',
+};
+const plain = (check) => CHECK_LABELS[check] || check;
 function renderFindings(v) {
   if (!v) { $('#findings').innerHTML = '<p class="muted">No results yet. Run the validator.</p>'; return; }
-  $('#validate-meta').textContent = `Last run ${new Date(v.generatedAt).toLocaleString()} · mode: ${v.mode} · ${v.failCount} FAIL, ${v.warnCount} WARN across ${v.pageCount} pages`;
+  $('#validate-meta').textContent = `Last checked ${new Date(v.generatedAt).toLocaleString()} · ${v.failCount} problems that cost rankings and ${v.warnCount} smaller issues across ${v.pageCount} pages`;
   const byCheck = {};
   for (const f of v.findings) (byCheck[f.check] ||= []).push(f);
   $('#findings').innerHTML = Object.entries(byCheck)
     .sort((a, b) => (a[1][0].severity === 'FAIL' ? -1 : 1) - (b[1][0].severity === 'FAIL' ? -1 : 1))
     .map(([check, items]) => `
       <div class="group">
-        <h3><span class="badge ${items[0].severity === 'FAIL' ? 'fail' : 'warn'}">${items[0].severity}</span> ${esc(check)} <span class="muted">· ${items.length}</span></h3>
+        <h3><span class="badge ${items[0].severity === 'FAIL' ? 'fail' : 'warn'}">${items[0].severity === 'FAIL' ? 'costs rankings' : 'worth fixing'}</span> ${esc(plain(check))} <span class="muted">· ${items.length} page${items.length > 1 ? 's' : ''}</span></h3>
         ${items.map((f) => `<div class="item"><div class="url">${esc(f.url.split('\n')[0])}</div>${esc(f.detail)}</div>`).join('')}
       </div>`).join('');
 }
