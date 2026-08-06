@@ -1,6 +1,6 @@
 {
   "source": "resentialcontruction.csv",
-  "importedPages": 27,
+  "importedPages": 28,
   "pages": [
     {
       "url": "https://www.wolffconstruction.com/",
@@ -230,7 +230,7 @@
       "indexability": "Indexable",
       "title": "What Does a Luxury Home Remodel Include in Granite Bay?",
       "titleLength": 55,
-      "metaDescription": "A luxury home remodel in Granite Bay covers custom kitchens, primary baths, structural changes, and full permit management. Wolff Construction handles it all—start to finish.",
+      "metaDescription": "A luxury home remodel in Granite Bay covers custom kitchens, primary baths, structural changes, and full permit management. Wolff Construction handles it all\u2014start to finish.",
       "metaDescriptionLength": 174,
       "metaKeywords": "Wolff Construction",
       "h1": "What Does a Luxury Home Remodel Actually Include in Granite Bay, CA?",
@@ -460,6 +460,23 @@
       "wordCount": 1512,
       "crawlDepth": 3,
       "inlinks": 11
+    },
+    {
+      "url": "https://www.wolffconstruction.com/community",
+      "path": "/community",
+      "statusCode": 0,
+      "indexability": "in Google index, not crawled",
+      "title": "",
+      "titleLength": 0,
+      "metaDescription": "",
+      "metaDescriptionLength": 0,
+      "metaKeywords": "",
+      "h1": "",
+      "h1Second": "",
+      "canonical": "",
+      "wordCount": 0,
+      "crawlDepth": 0,
+      "inlinks": 0
     }
   ]
 }

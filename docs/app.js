@@ -130,7 +130,7 @@ function renderOverview() {
   const donePct = allTasks.length ? Math.round((allTasks.filter((t) => t.status === 'done').length / allTasks.length) * 100) : 0;
 
   $('#stats').innerHTML = [
-    [c.pages, 'Pages On Your Site', false],
+    [c.pages, 'Pages Captured In The Crawl', false],
     [c.fails ?? '·', 'Problems Hurting Rankings', (c.fails ?? 0) > 0],
     [c.warns ?? '·', 'Smaller Issues', false],
     [c.staged, 'Fixes Written And Ready', false],
@@ -149,7 +149,11 @@ function renderOverview() {
     pill.classList.replace('border-red-500', 'border-green-600');
   }
   const src = $('#health-source');
-  if (src && c.fails !== null) src.textContent = `Data collected: ${c.pages} pages captured from the live site • then analyzed against the search rules`;
+  if (src && c.fails !== null) {
+    const sm = STATE.pages.sitemap;
+    src.textContent = `Data collected: ${c.pages} pages captured in the crawl • analyzed against the search rules` +
+      (sm ? ` • sitemap lists ${sm.urlCount} pages (checked ${sm.checkedAt})` : ' • sitemap check pending: npm run crawl:sitemap');
+  }
 
   const v = STATE.validation;
   if (v?.findings?.length) {

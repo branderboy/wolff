@@ -23,7 +23,8 @@
     "connect:citations": "node scripts/connectors/sameas.js",
     "connect:trends": "node scripts/connectors/trends.js",
     "connect:indexnow": "node scripts/connectors/indexnow.js",
-    "pages:build": "node scripts/build-static.js"
+    "pages:build": "node scripts/build-static.js",
+    "crawl:sitemap": "node scripts/import-sitemap.js"
   },
   "engines": {
     "node": ">=18"
