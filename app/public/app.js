@@ -126,12 +126,8 @@ function counts() {
 
 // ------------------------------------------------------------------ overview
 function renderOverview() {
-  const c = counts();
-  const sm = STATE.pages.sitemap;
-  const pageCount = sm?.urlCount || c.pages;
-
   const txt = $('#health-text');
-  if (txt) txt.textContent = `${pageCount} Pages • A 90 Day Action Plan`;
+  if (txt) txt.textContent = 'A 90 Day Search Action Plan';
 
   const ps = $('#plan-summary');
   if (ps) ps.innerHTML = STATE.plan.phases.map((p) => {
