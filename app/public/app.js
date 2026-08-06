@@ -127,7 +127,7 @@ function counts() {
 function renderOverview() {
   const c = counts();
   const allTasks = STATE.plan.phases.flatMap((p) => p.tasks);
-  const donePct = Math.round((allTasks.filter((t) => t.status === 'done').length / allTasks.length) * 100);
+  const donePct = allTasks.length ? Math.round((allTasks.filter((t) => t.status === 'done').length / allTasks.length) * 100) : 0;
 
   $('#stats').innerHTML = [
     [c.pages, 'Pages On Your Site', false],

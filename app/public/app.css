@@ -159,3 +159,13 @@ pre {
 .tab { display: none; }
 .tab.active { display: block; }
 main { padding-bottom: 60px; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 640px) {
+  .card { padding: 20px 16px; }
+  .btn-row { flex-wrap: wrap; }
+  .btn-row .btn { flex: 1 1 100%; text-align: center; }
+  .btn-row input { flex: 1 1 100%; min-width: 0; }
+  .btn { padding: 12px 18px; }
+  .tnode code { word-break: break-all; }
+}
