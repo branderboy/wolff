@@ -42,6 +42,7 @@ async function load() {
 
 // ------------------------------------------------------------------ history
 function renderHistory() {
+  if (!$('#history')) return;
   const pages = STATE.pages.pages || [];
   const live = pages.filter((p) => p.statusCode === 200);
   const titles = {};
@@ -126,53 +127,17 @@ function counts() {
 // ------------------------------------------------------------------ overview
 function renderOverview() {
   const c = counts();
-  const allTasks = STATE.plan.phases.flatMap((p) => p.tasks);
-  const donePct = allTasks.length ? Math.round((allTasks.filter((t) => t.status === 'done').length / allTasks.length) * 100) : 0;
+  const sm = STATE.pages.sitemap;
+  const pageCount = sm?.urlCount || c.pages;
 
-  $('#stats').innerHTML = [
-    [c.pages, 'Pages Captured In The Crawl', false],
-    [c.fails ?? '·', 'Problems Hurting Rankings', (c.fails ?? 0) > 0],
-    [c.warns ?? '·', 'Smaller Issues', false],
-    [c.staged, 'Fixes Written And Ready', false],
-    [donePct + '%', 'Of The Plan Done', false],
-  ].map(([n, l, bad]) => `<div class="flex flex-col items-center text-center p-4">
-    <div class="text-6xl font-black tracking-tighter mb-2 ${bad ? 'text-red-500' : 'text-slate-900'}">${n}</div>
-    <div class="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-slate-500 uppercase">${l}</div>
-  </div>`).join('');
+  const txt = $('#health-text');
+  if (txt) txt.textContent = `${pageCount} Pages • A 90 Day Action Plan`;
 
-  const pill = $('#health-pill'), txt = $('#health-text');
-  if (c.fails === null) { txt.textContent = 'Site Not Checked Yet'; }
-  else if (c.fails > 0) { txt.textContent = `${c.fails} Problems Identified On Your Website`; }
-  else {
-    txt.textContent = 'No Problems Identified On Your Website';
-    txt.classList.replace('text-red-600', 'text-green-700');
-    pill.classList.replace('border-red-500', 'border-green-600');
-  }
-  const src = $('#health-source');
-  if (src && c.fails !== null) {
-    const sm = STATE.pages.sitemap;
-    src.textContent = `Data collected: ${c.pages} pages captured in the crawl • analyzed against the search rules` +
-      (sm ? ` • sitemap lists ${sm.urlCount} pages (checked ${sm.checkedAt})` : ' • sitemap check pending: npm run crawl:sitemap');
-  }
-
-  const v = STATE.validation;
-  if (v?.findings?.length) {
-    const perUrl = {};
-    for (const f of v.findings.filter((f) => f.severity === 'FAIL')) {
-      const u = f.url.split('\n')[0].replace('https://www.wolffconstruction.com', '') || '/';
-      perUrl[u] = (perUrl[u] || 0) + 1;
-    }
-    const top = Object.entries(perUrl).sort((a, b) => b[1] - a[1]).slice(0, 6);
-    $('#offenders').innerHTML = top.map(([u, n]) => `<li><span class="n">${n}</span>${esc(u)}</li>`).join('');
-
-    const byCheck = {};
-    for (const f of v.findings.filter((f) => f.severity === 'FAIL')) byCheck[f.check] = (byCheck[f.check] || 0) + 1;
-    const bt = $('#breakdown-title');
-    if (bt && c.fails) bt.textContent = `What the ${c.fails} problems are`;
-    const bd = $('#problem-breakdown');
-    if (bd) bd.innerHTML = Object.entries(byCheck).sort((a, b) => b[1] - a[1])
-      .map(([k, n]) => `<li><span class="n">${n}</span>${esc(plain(k))}</li>`).join('');
-  }
+  const ps = $('#plan-summary');
+  if (ps) ps.innerHTML = STATE.plan.phases.map((p) => {
+    const done = p.tasks.filter((t) => t.status === 'done').length;
+    return `<li><span class="n">${done}/${p.tasks.length}</span><b>${esc(p.days)}</b> &nbsp;${esc(p.name)}</li>`;
+  }).join('');
 }
 
 // ------------------------------------------------------------------ connections
